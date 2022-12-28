@@ -2,6 +2,8 @@
 if [[ "$(ifconfig en0 | grep ether | awk '{print $2}')" == "f4:d4:88:68:cd:f8" ]];
 then
 	export ZSH_HOST_SETTING="loki"
+	export HELIX_RUNTIME="$HOME/Documents/helix/runtime"
+	export ZSHCONFIG="$HOME/.config/oh-my-zsh-custom/99-loki.zsh"
 
 	# set up yubikey
 	export GPG_TTY=$(tty)
