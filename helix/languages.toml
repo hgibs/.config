@@ -1,0 +1,36 @@
+[[language]]
+name = "json"
+config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+
+
+[[language]]
+name = "markdown"
+language-server = { command = "ltex-ls" }
+file-types = ["md"]
+scope = "source.markdown"
+roots = []
+
+
+[[language]]
+name = "rust"
+
+[language.config]
+checkOnSave = { command = "clippy" }
+
+[language.debugger]
+command = "codelldb"
+name = "codelldb"
+port-arg = "--port {}"
+transport = "tcp"
+
+
+[[language.debugger.templates]]
+name = "binary"
+request = "launch"
+[[language.debugger.templates.completion]]
+completion = "filename"
+name = "binary"
+
+[language.debugger.templates.args]
+program = "{0}"
+runInTerminal = true
