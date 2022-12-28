@@ -4,7 +4,7 @@
 # export PATH=$HOME/bin:/usr/local/bin:$PATH
 
 # Mandatory export
-export ZSH="/Users/hollandgibson/.oh-my-zsh"
+export ZSH="$HOME/.oh-my-zsh"
 
 # Move config
 ZSH_CUSTOM="$HOME/.config/oh-my-zsh-custom"
