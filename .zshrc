@@ -29,6 +29,7 @@ COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
 # HIST_STAMPS="mm/dd/yyyy"
 
-plugins=(you-should-use git brew kubectl zsh-syntax-highlighting zsh-autosuggestions)
+# 'zsh-syntax-highlighting' must be last
+plugins=(you-should-use git brew kubectl zsh-autosuggestions zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
