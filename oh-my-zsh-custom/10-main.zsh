@@ -21,6 +21,9 @@ export PATH="$HOME/Applications/bin:$PATH"
 export EDITOR=subl
 export BYOBU_CONFIG_DIR="~/.config/byobu"
 
+# help the non-compliant apps - this shouldn't be needed
+# export XDG_CONFIG_HOME="$HOME/.config"
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 # You may need to manually set your language environment
