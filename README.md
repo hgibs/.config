@@ -21,7 +21,7 @@ ln -s .config/.zshrc .zshrc
 brew tap homebrew/cask-fonts
 brew install --cask font-hack-nerd-font
 
-brew install 
+xargs brew install < homebrewpackages.txt
 ```
 
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 
