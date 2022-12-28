@@ -27,9 +27,20 @@ DISABLE_UPDATE_PROMPT="true"
 # ENABLE_CORRECTION="true"
 COMPLETION_WAITING_DOTS="true"
 # DISABLE_UNTRACKED_FILES_DIRTY="true"
-# HIST_STAMPS="mm/dd/yyyy"
+HIST_STAMPS="yyyy-mm-dd"
 
 # 'zsh-syntax-highlighting' must be last
-plugins=(you-should-use git brew kubectl zsh-autosuggestions zsh-syntax-highlighting)
+plugins=(
+  you-should-use
+  rust
+  git
+  brew
+  kubectl
+  zsh-autosuggestions
+  colored-man-pages
+  command-not-found
+  pip
+  zsh-syntax-highlighting
+)
 
 source $ZSH/oh-my-zsh.sh

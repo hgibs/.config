@@ -1,0 +1,67 @@
+# Inserts a blank line between shell prompts
+add_newline = false
+
+# Move the directory to the second line
+format = "$all$directory$character"
+
+# allow rust to boot up with a bit more time
+command_timeout = 1000
+
+[aws]
+symbol = "  "
+
+[character]
+success_symbol = "[❯](bold green)"
+error_symbol = "[❯](bold red)"
+
+[conda]
+symbol = " "
+# format = "[$symbol$environment](dimmed green) "
+
+[dart]
+symbol = " "
+
+[directory]
+read_only = " "
+
+[docker_context]
+symbol = " "
+
+[elixir]
+symbol = " "
+
+[elm]
+symbol = " "
+
+[git_branch]
+symbol = " "
+
+[golang]
+symbol = " "
+
+[hg_branch]
+symbol = " "
+
+[java]
+symbol = " "
+
+[julia]
+symbol = " "
+
+[memory_usage]
+symbol = " "
+
+[nim]
+symbol = " "
+
+[nix_shell]
+symbol = " "
+
+[nodejs]
+symbol = " "
+
+[package]
+symbol = " "
+
+[rust]
+symbol = " "

@@ -4,28 +4,39 @@ random(){
   echo;
 }
 
+upper() {
+  echo "$1" | tr '[:lower:]' '[:upper:]'
+}
+
 shasum_recent(){
   cd ~/Downloads;
   shasum -a 256 $(ls -t | head -1);
 }
 
-push_artifactory () {
-  docker pull --platform linux/amd64 "$1"
-
-  NEW_TAG="artifactory.rtenclave.io/docker-public-local/$1"
-  docker tag $1 $NEW_TAG
-  docker push $NEW_TAG
-  STATUS=$?
-
-  echo "\n"
-
-  if [ "$STATUS" -eq 0 ]; then
-    K8S_IMG=$(docker inspect --format='{{index .RepoDigests 0}}' "$NEW_TAG")
-
-    echo "To use this image in a manifest, refer to its shasum, i.e.:"
-    echo "image: $K8S_IMG"
-  else
-    echo 'Push failed!! Please log in and try again.'
-    echo "docker login artifactory.rtenclave.io"
+rename_files () {
+  if [[ $# < 3 ]]; then
+    echo "Usage: rename_files [from basename] [to basename] basename.*"
+    exit 1;
   fi
+  echo "from $1.*"
+  echo "to: $2.*"
+  files=($@)
+  for i in {3..$#}; do
+    filename="$files[$i]"
+    case $filename in
+      (.*.*) extension=${filename##*.};;
+      (.*)   extension="";;
+      (*.*)  extension=${filename##*.};;
+      (*)    extension="";;
+    esac
+    echo "${filename} > ${2}.${extension}"
+    mv "${filename}" "${2}.${extension}"
+  done
+}
+
+rust_debug(){
+  project_name=$(pwd | awk -F '/' '{print $NF}')
+  cargo build
+  DBG_TARGET="$(ls -lt "target/debug/deps/${project_name}-*" | head -n 1 | awk '{print $NF}')"
+  rust-lldb $DBG_TARGET
 }
