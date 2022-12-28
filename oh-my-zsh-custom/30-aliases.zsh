@@ -34,4 +34,4 @@ alias gs='git status'
 alias git-https="git remote set-url origin 'https://lokilabs@dev.azure.com/lokilabs/Loki%20Datascience/_git/Loki_Datascience'"
 # alias git-https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 # alias git-ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
-alias kga="kubectl get all,cm,ing"
+alias kga='kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'

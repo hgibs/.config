@@ -10,12 +10,15 @@ export PATH="$HOME/.cargo/bin:$PATH"
 
 export PATH="/opt/homebrew/opt/mysql-client/bin:$PATH"
 
+# custom scripts
+export PATH="$HOME/Applications/bin:$PATH"
+
 
 ###########
 # Exports #
 ###########
 
-export EDITOR=nano
+export EDITOR=subl
 export BYOBU_CONFIG_DIR="~/.config/byobu"
 
 # export MANPATH="/usr/local/man:$MANPATH"
