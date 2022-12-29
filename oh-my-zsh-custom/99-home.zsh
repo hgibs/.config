@@ -1,8 +1,10 @@
 # Loki Labs-specific settings
 if [[ "$(ifconfig en0 | grep ether | awk '{print $2}')" == "f8:4d:89:69:83:59" ]];
 then
+	export PATH="$PATH:/Users/hollandgibson/Library/Python/3.10/bin"
+
 	export ZSH_HOST_SETTING="home"
-	# export HELIX_RUNTIME="$HOME/Documents/helix/runtime" # ???
+	export HELIX_RUNTIME="$HOME/Applications/helix/runtime"
 	export ZSHCONFIG="$HOME/.config/oh-my-zsh-custom/99-home.zsh"
 
 	rng(){
