@@ -1,1 +1,18 @@
 theme = "onedarker"
+
+[editor]
+auto-save = true
+# rulers = [80, 120]
+color-modes = true
+bufferline = "multiple"
+scroll-lines = 2
+mouse = false
+
+[keys.normal]
+H = "goto_line_start"
+L = "goto_line_end"
+# J = "half_page_down"
+# K = "half_page_up"
+
+[keys.insert]
+j = { k = "normal_mode" }

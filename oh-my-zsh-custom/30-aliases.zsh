@@ -30,7 +30,6 @@ alias godu='/opt/homebrew/Cellar/gdu/5.*/bin/gdu'
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias tf="terraform"
 
-alias gs='git status'
 alias git-https="git remote set-url origin 'https://lokilabs@dev.azure.com/lokilabs/Loki%20Datascience/_git/Loki_Datascience'"
 # alias git-https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 # alias git-ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"

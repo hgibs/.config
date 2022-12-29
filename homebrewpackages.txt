@@ -12,8 +12,8 @@ neofetch
 python@3.11
 starship
 
-kakoune
 lazygit
+ripgrep
 
 
 
