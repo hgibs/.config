@@ -10,7 +10,7 @@ alias warp='cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
 alias jq='noglob jq'
 
 alias t='tldr'
-alias m='/usr/bin/man'
+# alias m='/usr/bin/man'
 alias p='ping -o'
 
 
@@ -29,6 +29,9 @@ alias godu='/opt/homebrew/Cellar/gdu/5.*/bin/gdu'
 
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 # alias tf="terraform"
+
+alias tree2='tree -L 2'
+alias tree3='tree -L 3'
 
 alias git-https="git remote set-url origin 'https://lokilabs@dev.azure.com/lokilabs/Loki%20Datascience/_git/Loki_Datascience'"
 # alias git-https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
