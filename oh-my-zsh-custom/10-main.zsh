@@ -21,6 +21,11 @@ export PATH="$HOME/Applications/bin:$PATH"
 export EDITOR=subl
 export BYOBU_CONFIG_DIR="~/.config/byobu"
 
+export LESSOPEN="| /System/Volumes/Data/opt/homebrew/bin/src-hilite-lesspipe.sh %s"
+export LESS=' -R '
+
+export PAGER='less'
+
 # help the non-compliant apps - this shouldn't be needed
 # export XDG_CONFIG_HOME="$HOME/.config"
 
