@@ -11,8 +11,39 @@ scope = "source.markdown"
 roots = []
 
 
+[[languge]]
+name = "yaml"
+
+[languge.indent-guides]
+render = true
+character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
+skip-levels = 1
+
+
+[[language]]
+name = "html"
+
+[language.auto-pairs]
+'(' = ')'
+'{' = '}'
+'[' = ']'
+'"' = '"'
+"'" = "'"
+'`' = '`'
+'<' = '>'
+
+
+[[language]]
+name = "plaintext"
+scope = "source.plaintext"
+file-types = ["txt"]
+rulers = [80, 120]
+roots = []
+
+
 [[language]]
 name = "rust"
+rulers = [120]
 
 [language.config]
 checkOnSave = { command = "clippy" }
@@ -34,3 +65,4 @@ name = "binary"
 [language.debugger.templates.args]
 program = "{0}"
 runInTerminal = true
+
