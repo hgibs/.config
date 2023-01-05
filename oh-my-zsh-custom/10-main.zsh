@@ -18,7 +18,7 @@ export PATH="$HOME/Applications/bin:$PATH"
 # Exports #
 ###########
 
-export EDITOR=subl
+export EDITOR=hx
 export BYOBU_CONFIG_DIR="~/.config/byobu"
 
 export LESSOPEN="| /System/Volumes/Data/opt/homebrew/bin/src-hilite-lesspipe.sh %s"
