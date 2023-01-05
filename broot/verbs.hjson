@@ -6,6 +6,19 @@
 
 verbs: [
 
+    {
+        invocation: right
+        shortcut: r
+        execution: ":panel_right"
+    }
+
+
+    {
+        invocation: left
+        shortcut: l
+        execution: ":panel_left"
+    }
+
     # Example 1: launching `tail -n` on the selected file (leaving broot)
     # {
     #     name: tail_lines
@@ -78,11 +91,11 @@ verbs: [
     }
 
     # Here's an example of a shortcut bringing you to your home directory
-    # {
-    #     invocation: home
-    #     key: ctrl-home
-    #     execution: ":focus ~"
-    # }
+    {
+        invocation: home
+        key: ctrl-home
+        execution: ":focus ~"
+    }
 
     # A popular set of shortcuts for going up and down:
     #
@@ -105,10 +118,10 @@ verbs: [
 
     # If you develop using git, you might like to often switch
     # to the git status filter:
-    # {
-    #     key: ctrl-g
-    #     execution: ":toggle_git_status"
-    # }
+    {
+        key: ctrl-g
+        execution: ":toggle_git_status"
+    }
 
     # You can reproduce the bindings of Norton Commander
     # on copying or moving to the other panel:
