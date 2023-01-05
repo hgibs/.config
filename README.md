@@ -26,6 +26,10 @@ xargs brew install < homebrewpackages.txt
 
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 
 
+```
+cargo install --locked broot
+```
+
 #### Manually import profile for iterm2
 
 Profile is at [iterm2/DefaultNerdFont.json](iterm2/DefaultNerdFont.json)
