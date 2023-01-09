@@ -42,6 +42,21 @@ roots = []
 
 
 [[language]]
+name = "python"
+rulers = [120]
+
+[config.pylsp]
+configurationSources = ['flake8']
+
+[config.pylsp.plugins]
+flake8.enabled = true
+flake8.config = "/Users/hollandgibson/CVS_Documents/actionmapgeneration/application/LogProcessor/.flake8"
+pycodestyle.enabled = false
+mccabe.enabled = false
+pyflakes.enabled = false
+
+
+[[language]]
 name = "rust"
 rulers = [120]
 
@@ -53,7 +68,6 @@ command = "codelldb"
 name = "codelldb"
 port-arg = "--port {}"
 transport = "tcp"
-
 
 [[language.debugger.templates]]
 name = "binary"
