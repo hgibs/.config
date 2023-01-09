@@ -14,4 +14,4 @@ starship
 
 lazygit
 ripgrep
-
+hashicorp/tap/terraform-ls
