@@ -4,6 +4,7 @@ then
 	export ZSH_HOST_SETTING="loki"
 	export HELIX_RUNTIME="$HOME/Documents/helix/runtime"
 	export ZSHCONFIG="$HOME/.config/oh-my-zsh-custom/99-loki.zsh"
+	export JAVA_HOME="/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home"
 
 	# set up yubikey
 	export GPG_TTY=$(tty)
