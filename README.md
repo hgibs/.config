@@ -26,11 +26,17 @@ echo "$(which fish)" | sudo tee -a /etc/shells
 chsh -s "$(which fish)"
 ```
 
-(optional) [Rust!](https://www.rust-lang.org/tools/install) 
+#### Install Oh-my-fish and fisher
+```
+cdtemp
+curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
+fish install --path=$HOME/.local/share/omf --config=$HOME/.config/omf
 
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
+fisher install jhillyerd/plugin-git patrickf1/colored_man_pages.fish blackjid/plugin-kubectl paysonwallach/fish-you-should-use
 ```
-cargo install --locked broot
-```
+
+(optional) [Rust!](https://www.rust-lang.org/tools/install) 
 
 #### Manually import profile for iterm2
 
