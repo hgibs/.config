@@ -8,11 +8,15 @@ bufferline = "multiple"
 scroll-lines = 2
 mouse = false
 
+[editor.lsp]
+display-messages = true
+
 [keys.normal]
 H = "goto_line_start"
-L = "goto_line_end"
+L = ["goto_line_end", "move_char_right"]
 # J = "half_page_down"
 # K = "half_page_up"
+g = { e = ["goto_last_line", "move_line_down"] }
 
 [keys.insert]
 j = { k = "normal_mode" }

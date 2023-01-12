@@ -1,8 +1,10 @@
 # Inserts a blank line between shell prompts
-add_newline = true
+add_newline = false
 
-# Move the directory to the second line
-format = "$all$directory$character"
+format = """
+
+$all$directory$character
+"""
 
 # allow rust to boot up with a bit more time
 command_timeout = 1000
@@ -14,6 +16,13 @@ symbol = "  "
 success_symbol = "[❯](bold green)"
 error_symbol = "[❯](bold red)"
 
+[cmd_duration]
+min_time = 10
+show_milliseconds = false
+disabled = false
+format = "祥$duration($style) "
+style = "bold italic #87A752"
+
 [conda]
 symbol = " "
 # format = "[$symbol$environment](dimmed green) "
@@ -23,6 +32,7 @@ symbol = " "
 
 [directory]
 read_only = " "
+truncate_to_repo = true
 
 [docker_context]
 symbol = " "

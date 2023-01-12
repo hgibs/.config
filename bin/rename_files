@@ -1,0 +1,20 @@
+#!/usr/bin/env bash
+
+if [[ $# < 3 ]]; then
+  echo "Usage: rename_files [from basename] [to basename] basename.*"
+  exit 1;
+fi
+echo "from $1.*"
+echo "to: $2.*"
+files=($@)
+for i in {3..$#}; do
+  filename="$files[$i]"
+  case $filename in
+    (.*.*) extension=${filename##*.};;
+    (.*)   extension="";;
+    (*.*)  extension=${filename##*.};;
+    (*)    extension="";;
+  esac
+  echo "${filename} > ${2}.${extension}"
+  mv "${filename}" "${2}.${extension}"
+done
