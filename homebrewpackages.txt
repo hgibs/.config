@@ -1,5 +1,20 @@
+# shell config
+fish
 byobu
+starship
+homebrew/cask-fonts/font-hack-nerd-font
+source-highlight
+
+# gnu tool replacements
 gdu
+exa
+broot
+ripgrep
+
+# helix addons
+hashicorp/tap/terraform-ls
+
+# tools
 git-filter-repo
 git-lfs
 imagemagick
@@ -10,8 +25,4 @@ tree
 watch
 neofetch
 python@3.11
-starship
-
 lazygit
-ripgrep
-hashicorp/tap/terraform-ls

@@ -1,5 +1,8 @@
 # Installation
 
+## Assumptions
+`git` is already installed.
+
 #### Clone recursively
 ```
 cd ~
@@ -9,19 +12,18 @@ git clone --recursive git@github.com:hgibs/.config.git
 
 Copy files from .config.bak back in, as needed.
 
-#### Link zsh configs
-```
-cd $HOME
-ln -s .config/.zshrc .zshrc
-```
-
 #### Install packages
 
 ```
-brew tap homebrew/cask-fonts
-brew install --cask font-hack-nerd-font
+cat homebrewpackages.txt | grep '^[a-zA-Z]' | xargs brew install
+```
 
-xargs brew install < homebrewpackages.txt
+Note: it is easier to keep things up to date with a `brew upgrade` rather than maintaining a bunch of `cargo` crates.
+
+#### Configure fish
+```
+echo "$(which fish)" | sudo tee -a /etc/shells
+chsh -s "$(which fish)"
 ```
 
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 

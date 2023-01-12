@@ -1,12 +1,12 @@
 # FUNCTIONS
-random(){
-  cat /dev/urandom | env LC_CTYPE=C tr -dc $1 | head -c $2;
-  echo;
-}
+# random(){
+#   cat /dev/urandom | env LC_CTYPE=C tr -dc $1 | head -c $2;
+#   echo;
+# }
 
-upper() {
-  echo "$1" | tr '[:lower:]' '[:upper:]'
-}
+# upper() {
+#   echo "$1" | tr '[:lower:]' '[:upper:]'
+# }
 
 shasum_recent(){
   cd ~/Downloads;
@@ -39,18 +39,4 @@ rust_debug(){
   cargo build
   DBG_TARGET="$(ls -lt "target/debug/deps/${project_name}-*" | head -n 1 | awk '{print $NF}')"
   rust-lldb $DBG_TARGET
-}
-
-function br {
-    local cmd cmd_file code
-    cmd_file=$(mktemp)
-    if broot --outcmd "$cmd_file" "$@"; then
-        cmd=$(<"$cmd_file")
-        command rm -f "$cmd_file"
-        eval "$cmd"
-    else
-        code=$?
-        command rm -f "$cmd_file"
-        return "$code"
-    fi
 }
