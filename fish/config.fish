@@ -5,8 +5,6 @@
 # load some plugins
 # maybe these should only load in specific circumstances?, or run in background?
 
-__git.init
-__kubectl.init
 # cless
 
 # import my work
@@ -18,7 +16,9 @@ for s_file in $custom_scripts
     source $s_file
 end
 
-
+# run custom plugin
+# __kubectl_custom_init
+# emit kubectl_install
 
 if status is-interactive
     # Commands to run in interactive sessions only
