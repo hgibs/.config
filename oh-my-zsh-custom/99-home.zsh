@@ -7,11 +7,6 @@ then
 	export HELIX_RUNTIME="$HOME/Applications/helix/runtime"
 	export ZSHCONFIG="$HOME/.config/oh-my-zsh-custom/99-home.zsh"
 
-	rng(){
-	  /opt/homebrew/bin/onlykey-cli rng hexbytes --count $2 | env LC_CTYPE=C tr -dc $1;
-	  echo;
-	}
-
 	alias parachute='cd $HOME/Documents/cloud/parachute && $EDITOR . && source env.key'
 	alias vpsiac='cd $HOME/Documents/cloud/vps-iac && $EDITOR . && source env.key'
 	alias keyb='cd $HOME/Documents/projects/Mercury65Plus && $EDITOR .'
