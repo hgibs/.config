@@ -3,3 +3,5 @@ iterm2/AppSupport
 byobu/.ssh-agent
 broot/launcher
 packer
+
+fish/fish_variables
