@@ -9,7 +9,6 @@ abbr wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
 abbr tg "terragrunt"
 abbr tgaa "terragrunt apply --auto-approve"
 abbr tgra "terragrunt run-all apply"
-abbr pip 'noglob pip'
 abbr warp 'cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
 abbr jq 'noglob jq'
 
