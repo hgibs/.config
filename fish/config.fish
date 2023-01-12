@@ -2,6 +2,17 @@
 # Overwrites of conf.d/*.fish #
 ###############################
 
+# import my work
+set -l custom_scripts $(command ls -1 $HOME/.config/fish/custom/conf.d/*.fish)
+set -la custom_scripts $(command ls -1 $HOME/.config/fish/custom/functions/*.fish)
+
+for s_file in $custom_scripts
+    # echo $s_file
+    source $s_file
+end
+
+
+
 if status is-interactive
     # Commands to run in interactive sessions only
     

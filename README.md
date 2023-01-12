@@ -26,13 +26,11 @@ echo "$(which fish)" | sudo tee -a /etc/shells
 chsh -s "$(which fish)"
 ```
 
-#### Install Oh-my-fish and fisher
+#### Install fisher
 ```
 cdtemp
-curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
-fish install --path=$HOME/.local/share/omf --config=$HOME/.config/omf
 
-omf install https://github.com/jhillyerd/plugin-git patrickf1/colored_man_pages.fish blackjid/plugin-kubectl paysonwallach/fish-you-should-use
+fisher install jhillyerd/plugin-git patrickf1/colored_man_pages.fish blackjid/plugin-kubectl paysonwallach/fish-you-should-use
 ```
 
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 
