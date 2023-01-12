@@ -28,7 +28,7 @@ chsh -s "$(which fish)"
 
 #### Install fisher
 ```
-cdtemp
+curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
 
 fisher install jhillyerd/plugin-git patrickf1/colored_man_pages.fish blackjid/plugin-kubectl paysonwallach/fish-you-should-use
 ```
