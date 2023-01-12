@@ -32,8 +32,7 @@ cdtemp
 curl https://raw.githubusercontent.com/oh-my-fish/oh-my-fish/master/bin/install > install
 fish install --path=$HOME/.local/share/omf --config=$HOME/.config/omf
 
-curl -sL https://git.io/fisher | source && fisher install jorgebucaran/fisher
-fisher install jhillyerd/plugin-git patrickf1/colored_man_pages.fish blackjid/plugin-kubectl paysonwallach/fish-you-should-use
+omf install https://github.com/jhillyerd/plugin-git patrickf1/colored_man_pages.fish blackjid/plugin-kubectl paysonwallach/fish-you-should-use
 ```
 
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 
