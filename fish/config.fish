@@ -2,6 +2,13 @@
 # Overwrites of conf.d/*.fish #
 ###############################
 
+# load some plugins
+# maybe these should only load in specific circumstances?, or run in background?
+
+__git.init
+__kubectl.init
+# cless
+
 # import my work
 set -l custom_scripts $(command ls -1 $HOME/.config/fish/custom/conf.d/*.fish)
 set -la custom_scripts $(command ls -1 $HOME/.config/fish/custom/functions/*.fish)
