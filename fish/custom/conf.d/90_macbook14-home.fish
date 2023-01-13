@@ -1,8 +1,6 @@
 if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
 	set -g HOST_ENV_SETTING home
 
-	fish_add_path -a /Users/hollandgibson/Library/Python/3.10/bin
-
 	set -gx HELIX_RUNTIME $HOME/Applications/helix/runtime
 	set -gx GPG_TTY $(tty)
 	set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey

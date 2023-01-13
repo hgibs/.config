@@ -31,4 +31,7 @@ if status is-interactive
 
     # should be last executed line
     starship init fish | source
+
+    # starship function can be later
+    enable_transience
 end

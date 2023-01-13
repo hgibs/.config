@@ -10,5 +10,6 @@ fish_add_path -p $HOME/Applications/bin
 fish_add_path -a '/Applications/Sublime Text.app/Contents/SharedSupport/bin'
 fish_add_path -a $HOME/.cargo/bin
 fish_add_path -a /opt/homebrew/opt/mysql-client/bin
+fish_add_path -a /Users/hollandgibson/Library/Python/3.10/bin
 
 # /opt/homebrew/opt/libpq/bin 
