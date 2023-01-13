@@ -33,6 +33,13 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fisher update
 ```
 
+
+#### Fix python
+```
+python -m pip install --user virtualfish
+vf install
+```
+
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 
 
 #### Manually import profile for iterm2

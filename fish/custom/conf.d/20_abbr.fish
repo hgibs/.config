@@ -43,3 +43,8 @@ abbr kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
 
 
 abbr ls "exa -lag --header"
+
+abbr buu "brew update && brew upgrade"
+
+abbr vfn "vf new -p $(which python3.11) \$(basename \$PWD)"
+abbr vfa "vf activate \$(basename \$PWD)"
