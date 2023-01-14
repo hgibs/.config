@@ -48,3 +48,7 @@ abbr buu "brew update && brew upgrade"
 
 abbr vfn "vf new -p $(which python3.11) \$(basename \$PWD)"
 abbr vfa "vf activate \$(basename \$PWD)"
+
+abbr ... "../.."
+abbr .... "../../.."
+abbr ..... "../../../.."
