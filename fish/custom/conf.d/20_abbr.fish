@@ -41,7 +41,7 @@ abbr tree3 'tree -L 3'
 # abbr git ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 abbr kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
 
-
+abbr l "exa -l"
 abbr ls "exa -lag --header"
 
 abbr buu "brew update && brew upgrade"
