@@ -1,7 +1,7 @@
-theme = "onedarker"
+theme = "fleet_dark"
 
 [editor]
-auto-save = true
+auto-save = false  # saves on unfocus
 # rulers = [80, 120]
 color-modes = true
 bufferline = "multiple"
@@ -20,3 +20,4 @@ g = { e = ["goto_last_line", "move_line_down"] }
 
 [keys.insert]
 j = { k = "normal_mode" }
+C-s = ':w'
