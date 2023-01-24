@@ -15,6 +15,7 @@ ripgrep
 hashicorp/tap/terraform-ls
 
 # tools
+helix
 git-filter-repo
 git-lfs
 imagemagick
