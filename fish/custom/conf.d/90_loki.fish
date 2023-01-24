@@ -11,9 +11,9 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f4:d4:88:68:cd:f8"
 	gpgconf --launch gpg-agent
 	gpg-connect-agent updatestartuptty /bye > /dev/null
 
-	abbr loki 'cd $HOME/Library/CloudStorage/OneDrive-LokiLabsInc/personal_docs/Loki-Catalisto/ && $EDITOR .'
-	abbr lokids 'cd $HOME/CVS_Documents/Loki_Datascience && $EDITOR .'
-	abbr aco 'cd $HOME/Library/CloudStorage/OneDrive-LokiLabsInc/personal_docs/ACO && $EDITOR .'
+	abbr loki 'cd $HOME/Library/CloudStorage/OneDrive-LokiLabsInc/personal_docs/Loki-Catalisto/'
+	abbr lokids 'cd $HOME/CVS_Documents/Loki_Datascience'
+	abbr aco 'cd $HOME/Library/CloudStorage/OneDrive-LokiLabsInc/personal_docs/ACO'
 
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
