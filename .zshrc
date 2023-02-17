@@ -45,3 +45,5 @@ plugins=(
 
 source $ZSH/oh-my-zsh.sh
 eval "$(starship init zsh)"
+
+source /Users/hollandgibson/.config/broot/launcher/bash/br
