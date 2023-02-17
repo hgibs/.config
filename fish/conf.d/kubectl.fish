@@ -1,4 +1,4 @@
-function _kubectl_init --on-event fish_prompt
+function _kubectl_install --on-event kubectl_install
   __kubectl.init
 end
 
