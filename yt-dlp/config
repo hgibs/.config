@@ -1,3 +1,4 @@
 --ignore-errors
 --no-playlist
---format 'best'
+--format 'bv*+ba'
+--embed-thumbnail
