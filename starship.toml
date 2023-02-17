@@ -1,6 +1,9 @@
 # Inserts a blank line between shell prompts
 add_newline = false
 
+# allow some commands to startup (especially on first calls)
+command_timeout = 1500
+
 # format = """
 
 # ($all)
@@ -86,9 +89,6 @@ $vlang\
 $zig)
 $directory$character
 """
-
-# allow rust to boot up with a bit more time
-command_timeout = 1000
 
 [aws]
 symbol = "  "
