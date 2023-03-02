@@ -6,6 +6,8 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
 	set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
 	set -gx KUBECONFIG $HOME/.kube/config.yaml
 
+	fish_add_path -a /Users/hollandgibson/.miniforge3/bin
+
 	abbr parachute 'cd $HOME/Documents/cloud/parachute && bass source env.key'
 	abbr vpsiac 'cd $HOME/Documents/cloud/vps-iac && bass source env.key'
 	abbr keyb 'cd $HOME/Documents/projects/Mercury65Plus'
@@ -23,6 +25,6 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
 
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
-	eval /Users/hollandgibson/miniforge3/bin/conda "shell.fish" "hook" $argv | source
+	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
 	# <<< conda initialize <<<
 end
