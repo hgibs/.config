@@ -8,7 +8,7 @@ then
 	export ZSHCONFIG="$HOME/.config/oh-my-zsh-custom/99-home.zsh"
 
 	alias parachute='cd $HOME/Documents/cloud/parachute && $EDITOR . && source env.key'
-	alias vpsiac='cd $HOME/Documents/cloud/vps-iac && $EDITOR . && source env.key'
+	alias vpsiac='cd $HOME/Developer/cloud/vps-iac && $EDITOR . && source env.key'
 	alias keyb='cd $HOME/Documents/projects/Mercury65Plus && $EDITOR .'
 	alias cinefolders='cd $HOME/Documents/projects/cinefolders && $EDITOR .'
 
