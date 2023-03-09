@@ -4,7 +4,7 @@ byobu/.ssh-agent
 broot/launcher
 packer
 
-# fish/fish_variables
+fish/fish_variables
 .DS_Store
 
 fish/conf.d/virtualfish-loader.fish
