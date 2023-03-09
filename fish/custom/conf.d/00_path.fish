@@ -6,6 +6,9 @@ fish_add_path -p /opt/homebrew/bin
 fish_add_path -p /opt/homebrew/sbin
 fish_add_path -p $HOME/Applications/bin
 
+# mainly for fisher install
+fish_add_path -a $HOME/.local/bin
+
 # rest of paths
 fish_add_path -a '/Applications/Sublime Text.app/Contents/SharedSupport/bin'
 fish_add_path -a $HOME/.cargo/bin
