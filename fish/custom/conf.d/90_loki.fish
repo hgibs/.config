@@ -4,6 +4,8 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f4:d4:88:68:cd:f8"
 	set -gx HELIX_RUNTIME "$HOME/Documents/helix/runtime"
 	set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home"
 
+	fish_add_path -a /Users/hollandgibson/Library/Python/3.10/bin
+
 	# set up yubikey
 	set -gx GPG_TTY $(tty)
 	set -e -Ug SSH_AGENT_PID
