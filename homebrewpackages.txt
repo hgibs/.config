@@ -13,6 +13,7 @@ ripgrep
 
 # helix addons
 hashicorp/tap/terraform-ls
+docker-ls
 
 # tools
 helix
