@@ -10,7 +10,6 @@ abbr tg "terragrunt"
 abbr tgaa "terragrunt apply --auto-approve"
 abbr tgra "terragrunt run-all apply"
 abbr warp 'cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
-abbr jq 'noglob jq'
 
 abbr reset_fish 'source ~/.config/fish/config.fish'
 
