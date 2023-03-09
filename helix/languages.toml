@@ -5,7 +5,6 @@ config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true
 
 [[language]]
 name = "markdown"
-language-server = { command = "ltex-ls" }
 file-types = ["md"]
 scope = "source.markdown"
 roots = []
@@ -39,7 +38,6 @@ scope = "source.plaintext"
 file-types = ["txt"]
 rulers = [80, 120]
 roots = []
-
 
 [[language]]
 name = "python"

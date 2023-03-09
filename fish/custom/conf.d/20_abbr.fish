@@ -12,6 +12,8 @@ abbr tgra "terragrunt run-all apply"
 abbr warp 'cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
 abbr jq 'noglob jq'
 
+abbr reset_fish 'source ~/.config/fish/config.fish'
+
 abbr t 'tldr'
 # abbr m '/usr/bin/man'
 abbr p 'ping -o'

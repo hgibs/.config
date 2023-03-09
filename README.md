@@ -33,14 +33,22 @@ curl -sL https://raw.githubusercontent.com/jorgebucaran/fisher/main/functions/fi
 fisher update
 ```
 
-
 #### Fix python
 ```
 python -m pip install --user virtualfish
 vf install
 ```
 
+#### Optional
 (optional) [Rust!](https://www.rust-lang.org/tools/install) 
+
+Install/update [rust-analyzer](https://github.com/rust-lang/rust-analyzer):
+```
+mkdir -p ~/Applications/bin
+rm -f ~/Applications/bin/rust-analyzer
+curl -L https://github.com/rust-lang/rust-analyzer/releases/latest/download/rust-analyzer-aarch64-apple-darwin.gz | gunzip -c - > ~/Applications/bin/rust-analyzer
+chmod +x ~/Applications/bin/rust-analyzer
+```
 
 #### Manually import profile for iterm2
 

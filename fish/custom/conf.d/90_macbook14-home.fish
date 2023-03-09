@@ -9,7 +9,7 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
 	fish_add_path -a /Users/hollandgibson/.miniforge3/bin
 
 	abbr parachute 'cd $HOME/Documents/cloud/parachute && bass source env.key'
-	abbr vpsiac 'cd $HOME/Documents/cloud/vps-iac && bass source env.key'
+	abbr vpsiac 'cd $HOME/Developer/cloud/vps-iac && bass source env.key'
 	abbr keyb 'cd $HOME/Documents/projects/Mercury65Plus'
 	abbr cf 'cd $HOME/Documents/projects/cinefolders && bass source tmdb_apikey.secret'
 	# abbr ghost "/opt/homebrew/bin/gs"
