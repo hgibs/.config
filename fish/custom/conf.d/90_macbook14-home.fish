@@ -7,6 +7,7 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
 	set -gx KUBECONFIG $HOME/.kube/config.yaml
 
 	fish_add_path -a /Users/hollandgibson/.miniforge3/bin
+	fish_add_path -a "/Users/hollandgibson/Library/Application Support/Coursier/bin"
 
 	abbr parachute 'cd $HOME/Documents/cloud/parachute && bass source env.key'
 	abbr vpsiac 'cd $HOME/Developer/cloud/vps-iac && bass source env.key'
