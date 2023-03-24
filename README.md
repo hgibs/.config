@@ -54,3 +54,8 @@ chmod +x ~/Applications/bin/rust-analyzer
 
 Profile is at [iterm2/DefaultNerdFont.json](iterm2/DefaultNerdFont.json)
 
+# Notes
+
+when using `fish` especially, string escapes can get weird. So for using the license command we have to use the `string unescape` command. I.e.:
+`license apache-2.0 | string unescape > LICENSE`
+
