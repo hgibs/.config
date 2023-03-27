@@ -53,3 +53,8 @@ abbr vfa "vf activate \$(basename \$PWD)"
 abbr ... "../.."
 abbr .... "../../.."
 abbr ..... "../../../.."
+
+switch (uname -o)
+case 'Linux*'
+    abbr --add open 'xdg-open'
+end
