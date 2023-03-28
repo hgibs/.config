@@ -1,4 +1,4 @@
-if test $HOST_ENV_SETTING = loki
+if test "$HOST_ENV_SETTING" = loki
 	function push_artifactory
 	  docker pull --platform linux/amd64 "$argv[1]"
 	  set -f NEW_TAG artifactory.rtenclave.io/docker-public-local/$argv[1]
