@@ -19,10 +19,10 @@ abbr --add p 'ping -o'
 
 abbr --add md 'mkdir -p'
 
-abbr --add randtext "random '[:alnum:]' 64"
-abbr --add randprint "random '[:print:]' 64"
-abbr --add randpwd "random '[:graph:]' 64"
-abbr --add randnum "random '[:digit:]' 32"
+abbr --add randtext "$RANDOM_SOURCE '[:alnum:]' 64"
+abbr --add randprint "$RANDOM_SOURCE '[:print:]' 64"
+abbr --add randpwd "$RANDOM_SOURCE '[:graph:]' 64"
+abbr --add randnum "$RANDOM_SOURCE '[:digit:]' 32"
 abbr --add randhex "openssl rand -base64 16 | md5 | head -c24; echo"
 abbr --add randomsym 'cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 32; echo'
 
