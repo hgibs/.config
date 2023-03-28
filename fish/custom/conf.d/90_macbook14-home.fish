@@ -24,6 +24,12 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
 	abbr rnghex '/opt/homebrew/bin/onlykey-cli rng hexbytes --count 32'
 	abbr rngnum "rng '[:digit:]' 32"
 
+	# adds ~3ms to startup - but defaults to slightly better random source
+	# utlimately not worth the hassle but keeping here for useful notes
+	# if test (ioreg -p IOUSB -w0 -n ONLYKEY | grep CRYPTOTRUST -c) -gt 0;
+	# 	set -gx RANDOM_SOURCE rng
+	# end
+	
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
