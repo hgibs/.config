@@ -60,3 +60,5 @@ case 'Linux*'
 end
 
 abbr --add !! --position anywhere --function last_history_item
+
+abbr --add gcm --set-cursor=% 'git commit -m "%"'
