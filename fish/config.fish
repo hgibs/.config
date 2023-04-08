@@ -33,3 +33,4 @@ if status is-interactive
     # starship function can be later
     enable_transience
 end
+
