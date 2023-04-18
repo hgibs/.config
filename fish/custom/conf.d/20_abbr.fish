@@ -7,6 +7,7 @@ abbr --add zshconfig "subl ~/.zshrc"
 abbr --add sshconfig "subl ~/.ssh/config"
 abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
 abbr --add tg "terragrunt"
+abbr --add tf "terraform"
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
 abbr --add warp 'cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
