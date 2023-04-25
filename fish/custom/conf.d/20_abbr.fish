@@ -12,7 +12,7 @@ abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
 abbr --add warp 'cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
 
-abbr --add reset_fish 'source ~/.config/fish/config.fish'
+abbr --add reset_fish 'source ~/.config/fish/config.fish && gpgconf --kill gpg-agent'
 
 abbr --add t 'tldr'
 # abbr --add m '/usr/bin/man'
