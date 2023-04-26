@@ -44,7 +44,7 @@ abbr --add tree3 'tree -L 3'
 abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
 
 abbr --add l "exa -l --header --git --time-style=iso"
-abbr --add ls "exa -la --header --giti --time-style=long-iso"
+abbr --add ls "exa -la --header --git --time-style=long-iso"
 abbr --add lsg "exa -lag --header --git --time-style=long-iso"
 
 abbr --add buu "brew update && brew upgrade"
