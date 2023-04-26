@@ -8,6 +8,9 @@ bufferline = "multiple"
 scroll-lines = 2
 mouse = false
 
+[editor.file-picker]
+git-ignore = false
+
 [editor.lsp]
 display-messages = true
 
@@ -17,6 +20,13 @@ L = ["goto_line_end", "move_char_right"]
 # J = "half_page_down"
 # K = "half_page_up"
 g = { e = ["goto_last_line", "move_line_down"] }
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+# wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
 
 [keys.insert]
 j = { k = "normal_mode" }
