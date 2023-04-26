@@ -52,6 +52,13 @@ verbs: [
         leave_broot: false
     }
 
+    {
+        invocation: edit-leave
+        shortcut: E
+        execution: "hx {file}:{line}"
+        leave_broot: true
+    }
+
     # A convenient shortcut to create new text files in
     # the current directory or below
     {
