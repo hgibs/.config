@@ -12,6 +12,7 @@ mouse = false
 git-ignore = false
 
 [editor.lsp]
+display-inlay-hints = true
 display-messages = true
 
 [keys.normal]
