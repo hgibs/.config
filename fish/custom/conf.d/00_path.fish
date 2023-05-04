@@ -15,7 +15,11 @@ if test (uname -o) = "Darwin"
 	fish_add_path -a /opt/homebrew/opt/mysql-client/bin
 
 else if test (uname -o) = "GNU/Linux"
-	fish_add_path -p $HOME/bin
+	if test (fish --version | grep -o "[0-9].[0-9]") = "3.1"
+		set -U fish_user_paths $HOME/bin $fish_user_paths
+	else
+		fish_add_path -p $HOME/bin
+	end
 end
 
 # mainly for fisher install
