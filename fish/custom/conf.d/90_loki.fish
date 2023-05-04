@@ -7,9 +7,9 @@ if test (ifconfig en0 | grep ether | awk '{print $2}') = "f4:d4:88:68:cd:f8"
 	fish_add_path -a /Users/hollandgibson/Library/Python/3.10/bin
 
 	# set up yubikey
-	set -gx GPG_TTY $(tty)
+	set -gx GPG_TTY (tty)
 	set -e -Ug SSH_AGENT_PID
-	set -gx SSH_AUTH_SOCK $(gpgconf --list-dirs agent-ssh-socket)
+	set -gx SSH_AUTH_SOCK (gpgconf --list-dirs agent-ssh-socket)
 	gpgconf --launch gpg-agent
 	gpg-connect-agent updatestartuptty /bye > /dev/null
 

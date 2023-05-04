@@ -9,7 +9,7 @@ if test "$HOST_ENV_SETTING" = loki
 	  echo "\n"
 
 	  if test $PUSH_STATUS -eq 0
-	  	set -l K8S_IMG $(docker inspect --format='{{index .RepoDigests 0}}' "$NEW_TAG")
+	  	set -l K8S_IMG (docker inspect --format='{{index .RepoDigests 0}}' "$NEW_TAG")
 	  	echo "To use this image in a manifest, refer to its shasum, i.e.:"
     	echo "image: $K8S_IMG"
     else
