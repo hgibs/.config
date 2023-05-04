@@ -9,9 +9,9 @@
 
 # import my work
 # conf.d sets the HOST_ENV_SETTING which must happen for some functions to get correctly defined
-set -l custom_scripts $(command ls -1 $HOME/.config/fish/custom/conf.d/*.fish)
-set -la custom_scripts $(command ls -1 $HOME/.config/fish/custom/functions/*.fish)
-set -la custom_scripts $(command ls -1 $HOME/.config/fish/custom/completions/*.fish)
+set -l custom_scripts (command ls -1 $HOME/.config/fish/custom/conf.d/*.fish)
+set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/functions/*.fish)
+set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/completions/*.fish)
 
 for s_file in $custom_scripts
     # echo $s_file
