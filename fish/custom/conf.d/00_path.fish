@@ -14,6 +14,9 @@ if test (uname -o) = "Darwin"
 	fish_add_path -a $HOME/.cargo/bin
 	fish_add_path -a /opt/homebrew/opt/mysql-client/bin
 
+	# mainly for fisher install
+	fish_add_path -a $HOME/.local/bin
+
 else if test (uname -o) = "GNU/Linux"
 	if test (fish --version | grep -o "[0-9].[0-9]") = "3.1"
 		set -U fish_user_paths $HOME/bin $fish_user_paths
@@ -21,10 +24,5 @@ else if test (uname -o) = "GNU/Linux"
 		fish_add_path -p $HOME/bin
 	end
 end
-
-# mainly for fisher install
-fish_add_path -a $HOME/.local/bin
-
-
 
 # /opt/homebrew/opt/libpq/bin 
