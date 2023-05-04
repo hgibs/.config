@@ -1,0 +1,8 @@
+fonts-firacode
+fonts-hack
+fish
+jq
+kitty
+tldr
+xclip
+wget
