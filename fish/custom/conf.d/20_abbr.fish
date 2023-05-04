@@ -49,7 +49,7 @@ abbr --add lsg "exa -lag --header --git --time-style=long-iso"
 
 abbr --add buu "brew update && brew upgrade"
 
-abbr --add vfn "vf new -p $(which python3.11) \$(basename \$PWD)"
+abbr --add vfn "vf new -p" (command -v python3.11) "\$(basename \$PWD)"
 abbr --add vfa "vf activate \$(basename \$PWD)"
 
 abbr --add ... "../.."
