@@ -16,7 +16,7 @@ function __git.init
   end
 
   # preset the quote pair
-  abbr -a -g --set-cursor='%' -- gcm 'git commit -m "%"'
+  # abbr -a -g --set-cursor='%' -- gcm 'git commit -m "%"'
   
   # git abbreviations
   __git.create_abbr g          git
