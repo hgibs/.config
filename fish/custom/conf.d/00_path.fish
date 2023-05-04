@@ -1,7 +1,6 @@
 # fish_add_path -a 
 
 # todo, add if dir exists instead of this set of checks
-
 if test (uname -o) = "Darwin"
 	# prepend homebrew and my tools first
 	fish_add_path -p /usr/local/sbin
