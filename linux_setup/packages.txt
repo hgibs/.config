@@ -6,3 +6,5 @@ kitty
 tldr
 xclip
 wget
+ripgrep
+source-highlight

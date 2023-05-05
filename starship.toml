@@ -101,8 +101,31 @@ error_symbol = "[❯](bold red)"
 min_time = 30
 show_milliseconds = false
 disabled = false
-format = "祥$duration($style) "
+format = " $duration($style) "
 style = "bold italic #87A752"
+
+[line_break]
+disabled = true
+
+[status]
+# style = 'bg:blue'
+symbol = ''
+success_symbol = ''
+# format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+format = '[\[$common_meaning$signal_name$maybe_int\]]($style) '
+# map_symbol = true
+disabled = false
+
+[sudo]
+style = 'bold green'
+symbol = '󰣬 '
+disabled = false
+
+[time]
+disabled = false
+
+
+# Language specifics:
 
 [conda]
 symbol = " "
@@ -112,7 +135,7 @@ symbol = " "
 symbol = " "
 
 [directory]
-read_only = " "
+read_only = " "
 truncate_to_repo = true
 
 [docker_context]
@@ -139,14 +162,11 @@ symbol = " "
 [julia]
 symbol = " "
 
-[line_break]
-disabled = true
-
 [memory_usage]
-symbol = " "
+symbol = "󰔚 "
 
 [nim]
-symbol = " "
+symbol = "󰆥 "
 
 [nix_shell]
 symbol = " "
@@ -155,10 +175,10 @@ symbol = " "
 symbol = " "
 
 [package]
-symbol = " "
+symbol = "󰆧 "
 
 [rust]
 symbol = " "
 
-[time]
-disabled = false
+[scala]
+symbol = " "
