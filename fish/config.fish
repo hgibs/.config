@@ -2,6 +2,9 @@
 # Overwrites of conf.d/*.fish #
 ###############################
 
+# set $FISH for as many processes as possible
+set -Ux FISH (command -v fish)
+
 # load some plugins
 # maybe these should only load in specific circumstances?, or run in background?
 
@@ -31,6 +34,6 @@ if status is-interactive
     starship init fish | source
 
     # starship function can be later
-    enable_transience
+    # enable_transience
 end
 
