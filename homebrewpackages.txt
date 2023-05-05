@@ -1,6 +1,8 @@
 bash-language-server
 broot
 byobu
+dive
+dog
 exa
 fish
 gdu
