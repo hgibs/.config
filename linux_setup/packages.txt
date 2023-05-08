@@ -8,3 +8,4 @@ xclip
 wget
 ripgrep
 source-highlight
+meld

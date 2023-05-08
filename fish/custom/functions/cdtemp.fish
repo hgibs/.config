@@ -1,5 +1,5 @@
 function cdtemp
-set -f tempdir (mktemp -d)
+set -l tempdir (mktemp -d)
 cd $tempdir
 pwd
 end
