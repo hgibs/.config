@@ -11,6 +11,10 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 	set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
+	set -aU fish_user_paths "$HOME/src/inrev"
+	set -gx MAVEN_OPTS '-Xmx1500M -Xms1G -Duser.timezone=UTC -Xss32m'
+	set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
+
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source

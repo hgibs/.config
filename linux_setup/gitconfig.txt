@@ -1,0 +1,15 @@
+user.name=Holland Gibson
+user.email=holland.gibson@ccri.com
+color.ui=auto
+alias.lg50=!git log --graph --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\0' '{ printf "%s\033[31m%s\033[0m %-50s \033[32m%14s\033[0m \033[30;1m%s\033[0m\033[33m%s\n", $1, $2, gensub(/(.{49}).{2,}/, "\\1…","g",$3), $4, $5, $6 }' | less -R
+alias.pub=!sh -c 'git rebase -i -p origin/`git symbolic-ref HEAD | xargs -n 1 basename` && git push origin `git symbolic-ref HEAD | xargs -n 1 basename`'
+alias.conflicts=diff --name-only --diff-filter=U
+alias.lg80=!git log --graph --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\0' '{ printf "%s\033[31m%s\033[0m %-80s \033[32m%14s\033[0m \033[30;1m%s\033[0m\033[33m%s\n", $1, $2, gensub(/(.{79}).{2,}/, "\\1…","g",$3), $4, $5, $6 }' | less -R
+alias.lt=!git log --graph --abbrev-commit --color=always --abbrev-commit --pretty=format:'%h,%s,%d,%cr,%an,%cn' | gawk -F ',' '{ printf "%s \033[31m%s\033[0m %-80s \033[32m%14s\033[0m \033[30;1m%s\033[0m\033[33m%s\n", $1, $2, gensub(/(.{79}).{2,}/, "\\1…","g",$3), $4, $5, $6 }'
+alias.lg=!git log --graph --abbrev-commit --color=always --abbrev-commit --pretty=format:'%h@@@%s@@@%cr@@@%an@@@(%cn)@@@%d' --date=relative | gawk -F'@@@' '{ printf "%s \033[31m%-60s\033[0m \033[32m%-18s\033[0m \033[30;1m%-20s\033[0m\033[33m%-15s\033[34m%-10s\033[0m\n", $1, substr($2,0,60), $3, $4, $5, $6, $7 }' | less -R
+alias.merge-main=!git checkout main && git pull origin main && git checkout - && git merge main
+alias.chillzone=!sh -c 'git fmerge3'
+alias.bojanglin=!sh -c 'git inrev3'
+diff.tool=meld
+diff.prompt=false
+difftool.prompt=false
