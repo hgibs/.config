@@ -8,12 +8,20 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	
 	abbr -e ls # wait for exa to become available
 	
+	abbr mci 'mvn clean install'
+	abbr mcis 'mvn clean install -DskipTests'
+	abbr mdt 'mvn dependency:tree'
+	abbr mst 'mvn -Dmaven.test.skip=true'
+	
 	set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
 	set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
 	set -aU fish_user_paths "$HOME/src/inrev"
 	set -gx MAVEN_OPTS '-Xmx1500M -Xms1G -Duser.timezone=UTC -Xss32m'
 	set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
+
+	# add coursier to path
+	set -U fish_user_paths $HOME/.local/share/coursier/bin $fish_user_paths 
 
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
