@@ -1,6 +1,5 @@
-command -v ifconfig >/dev/null 2>&1 || exit 0
 if test (uname -o | grep -q 'Darwin')
-	if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59"
+	if test ifconfig en0 | grep ether | awk '{print $2}' = "f8:4d:89:69:83:59"
 		set -g HOST_ENV_SETTING home
 
 		set -gx HELIX_RUNTIME $HOME/Applications/helix/runtime
