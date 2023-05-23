@@ -18,7 +18,9 @@ set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/completions/*.fi
 
 for s_file in $custom_scripts
     # echo $s_file
-    source $s_file
+    if test "$s_file" != "/home/hgibson/.config/fish/custom/conf.d/90_macbook14-home.fish"
+        source $s_file
+    end
 end
 
 if status is-interactive
@@ -34,7 +36,8 @@ if status is-interactive
     starship init fish | source
 
     # starship function can be later
-    if test $FISH_MINOR -lt 4
+    if test $FISH_MINOR -ge 4
+        # transience supported in 3.4+
         enable_transience
     end
 end
