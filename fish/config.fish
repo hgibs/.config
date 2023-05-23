@@ -9,6 +9,7 @@ set -Ux FISH (command -v fish)
 # maybe these should only load in specific circumstances?, or run in background?
 
 # cless
+# test
 
 # import my work
 # conf.d sets the HOST_ENV_SETTING which must happen for some functions to get correctly defined
