@@ -1,10 +1,5 @@
 # fish_add_path -a 
 
-set -gx FISH_MAJOR (fish --version | awk '{print $3}' | head -c 1)
-set -gx FISH_MINOR (fish --version | awk '{print $3}' | head -c 3 | tail -c 1)
-
-# todo, add if dir exists instead of this set of checks
-
 if test (uname -o) = "Darwin"
 	# prepend homebrew and my tools first
 	fish_add_path -p /usr/local/sbin
@@ -21,11 +16,7 @@ if test (uname -o) = "Darwin"
 	fish_add_path -a $HOME/.local/bin
 
 else if test (uname -o) = "GNU/Linux"
-	if test $FISH_MINOR -lt 2 
-		set -U fish_user_paths $HOME/bin $fish_user_paths
-	else
-		fish_add_path -p $HOME/bin
-	end
+	fish_add_path -p $HOME/bin
 end
 
 # /opt/homebrew/opt/libpq/bin 

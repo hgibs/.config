@@ -60,9 +60,9 @@ abbr --add ..... "../../../.."
 switch (uname -o)
 case '*Linux'
     # abbr --add open 'xdg-open' # fish includes this function
-    abbr --add cb "| xsel - clipboard - input"
-    abbr --add pb "xsel - clipboard - output |"
-    abbr --add cl "xsel - clipboard - clear"
+    abbr --add cb "| xsel -clipboard -input"
+    abbr --add pb "xsel -clipboard -output |"
+    abbr --add cl "xsel -clipboard -clear"
 case 'Darwin'
     abbr --add cb "| pbcopy"
     abbr --add pb "pbpaste |"
