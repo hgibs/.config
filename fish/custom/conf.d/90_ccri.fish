@@ -22,15 +22,16 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	# move asciinema config (which disables automatic uploading)
 	set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
-	set -aU fish_user_paths "$HOME/src/inrev"
 	set -gx MAVEN_OPTS '-Xmx1500M -Xms1G -Duser.timezone=UTC -Xss32m'
 	set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
 
+	fish_add_path -a "$HOME/src/inrev"
+	
 	# add coursier to path
-	set -U fish_user_paths $HOME/.local/share/coursier/bin $fish_user_paths 
+	fish_add_path -p "$HOME/.local/share/coursier/bin"
 
 	# add pip to path
-	set -U fish_user_paths $HOME/.local/bin $fish_user_paths
+	fish_add_path -p "$HOME/.local/bin"
 	
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
