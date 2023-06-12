@@ -18,9 +18,19 @@ display-messages = true
 [keys.normal]
 H = "goto_line_start"
 L = ["goto_line_end", "move_char_right"]
-# J = "half_page_down"
-# K = "half_page_up"
-g = { e = ["goto_last_line", "move_line_down"] }
+# C-> = ["extend_to_line_bounds",]  # want to do a one-space indent, but that requires a new macro
+# swapping these to make more sense to me
+p = "paste_before"
+P = "paste_after"
+X = "extend_line_above"
+
+[keys.normal.g]
+e = ["goto_last_line", "move_line_down"] 
+a = "code_action"
+
+[keys.select]
+H = "goto_line_start"
+L = ["goto_line_end", "move_char_right"]
 
 [editor.soft-wrap]
 enable = true
