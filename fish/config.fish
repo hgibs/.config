@@ -35,7 +35,7 @@ if status is-interactive
     starship init fish | source
 
     # starship function can be later
-    if test $FISH_MINOR -lt 4
+    if test $FISH_MINOR -ge 4
         enable_transience
     end
 end
