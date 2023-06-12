@@ -22,6 +22,7 @@ L = ["goto_line_end", "move_char_right"]
 # swapping these to make more sense to me
 p = "paste_before"
 P = "paste_after"
+X = "extend_line_above"
 
 [keys.normal.g]
 e = ["goto_last_line", "move_line_down"] 
