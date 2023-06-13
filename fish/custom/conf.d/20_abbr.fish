@@ -10,8 +10,6 @@ abbr --add tg "terragrunt"
 abbr --add tf "terraform"
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
-abbr --add upper "tr '[:lower:]' '[:upper:]'"
-abbr --add lower "tr '[:upper:]' '[:lower:]'"
 
 abbr --add reset_fish 'source ~/.config/fish/config.fish && gpgconf --kill gpg-agent'
 
