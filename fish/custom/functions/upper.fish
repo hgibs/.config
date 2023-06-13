@@ -1,3 +1,5 @@
 function upper
-echo $argv[1] | tr '[:lower:]' '[:upper:]'
+    while read line
+        echo $line | tr '[:lower:]' '[:upper:]'
+    end
 end
