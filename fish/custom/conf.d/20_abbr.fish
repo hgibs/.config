@@ -70,3 +70,6 @@ end
 abbr --add !! --position anywhere --function last_history_item
 
 # abbr --add gcm --set-cursor=% 'git commit -m "%"'
+abbr --add gcpc 'git cherry-pick --continue'
+abbr --erase gcp
+abbr --add gcp 'git cherry-pick -x'
