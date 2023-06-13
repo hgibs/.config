@@ -7,6 +7,7 @@ color-modes = true
 bufferline = "multiple"
 scroll-lines = 2
 mouse = false
+shell = ["fish", "-c"]
 
 [editor.file-picker]
 git-ignore = false
