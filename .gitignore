@@ -1,14 +1,13 @@
-packer/checkpoint*
-iterm2/AppSupport
-byobu/.ssh-agent
-broot/launcher
-packer
-
-fish/fish_variables
-fish/conf.d
-fish/functions
-fish/completions
-
 .DS_Store
 
+asciinema/install-id
+broot/launcher
+byobu/.ssh-agent
+fish/completions
+fish/conf.d
+fish/functions
 fish/conf.d/virtualfish-loader.fish
+fish/fish_variables
+iterm2/AppSupport
+packer
+packer/checkpoint*
