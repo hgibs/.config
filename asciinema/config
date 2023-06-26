@@ -9,7 +9,7 @@ url = https://asciinema.nowhere.invalid
 
 ; Command to record, default: $SHELL
 ; command = /bin/bash -l
-command = /usr/bin/fish -l
+command = fish -l
 
 ; Enable stdin (keyboard) recording, default: no
 stdin = yes
