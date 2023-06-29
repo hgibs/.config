@@ -74,3 +74,4 @@ abbr --add !! --position anywhere --function last_history_item
 abbr --add gcpc 'git cherry-pick --continue'
 abbr --erase gcp
 abbr --add gcp 'git cherry-pick -x'
+abbr --add rm_orig 'find . -name \*.orig -delete'
