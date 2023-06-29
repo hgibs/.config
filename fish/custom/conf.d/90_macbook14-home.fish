@@ -2,6 +2,8 @@ if test $FISH_MINOR -lt 4
 	exit 0
 end
 
+command -v ifconfig >/dev/null 2>&1 || exit 0
+
 uname -o | grep -q 'Darwin'
 set -l is_darwin $status
 

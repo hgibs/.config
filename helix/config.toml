@@ -8,6 +8,8 @@ bufferline = "multiple"
 scroll-lines = 2
 mouse = false
 shell = ["fish", "-c"]
+auto-completion = true
+idle-timeout = 50
 
 [editor.file-picker]
 git-ignore = false

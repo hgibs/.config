@@ -10,8 +10,8 @@ abbr --add tg "terragrunt"
 abbr --add tf "terraform"
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
-abbr --add warp 'cd /Users/lokiadmin/Documents/ACO/Projects/warpzone_priorities'
 
+abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
 abbr --add reset_fish 'source ~/.config/fish/config.fish && gpgconf --kill gpg-agent'
 
 abbr --add t 'tldr'
