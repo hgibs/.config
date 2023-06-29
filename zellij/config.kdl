@@ -136,7 +136,7 @@ keybinds {
     }
     shared_except "locked" {
         bind "Ctrl g" { SwitchToMode "Locked"; }
-        bind "Ctrl q" { Quit; }
+        bind "Ctrl q" { }
         bind "Alt n" { NewPane; }
         bind "Alt h" "Alt Left" { MoveFocusOrTab "Left"; }
         bind "Alt l" "Alt Right" { MoveFocusOrTab "Right"; }
@@ -197,8 +197,9 @@ on_force_close "quit"
 
 // Choose the path to the default shell that zellij will use for opening new panes
 // Default: $SHELL
-//
-default_shell "fish"
+
+// only uncomment on legacy branch
+// default_shell "fish"
 
 // Toggle between having pane frames around the panes
 // Options:

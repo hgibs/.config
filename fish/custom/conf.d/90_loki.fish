@@ -1,5 +1,4 @@
 command -v ifconfig >/dev/null 2>&1 || exit 0
-exit 0 #ignore this test
 
 if test (ifconfig en0 | grep ether | awk '{print $2}') = "f4:d4:88:68:cd:f8"
 	set -g HOST_ENV_SETTING loki
