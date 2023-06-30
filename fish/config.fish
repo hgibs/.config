@@ -36,6 +36,7 @@ if status is-interactive
 
     # starship function can be later
     if test $FISH_MINOR -ge 4
+        # transience supported in 3.4+
         enable_transience
     end
 end
