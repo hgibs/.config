@@ -8,7 +8,8 @@ url = https://asciinema.nowhere.invalid
 [record]
 
 ; Command to record, default: $SHELL
-command = /bin/bash -l
+; command = /bin/bash -l
+command = fish -l
 
 ; Enable stdin (keyboard) recording, default: no
 stdin = yes

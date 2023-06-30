@@ -4,10 +4,11 @@ command -v ip >/dev/null 2>&1 || exit 0
 if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
 	set -g HOST_ENV_SETTING ccri
 
-	set -g STARSHIP_CONFIG ~/dotfiles/starship.toml
+	set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 	
 	abbr -e ls # wait for exa to become available
 	
+	abbr record_cmcc 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout.kdl"'
 	abbr mci 'mvn clean install'
 	abbr mcis 'mvn clean install -DskipTests'
 	abbr mdt 'mvn dependency:tree'
