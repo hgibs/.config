@@ -21,7 +21,8 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	abbr m 'mvn'
 	abbr mt 'mvn test'
 	abbr msc 'mvn scala:console'
-	abbr nas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
+	abbr mountnas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
+	abbr mountlxc 'sshfs hgibson@hgibson-lxc.ccri.com:/home/hgibson $HOME/lxc'
 	
 	# colorful less!
 	set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
