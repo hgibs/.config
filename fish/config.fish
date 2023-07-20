@@ -41,8 +41,8 @@ if status is-interactive
         enable_transience
     end
 
-    if test -z "$HOST_ENV_SETTING" -o "$BYOBU_ENABLE" = "true" 
-        exec byobu-launcher
-    end
+    # if test -z "$HOST_ENV_SETTING" -o "$BYOBU_ENABLE" = "true" 
+    #     exec byobu-launcher
+    # end
 end
 
