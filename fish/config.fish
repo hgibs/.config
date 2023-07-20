@@ -30,6 +30,10 @@ if status is-interactive
     end
 
     set fish_greeting "Welcome to fish, the friendly interactive shell"
+    
+    if test -z "$HOST_ENV_SETTING" -o "$BYOBU_ENABLE" = "true" 
+        exec byobu-launcher
+    end
 
     # should be last executed line
     starship init fish | source
