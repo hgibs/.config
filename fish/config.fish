@@ -27,6 +27,7 @@ if status is-interactive
     
     if test -z $HOST_ENV_SETTING
         set_color --bold red; echo "‼️  HOST_ENV_SETTING UNSET ‼️"
+        set -g BYOBU_ENABLE "true"
     end
 
     set fish_greeting "Welcome to fish, the friendly interactive shell"
@@ -46,3 +47,4 @@ if status is-interactive
     # end
 end
 
+status --is-login; and status --is-interactive; and test "$BYOBU_ENABLE" = "true"; and exec byobu-launcher
