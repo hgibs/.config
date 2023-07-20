@@ -31,9 +31,6 @@ if status is-interactive
 
     set fish_greeting "Welcome to fish, the friendly interactive shell"
     
-    if test -z "$HOST_ENV_SETTING" -o "$BYOBU_ENABLE" = "true" 
-        exec byobu-launcher
-    end
 
     # should be last executed line
     starship init fish | source
@@ -42,6 +39,10 @@ if status is-interactive
     if test $FISH_MINOR -ge 4
         # transience supported in 3.4+
         enable_transience
+    end
+
+    if test -z "$HOST_ENV_SETTING" -o "$BYOBU_ENABLE" = "true" 
+        exec byobu-launcher
     end
 end
 
