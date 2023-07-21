@@ -1,5 +1,10 @@
 command -v ip >/dev/null 2>&1 || exit 0
 
+ip link show | grep -q enp0s31f6
+if test $status -ne 0
+  exit 0
+end 
+
 # if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
 if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
 	set -g HOST_ENV_SETTING ccri
@@ -8,7 +13,7 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
 	set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/git_readonly_personal_token)
 	
-	abbr -e ls # wait for exa to become available
+	# abbr -e ls # wait for exa to become available
 	
 	abbr record_cmcc 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout.kdl"'
 	abbr mci 'mvn clean install'
@@ -18,6 +23,8 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	abbr m 'mvn'
 	abbr mt 'mvn test'
 	abbr msc 'mvn scala:console'
+	abbr mountnas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
+	abbr mountlxc 'sshfs hgibson@hgibson-lxc.ccri.com:/home/hgibson $HOME/lxc'
 	
 	# colorful less!
 	set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
