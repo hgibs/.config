@@ -34,6 +34,8 @@ if test $is_darwin
 		abbr rnghex '/opt/homebrew/bin/onlykey-cli rng hexbytes --count 32'
 		abbr rngnum "rng '[:digit:]' 32"
 
+		abbr mounttower 'sshfs holland@k8s-tower.home.hollandgibson.com:/home/holland $HOME/sshfs/tower'
+
 		# Wasmer
 		export WASMER_DIR="/Users/hollandgibson/.wasmer"
 		[ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
