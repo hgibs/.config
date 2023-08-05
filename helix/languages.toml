@@ -1,7 +1,12 @@
 [[language]]
 name = "json"
-config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+# config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
 
+[language-server.vscode-json-language-server.config]
+provideFormatter = true
+
+[language-server.vscode-json-language-server.config.json]
+keepLines = {"enable" = true}
 
 [[language]]
 name = "markdown"
