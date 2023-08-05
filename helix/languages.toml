@@ -15,7 +15,7 @@ scope = "source.markdown"
 roots = []
 
 
-[[languge]]
+[[language]]
 name = "yaml"
 
 [languge.indent-guides]
