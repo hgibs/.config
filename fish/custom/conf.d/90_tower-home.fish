@@ -17,12 +17,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	# move asciinema config (which disables automatic uploading)
 	set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
-	# add coursier to path
-	fish_add_path -p "$HOME/.local/share/coursier/bin"
-
-	# add pip to path
 	fish_add_path -p "$HOME/.local/bin"
-	
+	fish_add_path -a "$HOME/.cargo/bin"
+
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
