@@ -9,6 +9,7 @@ end
 if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "e0:d5:5e:21:8e:72"
 	set -g HOST_ENV_SETTING tower-home
 
+	set -gx HELIX_RUNTIME $HOME/src/helix/runtime
 	set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
 	# colorful less!
