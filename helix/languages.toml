@@ -48,10 +48,10 @@ roots = []
 name = "python"
 rulers = [120]
 
-[config.pylsp]
+[language-server.pylsp.config]
 configurationSources = ['flake8']
 
-[config.pylsp.plugins]
+[language-server.pylsp.config.plugins]
 flake8.enabled = true
 flake8.config = "/Users/hollandgibson/CVS_Documents/actionmapgeneration/application/LogProcessor/.flake8"
 pycodestyle.enabled = false
