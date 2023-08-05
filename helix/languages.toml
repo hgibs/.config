@@ -88,3 +88,4 @@ runInTerminal = true
 name = "xml"
 auto-format = false
 language-server = { command = "lemminx-linux", args = ["--stdio"] }
+# language-servers = [ { command = "lemminx-linux", args = ["--stdio"] } ]
