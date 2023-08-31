@@ -34,10 +34,7 @@ if test $FISH_MINOR -lt 2
         end
 
         set -l var fish_user_paths
-        set -q _flag_path
-        and set var PATH
-        # $PATH should be global
-        and set scope -g
+        set -q _flag_path; and set var PATH
         set -l mode $_flag_prepend $_flag_append
         set -q mode[1]; or set mode -p
 
@@ -52,22 +49,15 @@ if test $FISH_MINOR -lt 2
             set -l p (builtin realpath -s -- $path 2>/dev/null)
 
             # Ignore non-existing paths
-            if not test -d "$p"
-                # path does not exist
-                if set -q _flag_verbose
-                    # print a message in verbose mode
-                    printf (_ "Skipping non-existent path: %s\n") "$p"
-                end
-                continue
-            end
+            test -d "$p"; or continue
 
             if set -l ind (contains -i -- $p $$var)
                 # In move-mode, we remove it from its current position and add it back.
-                if set -q _flag_move; and not contains -- $p $newpaths
+                if set -q _flag_move
                     set -a indexes $ind
                     set -a newpaths $p
                 end
-            else if not contains -- $p $newpaths
+            else
                 # Without move, we only add it if it's not in.
                 set -a newpaths $p
             end
@@ -95,6 +85,7 @@ if test $FISH_MINOR -lt 2
             and set $scope $var $newvar
             return 0
         else
+            # echo $argv
             return 1
         end
     end
