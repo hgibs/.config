@@ -16,8 +16,8 @@ if test $is_darwin
 		set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
 		set -gx KUBECONFIG $HOME/.kube/config.yaml
 
-		fish_add_path -a /Users/hollandgibson/.miniforge3/bin
-		fish_add_path -a "/Users/hollandgibson/Library/Application Support/Coursier/bin"
+		fish_add_path --append /Users/hollandgibson/.miniforge3/bin
+		fish_add_path --append "/Users/hollandgibson/Library/Application Support/Coursier/bin"
 
 		abbr parachute 'cd $HOME/Documents/cloud/parachute && bass source env.key'
 		abbr vpsiac 'cd $HOME/Developer/cloud/vps-iac && bass source env.key'
