@@ -1,11 +1,16 @@
 fonts-firacode
 fonts-hack
 fish
-jq
+yq
 kitty
 tldr
 xclip
 wget
 ripgrep
 source-highlight
+meld
+npm
+solaar
+sshfs
+ncdu
 meld
