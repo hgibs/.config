@@ -1,0 +1,26 @@
+[nas]
+type = smb
+host = nas.home.hollandgibson.com
+user = macb14
+pass = [REDACTED]
+case_insensitive = false
+
+[scaleway]
+type = s3
+provider = Scaleway
+access_key_id = [REDACTED]
+secret_access_key = [REDACTED]
+region = fr-par
+endpoint = s3.fr-par.scw.cloud
+acl = private
+storage_class = GLACIER
+bucket_acl = private
+
+[secret]
+type = crypt
+remote = scaleway:hollandgibson-backup/backup/
+filename_encryption = standard
+directory_name_encryption = true
+password = [REDACTED]
+password2 = [REDACTED]
+
