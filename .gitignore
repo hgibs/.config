@@ -1,4 +1,8 @@
 .DS_Store
+
+# secrets here
+rclone.conf
+
 asciinema/install-id
 broot/launcher
 byobu/.ssh-agent
