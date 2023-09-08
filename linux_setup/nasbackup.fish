@@ -47,8 +47,9 @@ end
 
 echo "Rolling backup to $output_path"
 
-rsync -a \
-  --progress \
+# --links is implied by -P
+rsync -aqP \
+  --safe-links \
   --exclude="lost+found" \
   --exclude="nas0_tank" \
   --exclude=".tldr" \
