@@ -90,3 +90,9 @@ if test $FISH_MINOR -lt 2
         end
     end
 end
+
+set fish_color_command brcyan
+set fish_color_param green
+set fish_color_quote normal
+set fish_color_comment AAA
+set fish_color_operator yellow
