@@ -17,6 +17,8 @@ if test (uname -o) = "Darwin"
 
 else if test (uname -o) = "GNU/Linux"
 	fish_add_path --prepend $HOME/bin
+	fish_add_path --append $HOME/.cargo/bin
 end
 
 # /opt/homebrew/opt/libpq/bin 
+
