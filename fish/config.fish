@@ -19,7 +19,7 @@ set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/completions/*.fi
 
 for s_file in $custom_scripts
     # echo $s_file
-    if test "$s_file" != "/home/hgibson/.config/fish/custom/conf.d/90_macbook14-home.fish"
+    if test "$s_file" != "$HOME/.config/fish/custom/conf.d/90_macbook14-home.fish"
         source $s_file
     end
 end
