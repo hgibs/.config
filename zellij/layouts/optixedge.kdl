@@ -5,7 +5,7 @@ layout {
         }
         pane
     }
-    cwd "/home/hgibson/Developer/optix_edge"
+    cwd "/home/ghgibson/Developer/optix_edge"
     tab name="containers" cwd="containers" focus=true
     tab name="utils" cwd="java-utils"
     tab name="blue-optix" cwd="blue-optix"
