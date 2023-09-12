@@ -60,7 +60,20 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
 	#default to java 8
 	set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
-    set -a PATH "$JAVA_HOME/bin"
+
+	# make sure docker is running
+	systemctl --user --quiet is-active docker.service
+	if test $status -ne 0
+		set_color 0db7ed
+		echo "󰡨 Starting docker.service"
+		set_color normal
+		systemctl --user start docker.service
+	end
+	set -l docker_preamble "unix://"
+	set -l docker_sockpath (find /run/user -name docker.sock 2>/dev/null || true | head -n 1)
+	# set -l docker_sockpath "$XDG_RUNTIME_DIR/docker.sock"
+	set -gx DOCKER_HOST (string join '' "$docker_preamble" "$docker_sockpath")
+	set -a PATH "$JAVA_HOME/bin"
 	
 	
 	# add NVM setup
