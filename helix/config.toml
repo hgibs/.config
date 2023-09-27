@@ -3,6 +3,7 @@ theme = "fleet_dark"
 [editor]
 auto-save = false  # saves on unfocus
 # rulers = [80, 120]
+cursorline = true
 color-modes = true
 bufferline = "multiple"
 scroll-lines = 2
