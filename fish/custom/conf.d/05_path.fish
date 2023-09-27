@@ -1,5 +1,7 @@
 # fish_add_path -a 
 
+fish_add_path -p "$HOME/.local/bin"
+
 if test (uname -o) = "Darwin"
 	# prepend homebrew and my tools first
 	fish_add_path -p /usr/local/sbin
@@ -11,9 +13,6 @@ if test (uname -o) = "Darwin"
 	fish_add_path -a '/Applications/Sublime Text.app/Contents/SharedSupport/bin'
 	fish_add_path -a $HOME/.cargo/bin
 	fish_add_path -a /opt/homebrew/opt/mysql-client/bin
-
-	# mainly for fisher install
-	fish_add_path -a $HOME/.local/bin
 
 else if test (uname -o) = "GNU/Linux"
 	fish_add_path -p $HOME/bin
