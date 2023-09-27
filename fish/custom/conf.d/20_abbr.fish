@@ -42,7 +42,13 @@ abbr --add tree3 'tree -L 3'
 # abbr --add git https="git remote set-url origin 'https://lokilabs@dev.azure.com/lokilabs/Loki%20Datascience/_git/Loki_Datascience'"
 # abbr --add git https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 # abbr --add git ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
+
 abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
+
+# abbr --add psf "ps --format '{{.Names}}{{.Status}}' | column -t -s ' '"
+abbr --add dps "docker_ps_pretty"
+abbr --add watchf "watch -x $FISH -c"
+abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
 
 abbr --add l "eza -l --header --git --time-style=iso"
 abbr --add ls "eza -la --header --git --time-style=long-iso"

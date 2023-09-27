@@ -95,4 +95,6 @@ set fish_color_command brcyan
 set fish_color_param green
 set fish_color_quote normal
 set fish_color_comment AAA
-set fish_color_operator yellow
+set fish_color_operator brmagenta
+# set fish_color_error white
+set fish_color_error brred
