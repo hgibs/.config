@@ -112,6 +112,7 @@ disabled = true
 symbol = ''
 success_symbol = ''
 # format = '[\[$symbol$common_meaning$signal_name$maybe_int\]]($style) '
+style = 'fg:bright-red'
 format = '[\[$common_meaning$signal_name$maybe_int\]]($style) '
 # map_symbol = true
 disabled = false
@@ -149,6 +150,13 @@ symbol = " "
 
 [git_branch]
 symbol = " "
+style = "fg:208"
+
+[git_status]
+style = "fg:208"
+
+[git_state]
+style = "fg:207"
 
 [golang]
 symbol = " "
