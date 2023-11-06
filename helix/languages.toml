@@ -1,8 +1,16 @@
+# json
 [[language]]
 name = "json"
-config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+# config = { "provideFormatter" = true, "json" = { "keepLines" = { "enable" = true } } }
+
+[language-server.vscode-json-language-server.config]
+provideFormatter = true
+
+[language-server.vscode-json-language-server.config.json]
+keepLines = {"enable" = true}
 
 
+# markdown
 [[language]]
 name = "markdown"
 file-types = ["md"]
@@ -10,7 +18,8 @@ scope = "source.markdown"
 roots = []
 
 
-[[languge]]
+# yaml
+[[language]]
 name = "yaml"
 
 [languge.indent-guides]
@@ -19,6 +28,7 @@ character = "╎" # Some characters that work well: "▏", "┆", "┊", "⸽"
 skip-levels = 1
 
 
+# html
 [[language]]
 name = "html"
 
@@ -32,6 +42,7 @@ name = "html"
 '<' = '>'
 
 
+# txt
 [[language]]
 name = "plaintext"
 scope = "source.plaintext"
@@ -39,14 +50,16 @@ file-types = ["txt"]
 rulers = [80, 120]
 roots = []
 
+
+# python
 [[language]]
 name = "python"
 rulers = [120]
 
-[config.pylsp]
+[language-server.pylsp.config]
 configurationSources = ['flake8']
 
-[config.pylsp.plugins]
+[language-server.pylsp.config.plugins]
 flake8.enabled = true
 flake8.config = "/Users/hollandgibson/CVS_Documents/actionmapgeneration/application/LogProcessor/.flake8"
 pycodestyle.enabled = false
@@ -54,11 +67,12 @@ mccabe.enabled = false
 pyflakes.enabled = false
 
 
+# rust
 [[language]]
 name = "rust"
 rulers = [120]
 
-[language.config]
+[language-server.rust-analyzer.config]
 checkOnSave = { command = "clippy" }
 
 [language.debugger]
@@ -78,8 +92,16 @@ name = "binary"
 program = "{0}"
 runInTerminal = true
 
+
+# XML
 [[language]]
 # https://github.com/redhat-developer/vscode-xml/tree/main
 name = "xml"
 auto-format = false
-language-server = { command = "lemminx-linux", args = ["--stdio"] }
+language-server = "lemminx"
+# language-servers = [ { "lemminx" } ]
+
+[language-server.lemminx]
+command = "lemminx-linux"
+args = ["--stdio"]
+
