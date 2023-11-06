@@ -12,13 +12,14 @@ if test (uname -o) = "Darwin"
 	fish_add_path --append $HOME/.cargo/bin
 	fish_add_path --append /opt/homebrew/opt/mysql-client/bin
 
-	# mainly for fisher install
-	fish_add_path --append $HOME/.local/bin
 
 else if test (uname -o) = "GNU/Linux"
 	fish_add_path --prepend $HOME/bin
 	fish_add_path --append $HOME/.cargo/bin
 end
+
+# mainly for fisher install
+fish_add_path --append $HOME/.local/bin
 
 # /opt/homebrew/opt/libpq/bin 
 
