@@ -29,6 +29,7 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	abbr msc 'mvn scala:console'
 	abbr mep 'mvn help:effective-pom -Dverbose=true'
 	abbr ml 'mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list'
+	abbr mlp 'mvn -q --also-make exec:exec -Dexec.executable="pwd"'  # list all project dirs
 	abbr mountnas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
 	abbr mountlxc 'sshfs hgibson@hgibson-lxc.ccri.com:/home/hgibson $HOME/lxc'
 	
