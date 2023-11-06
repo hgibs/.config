@@ -7,13 +7,13 @@ if test "$HOST_ENV_SETTING" = ccri
 
         set -l javaversion "$argv[1]"
         if test $javaversion -eq 20
-            set -gx JAVA_HOME "$HOME/jvm/jdk-20.0.1"
+            set -gx JAVA_HOME "$HOME/jvm/jdk-20.0.2"
         else if test $javaversion -eq 18
             set -gx JAVA_HOME "$HOME/jvm/jdk-18.0.2"
         else if test $javaversion -eq 17
-            set -gx JAVA_HOME "/usr/lib/jvm/java-17-openjdk-amd64"
+            set -gx JAVA_HOME "$HOME/jvm/jdk-17.0.2"
         else if test $javaversion -eq 11
-            set -gx JAVA_HOME "/usr/lib/jvm/java-11-openjdk-amd64"
+            set -gx JAVA_HOME "$HOME/jvm/jdk-11.0.2"
         else if test $javaversion -eq 8
             set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
         else
