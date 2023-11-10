@@ -2,11 +2,16 @@ if test "$HOST_ENV_SETTING" = ccri
     function setjdk
         if test -z "$argv"
             echo "Usage: setjdk [version]" >&2
+            printf "\n(Supported versions: graalvm, 21, 20, 18, 17, 11, 8)\n" >&2
             return 2
         end
 
         set -l javaversion "$argv[1]"
-        if test $javaversion -eq 20
+        if test $javaversion = "graalvm"
+            set -gx JAVA_HOME "$HOME/jvm/graalvm-jdk-21.0.1+12.1"
+        else if test $javaversion -eq 21
+            set -gx JAVA_HOME "$HOME/jvm/jdk-21.0.1"
+        else if test $javaversion -eq 20
             set -gx JAVA_HOME "$HOME/jvm/jdk-20.0.2"
         else if test $javaversion -eq 18
             set -gx JAVA_HOME "$HOME/jvm/jdk-18.0.2"
