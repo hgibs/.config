@@ -10,7 +10,7 @@ scroll-lines = 2
 mouse = false
 shell = ["fish", "-c"]
 auto-completion = true
-idle-timeout = 50
+idle-timeout = 200
 
 [editor.file-picker]
 git-ignore = false
