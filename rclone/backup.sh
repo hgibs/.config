@@ -18,8 +18,13 @@ set -x
  
 # started blue on Sep 2023
 DESTINATION="nas:macbook14_backups/rclone/blue"
-OPTIONS="--config /Users/hollandgibson/.config/rclone/rclone.conf --metadata -P"
-rclone sync /Users $DESTINATION/Users $OPTIONS --exclude ".Trash**" --exclude ".npm" --exclude 'Library/Containers**' --exclude 'Library/Daemon Containers**'
+OPTIONS="--config /Users/hollandgibson/.config/rclone/rclone.conf --metadata -P -L"
+rclone sync /Users $DESTINATION/Users $OPTIONS \
+  --exclude ".Trash**" \
+  --exclude ".npm" \
+  --exclude 'Library/Containers**' \
+  --exclude 'Library/Daemon Containers**' \
+  --exclude 'Library/Caches**'
 rclone sync /Applications $DESTINATION/Applications $OPTIONS
 rclone sync /opt $DESTINATION/opt $OPTIONS
 rclone sync /private $DESTINATION/private $OPTIONS
