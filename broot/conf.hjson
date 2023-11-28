@@ -90,6 +90,7 @@ show_selection_mark: true
 #
 special_paths: {
     "/media" : "no-enter" // comment it if desired
+    "**/.git": "hide"
     # "/media/slow-backup-disk"    : no-enter
     # "/home/dys/useless"    : hide
     # "/home/dys/my-link-I-want-to-explore"    : enter
