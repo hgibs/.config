@@ -2,3 +2,4 @@
 --no-playlist
 --format 'bv*+ba'
 --embed-thumbnail
+-o "%(title)s.%(ext)s"
