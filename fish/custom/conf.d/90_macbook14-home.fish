@@ -23,6 +23,7 @@ if test $is_darwin
 		abbr vpsiac 'cd $HOME/Developer/cloud/vps-iac && bass source env.key'
 		abbr keyb 'cd $HOME/Documents/projects/Mercury65Plus'
 		abbr cf 'cd $HOME/Documents/projects/cinefolders && bass source tmdb_apikey.secret'
+		abbr knowb '$HOME/Documents/hobby_projects/book_binding'
 		# abbr ghost "/opt/homebrew/bin/gs"
 		# abbr SSH="/usr/bin/ssh"
 		# abbr ssh-shell='onlykey-agent ~/.ssh/github.pub -v --shell'
