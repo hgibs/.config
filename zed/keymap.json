@@ -1,0 +1,8 @@
+[
+  {
+    "context": "Editor && showing_completions",
+    "bindings": {
+      "tab": "editor::ConfirmCompletion"
+    }
+  }
+]
