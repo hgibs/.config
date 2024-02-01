@@ -76,6 +76,32 @@ end
 
 abbr --add !! --position anywhere --function last_history_item
 
+abbr --add tree2 'tree -L 2'
+abbr --add tree3 'tree -L 3'
+# abbr --add godu '/opt/homebrew/opt/gdu/bin/gdu'
+
+abbr --add ls "eza -la --header --git --time-style=long-iso"
+abbr --add lsg "eza -lag --header --git --time-style=long-iso"
+abbr --add p 'ping -o'
+
+# abbr --add psf "ps --format '{{.Names}}{{.Status}}' | column -t -s ' '"
+
+abbr --add ... "../.."
+abbr --add .... "../../.."
+abbr --add ..... "../../../.."
+
+abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
+abbr -a L --position anywhere --set-cursor "% | less"
+
+## Developer stuff
+abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
+abbr --add watchf "watch -x $FISH -c"
+abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
+abbr --add vfn "vf new -p" (command -v python3.12) "(two_dirs \$PWD | tr / -)"
+abbr --add vfa "vf activate (two_dirs \$PWD | tr / -)"
+
+
+## additional git abbrs
 # abbr --add gcm --set-cursor=% 'git commit -m "%"'
 abbr --add gcpc 'git cherry-pick --continue'
 abbr --erase gcp
