@@ -43,8 +43,8 @@ abbr -a L --position anywhere --set-cursor "% | less"
 abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
 abbr --add watchf "watch -x $FISH -c"
 abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
-abbr --add vfn "vf new -p" (command -v python3.11) "(basename \$PWD)"
-abbr --add vfa "vf activate (basename \$PWD)"
+abbr --add vfn "vf new -p" (command -v python3.12) "(two_dirs \$PWD | tr / -)"
+abbr --add vfa "vf activate (two_dirs \$PWD | tr / -)"
 
 
 ## additional git abbrs
