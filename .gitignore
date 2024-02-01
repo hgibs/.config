@@ -3,6 +3,7 @@
 # secrets here
 rclone.conf
 scw/config.yaml
+*.secret
 
 asciinema/install-id
 broot/launcher
