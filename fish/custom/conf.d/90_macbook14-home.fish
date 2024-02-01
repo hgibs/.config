@@ -13,7 +13,8 @@ if test $is_darwin
 
 		set -gx HELIX_RUNTIME $HOME/Applications/helix/runtime
 		set -gx GPG_TTY (tty)
-		set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
+		# set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
+		set -gx GNUPGHOME $HOME/.gnupg/macos  # use onlykey
 		set -gx KUBECONFIG $HOME/.kube/config.yaml
 
 		fish_add_path -a /Users/hollandgibson/.miniforge3/bin
@@ -28,6 +29,8 @@ if test $is_darwin
 		# abbr SSH="/usr/bin/ssh"
 		# abbr ssh-shell='onlykey-agent ~/.ssh/github.pub -v --shell'
 		abbr s "onlykey-agent -c"
+
+		
 		abbr sshk "onlykey-agent -sk ECC5 -c"
 		abbr sshs "onlykey-agent -sk ECC5 -s"
 		# set these to use the onlykey
