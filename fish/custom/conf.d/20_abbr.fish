@@ -24,7 +24,7 @@ abbr --add randtext "$RANDOM_SOURCE '[:alnum:]' 64"
 abbr --add randprint "$RANDOM_SOURCE '[:print:]' 64"
 abbr --add randpwd "$RANDOM_SOURCE '[:graph:]' 64"
 abbr --add randnum "$RANDOM_SOURCE '[:digit:]' 32"
-abbr --add randhex "openssl rand -base64 16 | md5 | head -c24; echo"
+abbr --add randhex "openssl rand -base64 16 | md5sum | head -c24; echo"
 abbr --add randomsym 'cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 32; echo'
 
 abbr --add gp_ssl 'GIT_SSL_NO_VERIFY=1 git push'
@@ -47,8 +47,8 @@ abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
 
 # abbr --add psf "ps --format '{{.Names}}{{.Status}}' | column -t -s ' '"
 abbr --add dps "docker_ps_pretty"
-abbr --add watchf "watch -x $FISH -c"
-abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
+abbr --add watchf "watch -dcx $FISH -c"
+abbr --add watchdps "watch -dcx $FISH -c docker_ps_pretty"
 
 abbr --add l "eza -l --header --git --time-style=iso"
 abbr --add ls "eza -la --header --git --time-style=long-iso"
@@ -81,3 +81,4 @@ abbr --add gcpc 'git cherry-pick --continue'
 abbr --erase gcp
 abbr --add gcp 'git cherry-pick -x'
 abbr --add rm_orig 'find . -name \*.orig -delete'
+abbr --add gfa 'git fetch --all --prune --tags'
