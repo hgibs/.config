@@ -18,7 +18,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	abbr record_container 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_container.kdl"'
 	abbr record_crush 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_crusher.kdl"'
 	abbr record_cmcc 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout.kdl"'
+	abbr record_lib 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_lib_layout.kdl"'
 	abbr mci 'mvn clean install'
+	abbr mcv 'mvn clean verify'
 	abbr mcis 'mvn clean install -DskipTests'
 	abbr mdt 'mvn dependency:tree'
 	abbr mdtf 'mvn dependency:tree -DoutputFile=dependencies.txt'
@@ -59,8 +61,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	# set -gxa PATH "$HOME/Developer/spotbugs-utils"
 	fish_add_path --global --append "$HOME/Developer/spotbugs-utils"
 
-	#default to java 8
-	set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
+	#default java
+	# set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
+	set -gx JAVA_HOME "$HOME/jvm/jdk-17.0.2"
 
 	# make sure docker is running
 	systemctl --user --quiet is-active docker.service
@@ -76,9 +79,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	set -gx DOCKER_HOST (string join '' "$docker_preamble" "$docker_sockpath")
 	set -a PATH "$JAVA_HOME/bin"
 	
-	
 	# add NVM setup
 	set -gx NVM_DIR "$HOME/.nvm"
+	
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
 	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
