@@ -6,9 +6,9 @@ layout {
         pane
     }
     cwd "/home/ghgibson/Developer/optix_edge"
-    tab name="containers" cwd="containers" focus=true
-    tab name="utils" cwd="java-utils"
-    tab name="blue-optix" cwd="blue-optix"
+    tab name="lib" cwd="lib" focus=true
+    tab name="containers" cwd="containers"
+    // tab name="blue-optix" cwd="blue-optix"
     tab name="cmcc" cwd="deployments/cmcc"
     tab name="crusher" cwd="deployments/crusher"
 }
