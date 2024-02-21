@@ -13,6 +13,7 @@ if test $is_darwin
 
 		set -gx HELIX_RUNTIME $HOME/Applications/helix/runtime
 		set -gx GPG_TTY (tty)
+		set -x SSH_AUTH_SOCK $HOME/Library/Containers/com.maxgoedjen.Secretive.SecretAgent/Data/socket.ssh
 		# set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
 		set -gx GNUPGHOME $HOME/.gnupg/macos  # use onlykey
 		set -gx KUBECONFIG $HOME/.kube/config.yaml
@@ -28,7 +29,8 @@ if test $is_darwin
 		# abbr ghost "/opt/homebrew/bin/gs"
 		# abbr SSH="/usr/bin/ssh"
 		# abbr ssh-shell='onlykey-agent ~/.ssh/github.pub -v --shell'
-		abbr s "onlykey-agent -c"
+		# abbr s "onlykey-agent -c"
+		abbr sshsign "ssh-keygen -Y sign -f ~/.ssh/secretive.touchid-home.pub -n file"
 
 		
 		abbr sshk "onlykey-agent -sk ECC5 -c"
