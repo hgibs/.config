@@ -82,3 +82,5 @@ abbr --erase gcp
 abbr --add gcp 'git cherry-pick -x'
 abbr --add rm_orig 'find . -name \*.orig -delete'
 abbr --add gfa 'git fetch --all --prune --tags'
+abbr --add gstaa 'git stash --all'
+abbr --add gbl 'git blame -b -w -C -C -C'

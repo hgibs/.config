@@ -12,7 +12,7 @@ if test "$HOST_ENV_SETTING" = ccri
     docker push $newtag
 
     set -l PUSH_STATUS $status
-    echo "\n"
+    printf "\n"
 
     if test $PUSH_STATUS -eq 0
       set -l K8S_IMG (docker inspect --format='{{index .RepoDigests 0}}' "$newtag")
