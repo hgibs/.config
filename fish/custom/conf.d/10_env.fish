@@ -13,3 +13,10 @@ set -gx PAGER 'less'
 set -gx RANDOM_SOURCE 'urandom'
 
 set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
+
+
+###############
+# Non-exports #
+###############
+
+
