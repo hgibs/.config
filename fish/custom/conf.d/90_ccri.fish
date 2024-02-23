@@ -28,12 +28,15 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	abbr m 'mvn'
 	abbr mt 'mvn test'
 	abbr mc 'mvn clean'
+	abbr mcd 'mvn clean deploy'
+	abbr mcs 'mvn clean site'
 	abbr msc 'mvn scala:console'
-	abbr mep 'mvn help:effective-pom -Dverbose=true'
+	abbr mep 'mvn help:effective-pom -Dverbose=true -Doutput=effective.xml'
 	abbr ml 'mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list'
 	abbr mlp 'mvn -q --also-make exec:exec -Dexec.executable="pwd"'  # list all project dirs
 	abbr mountnas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
 	abbr mountlxc 'sshfs hgibson@hgibson-lxc.ccri.com:/home/hgibson $HOME/lxc'
+	abbr vpnclean "ip -j a | jq -r '.[] | select(.ifname | test(\"vpn.*\")) | .ifname' | xargs nmcli connection delete"
 	
 	abbr crusher '$HOME/Developer/optix_edge/deployments/crusher'
 	abbr cmcc '$HOME/Developer/optix_edge/deployments/cmcc'
