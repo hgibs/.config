@@ -20,11 +20,14 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
 	fish_add_path -p "$HOME/.local/bin"
 	fish_add_path -a "$HOME/.cargo/bin"
+	# fish_add_path -a "$HOME/miniforge3/bin"
+
+	eval $HOME/miniforge3/bin/conda "shell.fish" "hook" $argv | source
 
 	# enable byobu
 	set -g BYOBU_ENABLE "true"
 	# >>> conda initialize >>>
 	# !! Contents within this block are managed by 'conda init' !!
-	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
+	# eval /Users/hollandgibson/miniforge3/bin/conda "shell.fish" "hook" $argv | source
 	# <<< conda initialize <<<
 end
