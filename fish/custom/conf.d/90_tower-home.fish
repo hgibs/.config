@@ -18,6 +18,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	# move asciinema config (which disables automatic uploading)
 	set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
+	# git credential helper
+	set -gx GCM_CREDENTIAL_STORE "cache"
+
 	fish_add_path -p "$HOME/.local/bin"
 	fish_add_path -a "$HOME/.cargo/bin"
 	# fish_add_path -a "$HOME/miniforge3/bin"
