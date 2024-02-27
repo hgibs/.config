@@ -84,3 +84,9 @@ abbr --add tgra "terragrunt run-all apply"
 
 ## yt-dlp
 abbr --add --position anywhere -- ytplaylist "-o \"%(playlist_index&{} - |)s%(title)s.%(ext)s\""
+
+# git abbrs
+abbr --add gfa 'git fetch --all --prune --tags'
+abbr --add gstaa 'git stash --all'
+abbr --add gbl 'git blame -b -w -C -C -C'
+abbr --add gbu 'git branch -vv --set-upstream-to origin/(__git.current_branch) (__git.current_branch)'
