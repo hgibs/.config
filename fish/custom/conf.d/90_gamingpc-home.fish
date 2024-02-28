@@ -11,6 +11,7 @@ if test (ip -o link show enp9s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head
 
     set -gx HELIX_RUNTIME $HOME/.config/helix/runtime
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
+    set -gx KITTY_CONFIG_DIRECTORY $HOME/kitty/linux/kitty.conf
 
     # colorful less!
     set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
@@ -23,8 +24,8 @@ if test (ip -o link show enp9s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head
 
     # enable byobu
     set -g BYOBU_ENABLE true
-    # >>> conda initialize >>>
-    # !! Contents within this block are managed by 'conda init' !!
-    eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" hook $argv | source
-    # <<< conda initialize <<<
+
+    # set up conda
+    eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+
 end
