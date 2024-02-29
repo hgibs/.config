@@ -17,7 +17,8 @@ if test $is_darwin
         # set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
         set -gx GNUPGHOME $HOME/.gnupg/macos # use secure (touchid)
         set -gx KUBECONFIG $HOME/.kube/config.yaml
-        set -gx KITTY_CONFIG_DIRECTORY $HOME/kitty/macos/kitty.conf
+        set -gx KITTY_CONFIG_DIRECTORY $HOME/.config/kitty/macos
+        set -gx ZELLIJ_CONFIG_DIR $HOME/.config/zellij/macos_config
 
         fish_add_path -a /Users/hollandgibson/.miniforge3/bin
         fish_add_path -a "/Users/hollandgibson/Library/Application Support/Coursier/bin"
