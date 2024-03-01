@@ -8,3 +8,19 @@ set fish_color_comment AAA
 set fish_color_operator brmagenta
 # set fish_color_error white
 set fish_color_error brred
+
+if set -q _identifier
+ # do nothing
+else
+  if command -v ip >/dev/null 2>&1
+    set -U _identifier (ip -j link show | jq -r '.[] | select(.ifname | test("en.*")) | .address')
+  else if command -v ifconfig >/dev/null 2>&1
+    if ifconfig -a | grep -q en0
+      set -U _identifier (ifconfig en0 | grep ether | awk '{print $2}')
+    else
+      echo "Could not identify with ifconfig!"
+    end
+  else
+    echo "ip and ifconfig both not present - cannot identify!"
+  end
+end
