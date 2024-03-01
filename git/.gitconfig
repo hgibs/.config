@@ -2,6 +2,7 @@
 [user]
 	name = Holland Gibson
 	email = holland@hollandgibson.com
+	signingkey = /Users/hollandgibson/.ssh/secretive.github.pub
 
 [pager]
     diff = delta
@@ -21,12 +22,14 @@
 
 [core]
 	excludesfile = /Users/hollandgibson/.gitignore_global
+	pager = less -F -X
 
 [pull]
-	rebase = false
+	rebase = true
 
 [push]
-	autoSetupRemote = true
+	AutoSetupRemote = true
+	default = simple
 
 [filter "lfs"]
 	clean = git-lfs clean -- %f
@@ -42,4 +45,18 @@
 [commit]
 	gpgSign = 1
 [gpg]
-	program = /opt/homebrew/bin/gpg
+	format = ssh
+[branch]
+	autosetupmerge = always
+[difftool "sourcetree"]
+	cmd = opendiff \"$LOCAL\" \"$REMOTE\"
+	path = 
+[mergetool "sourcetree"]
+	cmd = /Applications/Sourcetree.app/Contents/Resources/opendiff-w.sh \"$LOCAL\" \"$REMOTE\" -ancestor \"$BASE\" -merge \"$MERGED\"
+	trustExitCode = true
+[rerere]
+	enabled = true
+[alias]
+	staash = stash --all
+[column]
+	ui = auto
