@@ -56,7 +56,7 @@ rsync -aqP \
   --exclude=".local/lib" \
   --exclude=".cache" \
   --exclude=".m2/repository" \
-  /home/hgibson/ \
+  $HOME/ \
   $output_path
 
 if test $count -ge 3;
