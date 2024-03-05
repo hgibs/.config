@@ -85,8 +85,5 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	# add NVM setup
 	set -gx NVM_DIR "$HOME/.nvm"
 	
-	# >>> conda initialize >>>
-	# !! Contents within this block are managed by 'conda init' !!
-	# eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
-	# <<< conda initialize <<<
+	eval $HOME/miniforge3/bin/conda "shell.fish" "hook" $argv | source
 end
