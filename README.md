@@ -1,5 +1,18 @@
 # Installation
 
+## Current Work
+
+
+Need to improve the startup time
+```
+mkdir -p /tmp/fish_profiling
+fish --profile-startup /tmp/fish_profiling/fish.profile
+sort -nk2 /tmp/fish_profiling/fish.profile | tee /tmp/fish_profiling/fish.profile.sorted
+```
+
+Currently at 177,620 μs (CCRi laptop)
+
+
 ## Assumptions
 `git` is already installed.
 
