@@ -12,7 +12,6 @@ if test "$_identifier" = "9c:6b:00:1d:ad:d4"
 
     set -gx HELIX_RUNTIME $HOME/.config/helix/runtime
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
-    set -gx KITTY_CONFIG_DIRECTORY $HOME/kitty/linux/kitty.conf
 
     # colorful less!
     set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"

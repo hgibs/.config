@@ -17,7 +17,6 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     # set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
     set -gx GNUPGHOME $HOME/.gnupg/macos # use secure (touchid)
     set -gx KUBECONFIG $HOME/.kube/config.yaml
-    set -gx KITTY_CONFIG_DIRECTORY $HOME/.config/kitty/macos
     set -gx ZELLIJ_CONFIG_DIR $HOME/.config/zellij/macos_config
 
     fish_add_path -a /Users/hollandgibson/.miniforge3/bin
@@ -63,6 +62,6 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
-    # eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
+    eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
     # <<< conda initialize <<<
 end
