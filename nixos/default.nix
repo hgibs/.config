@@ -1,10 +1,11 @@
 # Edit this configuration file to define what should be installed on
 # your system.  Help is available in the configuration.nix(5) man page
 # and in the NixOS manual (accessible by running ‘nixos-help’).
-
-{ config, pkgs, ... }:
-
 {
+  config,
+  pkgs,
+  ...
+}: {
   boot.loader = {
     efi.canTouchEfiVariables = true;
     grub = {
@@ -12,7 +13,7 @@
       enable = true;
       theme = "sleek-grub-theme";
       useOsProber = true;
-    }
+    };
     systemd-boot.enable = true;
   };
   environment.systemPackages = with pkgs; [
@@ -38,7 +39,7 @@
   ];
   environment.variables.EDITOR = "hx";
   fonts.packages = with pkgs; [
-    (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
+    (nerdfonts.override {fonts = ["FiraCode" "Hack"];})
   ];
   hardware.pulseaudio.enable = false;
   i18n.defaultLocale = "en_US.UTF-8";
@@ -54,17 +55,19 @@
     LC_TIME = "en_US.UTF-8";
   };
   networking = {
-    hostName = "nixos"; 
-    wireless.enable = true; 
-    interfaces.eth0.ipv4.addresses = [ {
-      address = "10.34.0.79";
-      prefixLength = 16;
-    } ];
+    hostName = "nixos";
+    wireless.enable = true;
+    interfaces.eth0.ipv4.addresses = [
+      {
+        address = "10.34.0.79";
+        prefixLength = 16;
+      }
+    ];
     defaultGateway = "10.34.0.1";
-    nameservers = [ "10.33.11.201" ];
+    nameservers = ["10.33.11.201"];
     networkmanager.enable = true;
   };
-  nix.settings.experimental-features = [ "nix-command" "flakes" ];
+  nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
   security = {
     rtkit.enable = true;
@@ -73,8 +76,8 @@
   services = {
     desktopManager.plasma5.enable = true;
     openssh = {
-        enable = true;
-     };
+      enable = true;
+    };
     pipewire = {
       enable = true;
       alsa.enable = true;
@@ -101,19 +104,19 @@
     hollandgibson = {
       isNormalUser = true;
       description = "Holland Gibson";
-      extraGroups = [ "networkmanager" "wheel" ];
+      extraGroups = ["networkmanager" "wheel"];
       packages = with pkgs; [
         firefox
         kate
       ];
-      openssh.authorizedKeys.keys = [ "ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBillLJ5wk4c/gN6NLQjypX/5jOL091Cd708K7WLUHIpqq6STP5A63TwWqay7LnGABpcJJFOGtodFo8kWa3xs6w=" ];
+      openssh.authorizedKeys.keys = ["ecdsa-sha2-nistp256 AAAAE2VjZHNhLXNoYTItbmlzdHAyNTYAAAAIbmlzdHAyNTYAAABBBBillLJ5wk4c/gN6NLQjypX/5jOL091Cd708K7WLUHIpqq6STP5A63TwWqay7LnGABpcJJFOGtodFo8kWa3xs6w="];
       shell = pkgs.fish;
     };
     ansible = {
       description = "Ansible Management";
       isNormalUser = true;
-      extraGroups = [ "wheel" ];
-      openssh.authorizedKeys.keys = [ "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvXLv0F0vjHdipn075hM4HYtR6okAyhWADc5Nj7epSo ansible@home.hollandgibson.com" ];
+      extraGroups = ["wheel"];
+      openssh.authorizedKeys.keys = ["ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIGvXLv0F0vjHdipn075hM4HYtR6okAyhWADc5Nj7epSo ansible@home.hollandgibson.com"];
       useDefaultShell = true;
     };
   };
@@ -124,7 +127,7 @@
     # can set helix as default editor?
     fish.enable = true;
     gnupg.agent = {
-     enable = true;
+      enable = true;
       enableSSHSupport = true;
     };
     sleek-grub-theme.withStyle = "orange";
