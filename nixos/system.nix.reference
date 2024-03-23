@@ -1,0 +1,12 @@
+  networking = {
+    hostName = "nixos"; 
+    wireless.enable = true; 
+    interfaces.eth0.ipv4.addresses = [ {
+      address = "10.34.0.79";
+      prefixLength = 16;
+    } ];
+    defaultGateway = "10.34.0.1";
+    nameservers = [ "10.33.11.201" ];
+    networkmanager.enable = true;
+  };
+
