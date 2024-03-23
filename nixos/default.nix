@@ -5,28 +5,38 @@
 { config, pkgs, ... }:
 
 {
-  boot.loader.systemd-boot.enable = true;
-  boot.loader.efi.canTouchEfiVariables = true;
+  boot.loader = {
+    efi.canTouchEfiVariables = true;
+    grub = {
+      device = "nodev";
+      enable = true;
+      theme = "sleek-grub-theme";
+      useOsProber = true;
+    }
+    systemd-boot.enable = true;
+  };
   environment.systemPackages = with pkgs; [
-    openssh
-    kitty
-    helix
-    python312
     broot
-    tealdeer
-    zellij
-    git
-    eza
-    ripgrep
-    broot
-    starship
-    jq
     byobu
-    tmux
-    zoxide
-    noto-fonts
+    eza
+    git
+    helix
+    jq
+    kitty
     nerdfonts
+    noto-fonts
+    openssh
+    python312
+    rustup
+    ripgrep
+    sleek-grub-theme
+    starship
+    tealdeer
+    tmux
+    zellij
+    zoxide
   ];
+  environment.variables.EDITOR = "hx";
   fonts.packages = with pkgs; [
     (nerdfonts.override { fonts = [ "FiraCode" "Hack" ]; })
   ];
@@ -53,8 +63,8 @@
     defaultGateway = "10.34.0.1";
     nameservers = [ "10.33.11.201" ];
     networkmanager.enable = true;
-
   };
+  nix.settings.experimental-features = [ "nix-command" "flakes" ];
   nixpkgs.config.allowUnfree = true;
   security = {
     rtkit.enable = true;
@@ -111,10 +121,22 @@
   # started in user sessions.
   # programs.mtr.enable = true;
   programs = {
+    # can set helix as default editor?
     fish.enable = true;
     gnupg.agent = {
      enable = true;
       enableSSHSupport = true;
+    };
+    sleek-grub-theme.withStyle = "orange";
+    steam = {
+      enable = true;
+      remotePlay.openFirewall = true;
+      dedicatedServer.openFirewall = true;
+      steam = {
+        enable = true;
+        remotePlay.openFirewall = true;
+        dedicatedServer.openFirewall = true;
+      };
     };
   };
 }
