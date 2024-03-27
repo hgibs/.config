@@ -31,7 +31,7 @@
     python312
     rustup
     ripgrep
-    sleek-grub-theme
+    # sleek-grub-theme
     starship
     steam
     tealdeer
@@ -69,7 +69,7 @@
     nameservers = ["10.33.11.201"];
     networkmanager = {
       enable = true;
-      unmanaged = [ "eth0" ];
+      unmanaged = ["eth0"];
     };
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
