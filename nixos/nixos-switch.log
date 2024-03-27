@@ -1,0 +1,89 @@
+error:
+       … while evaluating the attribute 'config'
+
+         at /nix/store/fmnp1bhd03zm7y49s4nqkm1n4k9nfsvx-nixos-23.11/nixos/lib/modules.nix:320:9:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |         ^
+          321|         _module = checked (config._module);
+
+       … while calling the 'seq' builtin
+
+         at /nix/store/fmnp1bhd03zm7y49s4nqkm1n4k9nfsvx-nixos-23.11/nixos/lib/modules.nix:320:18:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          321|         _module = checked (config._module);
+
+       (stack trace truncated; use '--show-trace' to show the full trace)
+
+       error: syntax error, unexpected '}', expecting ';'
+
+       at /home/hollandgibson/dotfiles/nixos/default.nix:153:5:
+
+          152|       ]
+          153|     };
+             |     ^
+          154|     # sleek-grub-theme.withStyle = "orange";
+building Nix...
+error:
+       … while evaluating the attribute 'config'
+
+         at /nix/store/fmnp1bhd03zm7y49s4nqkm1n4k9nfsvx-nixos-23.11/nixos/lib/modules.nix:320:9:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |         ^
+          321|         _module = checked (config._module);
+
+       … while calling the 'seq' builtin
+
+         at /nix/store/fmnp1bhd03zm7y49s4nqkm1n4k9nfsvx-nixos-23.11/nixos/lib/modules.nix:320:18:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          321|         _module = checked (config._module);
+
+       (stack trace truncated; use '--show-trace' to show the full trace)
+
+       error: syntax error, unexpected '}', expecting ';'
+
+       at /home/hollandgibson/dotfiles/nixos/default.nix:153:5:
+
+          152|       ]
+          153|     };
+             |     ^
+          154|     # sleek-grub-theme.withStyle = "orange";
+building the system configuration...
+error:
+       … while evaluating the attribute 'config.system.build.toplevel'
+
+         at /nix/store/fmnp1bhd03zm7y49s4nqkm1n4k9nfsvx-nixos-23.11/nixos/lib/modules.nix:320:9:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |         ^
+          321|         _module = checked (config._module);
+
+       … while calling the 'seq' builtin
+
+         at /nix/store/fmnp1bhd03zm7y49s4nqkm1n4k9nfsvx-nixos-23.11/nixos/lib/modules.nix:320:18:
+
+          319|         options = checked options;
+          320|         config = checked (removeAttrs config [ "_module" ]);
+             |                  ^
+          321|         _module = checked (config._module);
+
+       (stack trace truncated; use '--show-trace' to show the full trace)
+
+       error: syntax error, unexpected '}', expecting ';'
+
+       at /home/hollandgibson/dotfiles/nixos/default.nix:153:5:
+
+          152|       ]
+          153|     };
+             |     ^
+          154|     # sleek-grub-theme.withStyle = "orange";
