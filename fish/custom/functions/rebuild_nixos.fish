@@ -16,12 +16,15 @@ function rebuild_nixos
 
     echo "NixOS Rebuilding..."
 
-    sudo nixos-rebuild switch &>nixos-switch.log || (cat nixos-switch.log | grep --color error && return 1)
-
+    sudo nixos-rebuild switch &>nixos-switch.log || _rebuild_nixos_helper
     # Get current generation metadata
     set -l current (nixos-rebuild list-generations | grep current)
 
     # Commit all changes in the nixos dir only witih the generation metadata
     git add ./
     git commit -m "nixos-rebuild to: $current"
+end
+
+function _rebuild_nixos_helper
+    cat "$HOME/dotfiles/nixos/nixos-switch.log" | grep --color error && return 1
 end
