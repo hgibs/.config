@@ -12,7 +12,7 @@
       device = "nodev";
       enable = true;
       theme = "sleek-grub-theme";
-      useOsProber = true;
+      useOSProber = true;
     };
     systemd-boot.enable = true;
   };
@@ -24,6 +24,7 @@
     helix
     jq
     kitty
+    neofetch
     nerdfonts
     noto-fonts
     openssh
@@ -32,6 +33,7 @@
     ripgrep
     sleek-grub-theme
     starship
+    steam
     tealdeer
     tmux
     zellij
@@ -74,7 +76,6 @@
     sudo.wheelNeedsPassword = false;
   };
   services = {
-    desktopManager.plasma5.enable = true;
     openssh = {
       enable = true;
     };
@@ -92,13 +93,27 @@
     printing.enable = true;
     xserver = {
       enable = true;
+      desktopManager.plasma5.enable = true;
       displayManager.sddm.enable = true;
       layout = "us";
       xkbVariant = "";
     };
   };
   sound.enable = true;
-  system.stateVersion = "23.11"; # Did you read the comment?
+  system = {
+    autoUpgrade = {
+      enable = true;
+      dates = "09:00";
+      flake = inputs.self.outPath;
+      flags = [
+        "--update-input"
+        "nixpkgs"
+        "-L"
+      ];
+      randomizedDelaySec = "45min";
+    };
+    stateVersion = "23.11"; # Did you read the comment?
+  };
   time.timeZone = "America/New_York";
   users.users = {
     hollandgibson = {
@@ -130,16 +145,17 @@
       enable = true;
       enableSSHSupport = true;
     };
-    sleek-grub-theme.withStyle = "orange";
+    nix-ld = {
+      enable = true;
+      libraries = with pkgs; [
+        # Add any missing dynamic libraries for unpackaged programs here, NOT in environment.systemPackages
+      ]
+    };
+    # sleek-grub-theme.withStyle = "orange";
     steam = {
       enable = true;
       remotePlay.openFirewall = true;
       dedicatedServer.openFirewall = true;
-      steam = {
-        enable = true;
-        remotePlay.openFirewall = true;
-        dedicatedServer.openFirewall = true;
-      };
     };
   };
 }
