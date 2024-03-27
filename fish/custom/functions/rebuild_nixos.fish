@@ -9,7 +9,7 @@ function rebuild_nixos
         return 0
     end
 
-    nix --extra-experimental-features nix-command fmt ./ >/dev/null || nix --extra-experimental-features nix-command fmt ./ && echo "nix fmt failed!" && return 1
+    nix --extra-experimental-features nix-command fmt ./ &>/dev/null || _rebuild_nixos_helper_on_fmt_issue
     
     # Shows your changes
     git diff -U0 '*.nix'
@@ -27,4 +27,9 @@ end
 
 function _rebuild_nixos_helper
     cat "$HOME/dotfiles/nixos/nixos-switch.log" | grep --color error && return 1
+end
+
+function _rebuild_nixos_helper_on_fmt_issue
+    # on fails
+    nix --extra-experimental-features nix-command fmt ./ && echo "nix fmt failed!" && return 1
 end
