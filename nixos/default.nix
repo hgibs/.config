@@ -31,7 +31,7 @@
     python312
     rustup
     ripgrep
-    # sleek-grub-theme
+    sleek-grub-theme
     starship
     steam
     tealdeer

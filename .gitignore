@@ -1,5 +1,7 @@
 .DS_Store
 
+nixos/*.log
+
 # secrets here
 rclone.conf
 scw/config.yaml
