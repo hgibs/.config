@@ -11,10 +11,10 @@
     grub = {
       device = "nodev";
       enable = true;
-      theme = "sleek-grub-theme";
+      # theme = "sleek-grub-theme";
       useOSProber = true;
     };
-    systemd-boot.enable = true;
+    systemd-boot.enable = false;
   };
   environment.systemPackages = with pkgs; [
     broot
@@ -31,7 +31,7 @@
     python312
     rustup
     ripgrep
-    sleek-grub-theme
+    # sleek-grub-theme
     starship
     steam
     tealdeer
@@ -67,7 +67,10 @@
     ];
     defaultGateway = "10.34.0.1";
     nameservers = ["10.33.11.201"];
-    networkmanager.enable = true;
+    networkmanager = {
+      enable = true;
+      unmanaged = [ "eth0" ];
+    };
   };
   nix.settings.experimental-features = ["nix-command" "flakes"];
   nixpkgs.config.allowUnfree = true;
@@ -104,7 +107,6 @@
     autoUpgrade = {
       enable = true;
       dates = "09:00";
-      flake = inputs.self.outPath;
       flags = [
         "--update-input"
         "nixpkgs"
@@ -149,7 +151,7 @@
       enable = true;
       libraries = with pkgs; [
         # Add any missing dynamic libraries for unpackaged programs here, NOT in environment.systemPackages
-      ]
+      ];
     };
     # sleek-grub-theme.withStyle = "orange";
     steam = {
