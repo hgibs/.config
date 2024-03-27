@@ -1,6 +1,6 @@
 function rebuild_nixos 
     #adjusted from: https://gist.github.com/0atman/1a5133b842f929ba4c1e195ee67599d5
-    $EDITOR ~/dotfiles/nixos/*
+    $EDITOR ~/dotfiles/nixos/default.nix
     cd "$HOME/dotfiles/nixos" || return 1
 
     # skip if no changes
@@ -9,7 +9,7 @@ function rebuild_nixos
         return 0
     end
 
-    nix fmt ./ >/dev/null || nix fmt ./ && echo "nix fmt failed!" && return 1
+    nix --extra-experimental-features nix-command fmt ./ >/dev/null || nix --extra-experimental-features nix-command fmt ./ && echo "nix fmt failed!" && return 1
     
     # Shows your changes
     git diff -U0 '*.nix'
