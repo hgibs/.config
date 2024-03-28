@@ -27,9 +27,11 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 	abbr mst 'mvn -Dmaven.test.skip=true'
 	abbr m 'mvn'
 	abbr mt 'mvn test'
+	abbr mtd 'mvn test -Dmaven.surefire.debug'
 	abbr mc 'mvn clean'
 	abbr mcd 'mvn clean deploy'
 	abbr mcs 'mvn clean site'
+	# abbr mv 'mvn verify' # can't do that and still `mv` files!
 	abbr msc 'mvn scala:console'
 	abbr mep 'mvn help:effective-pom -Dverbose=true -Doutput=effective.xml'
 	abbr ml 'mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list'
@@ -59,6 +61,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
 	# add pip to path
 	fish_add_path --prepend "$HOME/.local/bin"
+	
+	# add jdtls to path
+	fish_add_path --append "$HOME/Applications/jdtls/bin"
 	
 	# add spotbugs to end of path
 	# set -gxa PATH "$HOME/Developer/spotbugs-utils"
