@@ -11,6 +11,8 @@ abbr --add tf "terraform"
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
 
+abbr --add weather "curl wttr.in/Charlottesville"
+
 abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
 abbr --add reset_fish 'source ~/.config/fish/config.fish && gpgconf --kill gpg-agent'
 
