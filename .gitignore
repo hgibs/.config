@@ -20,3 +20,4 @@ iterm2/AppSupport
 packer
 packer/checkpoint*
 zed/.tmp*
+yarn
