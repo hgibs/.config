@@ -6,3 +6,4 @@ source password.secret
 
 restic -r sftp:macb14@nas.home.hollandgibson.com:/mnt/Saturn/macbook14/restic/teal cat config
 
+restic -r sftp:macb14@nas.home.hollandgibson.com:/mnt/Saturn/macbook14/restic/teal backup "$HOME"
