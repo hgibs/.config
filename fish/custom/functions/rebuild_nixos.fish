@@ -4,7 +4,7 @@ function rebuild_nixos
     cd "$HOME/dotfiles/nixos" || return 1
 
     # skip if no changes
-    if git diff --quiet '*.nix'; then
+    if git diff --quiet '*.nix'
         echo "No changes detected, exiting."
         return 0
     end
