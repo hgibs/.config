@@ -1,0 +1,93 @@
+[user]
+	name = Holland Gibson
+	email = holland.gibson@ccri.com
+[core]
+	attributesfile = ~/.gitattributes
+	pager = delta --dark
+[color]
+	ui = true
+[alias]
+	lg50 = "!git log --graph --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-50s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{49}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }' | less -R"
+	pub = !sh -c 'git rebase -i -p origin/`git symbolic-ref HEAD | xargs -n 1 basename` && git push origin `git symbolic-ref HEAD | xargs -n 1 basename`'
+	conflicts = diff --name-only --diff-filter=U
+	lg80 = "!git log --graph --abbrev-commit --date=relative --pretty=format:'%x00%h%x00%s%x00%cd%x00%an%x00%d' | gawk -F '\\0' '{ printf \"%s\\033[31m%s\\033[0m %-80s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }' | less -R"
+	lt = "!git log --graph --abbrev-commit --color=always --abbrev-commit --pretty=format:'%h,%s,%d,%cr,%an,%cn' | gawk -F ',' '{ printf \"%s \\033[31m%s\\033[0m %-80s \\033[32m%14s\\033[0m \\033[30;1m%s\\033[0m\\033[33m%s\\n\", $1, $2, gensub(/(.{79}).{2,}/, \"\\\\1…\",\"g\",$3), $4, $5, $6 }'"
+	lg = "!git log --graph --abbrev-commit --color=always --abbrev-commit --pretty=format:'%h@@@%s@@@%cr@@@%an@@@(%cn)@@@%d' --date=relative | gawk -F'@@@' '{ printf \"%s \\033[31m%-60s\\033[0m \\033[32m%-18s\\033[0m \\033[30;1m%-20s\\033[0m\\033[33m%-15s\\033[34m%-10s\\033[0m\\n\", $1, substr($2,0,60), $3, $4, $5, $6, $7 }' | less -R"
+	merge-main = !git checkout main && git pull origin main && git checkout - && git merge main
+	chillzone = !sh -c 'git fmerge3'
+	bojanglin = !sh -c 'git inrev3'
+	root = rev-parse --show-toplevel
+	staash = stash --all
+[diff]
+	tool = meld
+	prompt = false
+	wsErrorHighlight = all
+	colorMoved = default
+[difftool]
+	prompt = false
+[pager]
+	diff = delta
+	log = less -F
+[merge]
+	tool = meld
+	conflictstyle = diff3
+[pull]
+	rebase = true
+[interactive]
+	diffFilter = delta --color-only
+	singleKey = true
+[push]
+	default = current
+[rerere]
+	enabled = true
+[column]
+	ui = auto
+[branch]
+	sort = -committerdate
+[maintenance]
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/data-processing
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/parent-pom
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/simq9
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/lib
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/common-cicd
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/gitlab-templates
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/java-utils
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/data-models
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers-monorepo
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/processors
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/uci-libs
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/blue-optix
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/webhookd
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/cop
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/k8s-investigation
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/navy
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/gitlab-profile
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/crusher
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/cmcc
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/deployments/cmcc-helm-deployment
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/cyber/utils
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/cyber/docs
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/cyber/cert-manager
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/cyber/grype-utils
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/cyber/spotbugs-utils
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/templates/maven
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/universal-converter
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/templates/generic-image
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/codespell
+	repo = /home/ghgibson/Developer/ccri-gitlab/config-scripts/ci-cluster
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/shellcheck
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/prettier
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/dind-nontls
+	repo = /home/ghgibson/Developer/ccri-gitlab/optix-edge/containers/yaml-utils
+[filter "lfs"]
+	clean = git-lfs clean -- %f
+	smudge = git-lfs smudge -- %f
+	process = git-lfs filter-process
+	required = true
+[lfs]
+	locksverify = true
+[delta]
+	navigate = true
+	dark = true
+	line-numbers = true
+	side-by-side = true
