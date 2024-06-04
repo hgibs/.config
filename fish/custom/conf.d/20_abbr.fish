@@ -6,8 +6,8 @@
 abbr --add zshconfig "subl ~/.zshrc"
 abbr --add sshconfig "subl ~/.ssh/config"
 abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
-abbr --add tg "terragrunt"
-abbr --add tf "terraform"
+abbr --add tg terragrunt
+abbr --add tf terraform
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
 
@@ -16,7 +16,7 @@ abbr --add weather "curl wttr.in/Charlottesville"
 abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
 abbr --add reset_fish 'source ~/.config/fish/config.fish && gpgconf --kill gpg-agent'
 
-abbr --add t 'tldr'
+abbr --add t tldr
 # abbr --add m '/usr/bin/man'
 abbr --add p 'ping -o'
 
@@ -50,27 +50,33 @@ abbr --add tree3 'tree -L 3'
 abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
 
 # abbr --add psf "ps --format '{{.Names}}{{.Status}}' | column -t -s ' '"
-abbr --add dps "docker_ps_pretty"
+abbr --add dps docker_ps_pretty
 abbr --add watchf "watch -dcx $FISH -c"
 abbr --add watchdps "watch -dcx $FISH -c docker_ps_pretty"
 
 abbr --add l "eza -l --header --git --time-style=iso"
-abbr --add md 'mkdir -p'
-abbr --add t 'tldr'
+abbr --add ls "eza -la --header --git --time-style=long-iso"
+abbr --add lsg "eza -lag --header --git --time-style=long-iso"
+
+abbr --add buu "brew update && brew upgrade"
+
+
+abbr --add ... "../.."
+abbr --add .... "../../.."
+abbr --add ..... "../../../.."
 
 switch (uname -o)
-case '*Linux'
-    # abbr --add open 'xdg-open' # fish includes this function
-    abbr --add cb "| xsel -clipboard -input"
-    abbr --add pb "xsel -clipboard -output |"
-    abbr --add cl "xsel -clipboard -clear"
-case 'Darwin'
-    abbr --add cb "| pbcopy"
-    abbr --add pb "pbpaste |"
+    case '*Linux'
+        # abbr --add open 'xdg-open' # fish includes this function
+        abbr --add cb "| xsel -clipboard -input"
+        abbr --add pb "xsel -clipboard -output |"
+        abbr --add cl "xsel -clipboard -clear"
+    case Darwin
+        abbr --add cb "| pbcopy"
+        abbr --add pb "pbpaste |"
 end
 
 abbr --add !! --position anywhere --function last_history_item
-abbr --add buu "brew update && brew upgrade"
 abbr --add sauu "sudo apt update && sudo apt upgrade -y"
 
 abbr --add tree2 'tree -L 2'
@@ -94,7 +100,7 @@ abbr -a L --position anywhere --set-cursor "% | less"
 abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
 abbr --add watchf "watch -x $FISH -c"
 abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
-abbr --add vfn "vf new -p" (command -v python3.12) "(two_dirs \$PWD | tr / -)"
+abbr --add vfn "vf new -p" (command -v python3.11) "(two_dirs \$PWD | tr / -)"
 abbr --add vfa "vf activate (two_dirs \$PWD | tr / -)"
 
 
@@ -120,15 +126,15 @@ abbr --add randtext "$RANDOM_SOURCE '[:alnum:]' 64"
 
 # abbr --add m '/usr/bin/man'
 # abbr --add tf "terraform"
-abbr --add dps "docker_ps_pretty"
+abbr --add dps docker_ps_pretty
 abbr --add gg 'br --conf ~/.config/broot/git-diff-conf.toml --git-status'
 abbr --add godu '/opt/homebrew/Cellar/gdu/5.*/bin/gdu'
 abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
 abbr --add reset_fish 'source ~/.config/fish/config.fish && gpgconf --kill gpg-agent'
 abbr --add sshconfig "subl ~/.ssh/config"
 # terragrunt
-abbr --add tf "terraform"
-abbr --add tg "terragrunt"
+abbr --add tf terraform
+abbr --add tg terragrunt
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
 
@@ -141,3 +147,4 @@ abbr --add gfa 'git fetch --all --prune --tags'
 abbr --add gstaa 'git stash --all'
 abbr --add gbl 'git blame -b -w -C -C -C'
 abbr --add gbu 'git branch -vv --set-upstream-to origin/(__git.current_branch) (__git.current_branch)'
+abbr --add gd 'git difftool'
