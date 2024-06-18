@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 function update_helmfile --description 'Updates helmfile to latest release'
     if command -vq helmfile
         set -l helmfile_path (which helmfile)
