@@ -48,6 +48,10 @@ abbr --add tree3 'tree -L 3'
 # abbr --add git ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 
 abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
+abbr --add mk 'minikube kubectl --'
+abbr --add hi 'helmfile --interactive'
+abbr --add hia 'helmfile --interactive apply'
+abbr --add ha 'helmfile apply'
 
 # abbr --add psf "ps --format '{{.Names}}{{.Status}}' | column -t -s ' '"
 abbr --add dps docker_ps_pretty
@@ -147,4 +151,3 @@ abbr --add gfa 'git fetch --all --prune --tags'
 abbr --add gstaa 'git stash --all'
 abbr --add gbl 'git blame -b -w -C -C -C'
 abbr --add gbu 'git branch -vv --set-upstream-to origin/(__git.current_branch) (__git.current_branch)'
-abbr --add gd 'git difftool'
