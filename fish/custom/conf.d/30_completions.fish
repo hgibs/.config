@@ -9,4 +9,8 @@ if test (uname -o) != Darwin
     end
 end
 
+if command -sq helmfile
+    helmfile completion fish | source
+end
+
 fzf --fish | source
