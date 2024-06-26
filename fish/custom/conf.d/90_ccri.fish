@@ -12,6 +12,7 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
     set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/git_readonly_personal_token)
+    set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_write_dev_token)
 
     # abbr -e ls # wait for exa to become available
 
