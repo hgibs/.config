@@ -1,9 +1,10 @@
 function update_helmfile --description 'Updates helmfile to latest release'
-    # set -l helmfile_path (which helmfile)
-    echo -e "Version before:\n" (helmfile --version) "\n"
-    # download to temp location
-    # set -l tmp_path (mktemp)
-
+    if command -vq helmfile
+        set -l helmfile_path (which helmfile)
+        echo -e "Version before:\n" (helmfile --version) "\n"
+    else
+        echo "helmfile not present"
+    end
     set -g proc_code (uname -m)
     if test "$proc_code" = x86_64
         set -g proc_code amd64
@@ -20,9 +21,12 @@ function update_helmfile --description 'Updates helmfile to latest release'
     set -l latest_url (curl -s https://api.github.com/repos/helmfile/helmfile/releases/latest \
 		| jq -r ".assets[] | select(.name | test(\"$file_regex\")) | .browser_download_url")
 
-    # set -l download_path "$tmpdir/helmfile.tar.gz"
-    rm -f $helmfile_path
-    curl -sL "$latest_url" | tar xz helmfile -C "$HOME/bin"
+    # echo $latest_url
+
+    if test -n "$helmfile_path"
+        rm -f $helmfile_path
+    end
+    curl -sL "$latest_url" | tar xz -C "$HOME/bin" helmfile
 
     if test $status -ne 0
         echo "Download failed!" >&2
