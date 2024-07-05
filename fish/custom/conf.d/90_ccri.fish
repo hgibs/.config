@@ -15,6 +15,7 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_write_dev_token)
 
     # abbr -e ls # wait for exa to become available
+    abbr bats 'TERM=xterm bats'
 
     abbr record_container 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_container.kdl"'
     abbr record_crush 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_crusher.kdl"'
