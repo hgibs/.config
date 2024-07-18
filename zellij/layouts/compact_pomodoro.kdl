@@ -1,0 +1,16 @@
+layout {
+    pane size=1 borderless=true {
+        plugin location="zellij:compact-bar"
+    }
+	pane split_direction="vertical" {
+	    pane
+	    pane split_direction="horizontal" {
+    	    pane command="/home/ghgibson/miniforge3/bin/timer" size="20%" {
+    	        args "20m"
+    	    }
+    	    pane size="80%"
+    	}
+	}
+}
+
+
