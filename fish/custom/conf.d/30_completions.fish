@@ -10,3 +10,7 @@ end
 if command -sq helmfile
     helmfile completion fish | source
 end
+
+if command -sq fzf
+    fzf --fish | source
+end
