@@ -14,5 +14,3 @@ end
 if command -sq fzf
     fzf --fish | source
 end
-
-fzf --fish | source

@@ -58,6 +58,7 @@ abbr --add ha 'helmfile apply'
 # abbr --add psf "ps --format '{{.Names}}{{.Status}}' | column -t -s ' '"
 abbr --add dr "docker run --rm -it"
 abbr --add dps docker_ps_pretty
+abbr --add dr "docker run --rm -it"
 abbr --add watchf "watch -dcx $FISH -c"
 abbr --add watchdps "watch -dcx $FISH -c docker_ps_pretty"
 
