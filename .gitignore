@@ -10,3 +10,6 @@ fish/functions
 iterm2/AppSupport
 packer
 packer/checkpoint*
+yarn
+zed/**/*.mdb
+zed/.tmp*
