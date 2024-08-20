@@ -19,7 +19,7 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     set -gx KUBECONFIG $HOME/.kube/config.yaml
     set -gx ZELLIJ_CONFIG_DIR $HOME/.config/zellij/macos_config
 
-    set -gx DICTIONARY "en_US"
+    set -gx DICTIONARY en_US
     set -gx DICPATH "$HOME/.local/share/hunspell"
 
     fish_add_path -a /Users/hollandgibson/.miniforge3/bin
@@ -48,14 +48,16 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     # abbr mounttower 'sshfs holland@k8s-tower.home.hollandgibson.com:/home/holland $HOME/sshfs/tower'
 
     # Wasmer
-    export WASMER_DIR="/Users/hollandgibson/.wasmer"
-    [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+    set -gx WASMER_DIR "/Users/hollandgibson/.wasmer"
+    if test -z "$WASMER_CACHE_DIR"
+        [ -s "$WASMER_DIR/wasmer.sh" ] && source "$WASMER_DIR/wasmer.sh"
+    end
 
     # pre-empt system ruby
-    set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
-    fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
-    set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
-    fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
+    # set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
+    # fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
+    # set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
+    # fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
 
     # adds ~3ms to startup - but defaults to slightly better random source
     # utlimately not worth the hassle but keeping here for useful notes
@@ -65,6 +67,6 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
 
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
-    eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" "hook" $argv | source
+    eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" hook $argv | source
     # <<< conda initialize <<<
 end
