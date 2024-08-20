@@ -21,7 +21,7 @@ abbr --add t tldr
 abbr --add p 'ping -o'
 
 abbr --add md 'mkdir -p'
-abbr --add curl 'curl -#JLO'
+# abbr --add curl 'curl -#JLO'
 abbr --add curlc 'curl -#LOC -'
 
 abbr --add randtext "$RANDOM_SOURCE '[:alnum:]' 64"
