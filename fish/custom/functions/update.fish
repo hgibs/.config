@@ -8,12 +8,20 @@ function update --description 'Updates binary'
     end
 
     switch "$argv[1]"
+        case fzf
+            if command -vq fzf
+                printf "fzf version before:\n"
+                fzf --version
+            end
+            _update_binary --url (_latest_release_url -g junegunn/fzf) fzf
+            rm -rf "$HOME/.config/fish/completions/fzf.fish"
         case helmfile
             if command -vq helmfile
                 printf "helmfile version before:\n"
                 helmfile --version
             end
             _update_binary --url (_latest_release_url -g helmfile/helmfile) helmfile
+            rm -rf "$HOME/.config/fish/completions/helmfile.fish"
         case rust-analyzer
             if command -vq rust-analyzer
                 printf "rust-analyzer version before:\n"
@@ -26,6 +34,11 @@ function update --description 'Updates binary'
     end
 
     if test (uname -o) = Darwin
-        xattr -dr com.apple.quarantine (which $argv[1])
+        if xattr (which $argv[1]) | grep com.apple.quarantine
+            xattr -dr com.apple.quarantine (which $argv[1])
+            printf "Un-quarantined %s\n" (which $argv[1])
+        else
+            printf "No quarantine on %s\n" (which $argv[1])
+        end
     end
 end
