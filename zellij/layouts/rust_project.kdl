@@ -12,7 +12,7 @@ layout {
 	    pane split_direction="vertical" {
 	        pane {
 				focus true
-				command "exa_sh"
+				command "eza_sh"
 				// command "hx" {
 				// 	args "*.toml src/*"
 				// } 
