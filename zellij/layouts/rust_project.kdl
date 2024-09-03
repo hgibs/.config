@@ -1,0 +1,28 @@
+layout {
+	default_tab_template {
+        // the default zellij tab-bar and status bar plugins
+		pane size=1 borderless=true split_direction="horizontal" {
+	        plugin location="zellij:compact-bar"
+	    }
+        pane {
+			children
+		}
+    }
+	tab name="rust" {
+	    pane split_direction="vertical" {
+	        pane {
+				focus true
+				command "eza_sh"
+				// command "hx" {
+				// 	args "*.toml src/*"
+				// } 
+			}
+	        pane split_direction="horizontal" {
+	            pane command="bacon" {
+		            args "check-all"
+		        }
+	            pane
+	        }
+	    }
+	}
+}
