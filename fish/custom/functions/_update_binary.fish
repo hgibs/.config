@@ -67,6 +67,7 @@ function _update_binary --description 'Update a binary given a URL'
     end
 
     set -l extracted_bin (ls -1 | grep "$binary_end_name" | head -n 1)
+    printf "extracted binary: %s" "$extracted_bin"
     cp "$tmpDir/$extracted_bin" "$final_dest"
 
     chmod +x "$final_dest"
