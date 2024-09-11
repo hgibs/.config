@@ -84,7 +84,7 @@ switch (uname -o)
         abbr --add pb "pbpaste |"
 end
 
-abbr --add !! --position anywhere --function last_history_item
+# abbr --add !! --position anywhere --function last_history_item
 abbr --add buu "brew update && brew upgrade"
 abbr --add sauu "sudo apt update && sudo apt upgrade -y"
 
@@ -103,7 +103,7 @@ abbr --add .... "../../.."
 abbr --add ..... "../../../.."
 
 abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
-abbr -a L --position anywhere --set-cursor "% | less"
+# abbr -a L --position anywhere --set-cursor "% | less"
 
 ## Developer stuff
 abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
@@ -149,7 +149,7 @@ abbr --add tgra "terragrunt run-all apply"
 
 
 ## yt-dlp
-abbr --add --position anywhere -- ytplaylist "-o \"%(playlist_index&{} - |)s%(title)s.%(ext)s\""
+# abbr --add --position anywhere -- ytplaylist "-o \"%(playlist_index&{} - |)s%(title)s.%(ext)s\""
 
 # abbr --add git https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 # abbr --add git ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
