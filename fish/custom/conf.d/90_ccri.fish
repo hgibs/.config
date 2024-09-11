@@ -13,15 +13,18 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
     set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/git_readonly_personal_token)
     set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_write_dev_token)
+    set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
     abbr bats 'TERM=xterm bats'
 
+    abbr cvp 'echo "// CVP" (uuidgen | upper) "BEGIN" | string trim | copy'
     abbr record_container 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_container.kdl"'
     abbr record_crush 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_crusher.kdl"'
     abbr record_cmcc 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout.kdl"'
     abbr record_lib 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_lib_layout.kdl"'
     abbr mci 'mvn clean install'
+    abbr mct 'mvn clean test'
     abbr mcv 'mvn clean verify'
     abbr mcis 'mvn clean install -DskipTests'
     abbr mdt 'mvn dependency:tree'
@@ -74,6 +77,10 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     # set -gxa PATH "$HOME/Developer/spotbugs-utils"
     fish_add_path --global --append "$HOME/Developer/spotbugs-utils"
 
+    # fortify paths
+    fish_add_path --append "$HOME/Fortify/Fortify_SCA_24.2.1/bin"
+    fish_add_path --append "$HOME/Fortify/Fortify_Apps_and_Tools_24.2.0/bin"
+
     #default java
     # set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
     set -gx JAVA_HOME "$HOME/jvm/jdk-17.0.2"
@@ -94,6 +101,10 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
     # add NVM setup
     set -gx NVM_DIR "$HOME/.nvm"
+
+    if test -f ~/.asdf/asdf.fish
+        source ~/.asdf/asdf.fish
+    end
 
     eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
 end

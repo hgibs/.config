@@ -1,0 +1,1 @@
+/home/ghgibson/.asdf/completions/asdf.fish
