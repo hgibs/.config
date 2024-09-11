@@ -32,6 +32,8 @@ abbr --add randhex "openssl rand -base64 16 | md5sum | head -c24; echo"
 abbr --add randomsym 'cat /dev/urandom | env LC_CTYPE=C tr -dc a-zA-Z0-9 | head -c 32; echo'
 
 abbr --add gp_ssl 'GIT_SSL_NO_VERIFY=1 git push'
+abbr --add gt 'git tag'
+abbr --add gtd "git for-each-ref --sort=creatordate --format '%(refname)' refs/tags | grep -Po '(?<=refs.tags.)\\S+'"
 abbr --add gg 'br --conf ~/.config/broot/git-diff-conf.toml --git-status'
 
 # abbr --add godu '/opt/homebrew/opt/gdu/bin/gdu'
