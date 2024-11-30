@@ -5,7 +5,8 @@
 ## core utils replacements
 abbr --add zshconfig "subl ~/.zshrc"
 abbr --add sshconfig "subl ~/.ssh/config"
-abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
+# abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short' - maybe use kdig?
+abbr --add wanip 'curl -4 ifconfig.io/ip; curl -6 ifconfig.io/ip'
 abbr --add tg terragrunt
 abbr --add tf terraform
 abbr --add tgaa "terragrunt apply --auto-approve"
@@ -98,14 +99,13 @@ abbr --add ... "../.."
 abbr --add .... "../../.."
 abbr --add ..... "../../../.."
 
-abbr --add wanip 'dig @resolver4.opendns.com myip.opendns.com +short'
 abbr -a L --position anywhere --set-cursor "% | less"
 
 ## Developer stuff
 abbr --add watchdps "watch -x $FISH -c docker_ps_pretty"
 abbr --add watchf "watch -x $FISH -c"
 abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
-abbr --add vfn "vf new -p" (command -v python3.11) "(two_dirs \$PWD | tr / -)"
+abbr --add vfn "vf new -p" (command -v python3.12) "(two_dirs \$PWD | tr / -)"
 abbr --add vfa "vf activate (two_dirs \$PWD | tr / -)"
 
 

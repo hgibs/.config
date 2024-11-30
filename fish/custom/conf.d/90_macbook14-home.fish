@@ -54,10 +54,10 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     end
 
     # pre-empt system ruby
-    # set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
-    # fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
-    # set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
-    # fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
+    set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
+    fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
+    set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
+    fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
 
     # adds ~3ms to startup - but defaults to slightly better random source
     # utlimately not worth the hassle but keeping here for useful notes
