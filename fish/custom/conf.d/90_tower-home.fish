@@ -30,7 +30,9 @@ if test "$_identifier" = "e0:d5:5e:21:8e:72"
     end
 
     # enable byobu
-    set -g BYOBU_ENABLE true
+    set -g BYOBU_ENABLE flase
+    # this causes ssh to fail...
+
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
     # eval /Users/hollandgibson/miniforge3/bin/conda "shell.fish" "hook" $argv | source
