@@ -41,7 +41,6 @@ name = "html"
 '`' = '`'
 '<' = '>'
 
-
 # txt
 [[language]]
 name = "plaintext"
@@ -50,11 +49,21 @@ file-types = ["txt"]
 rulers = [80, 120]
 roots = []
 
-
 # python
 [[language]]
 name = "python"
 rulers = [120]
+auto-format = true
+language-servers = ["ruff", "pylsp"]
+
+[language-server.ruff]
+command = "ruff"
+args = ["server"]
+environment = { "RUFF_TRACE" = "messages" }
+
+[language-server.ruff.config.settings]
+lineLength = 120
+logLevel = "debug"
 
 [language-server.pylsp.config]
 configurationSources = ['flake8']
