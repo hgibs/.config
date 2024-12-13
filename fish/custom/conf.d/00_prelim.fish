@@ -10,21 +10,26 @@ set fish_color_operator brmagenta
 set fish_color_error brred
 
 if set -q _identifier
- # do nothing
+    # do nothing
 else
-  if command -v ip >/dev/null 2>&1
-    if test -z "$NIX_PATH"
-      set -U _identifier (ip -j link show | jq -r '.[] | select(.ifname | test("en.*")) | .address')
-    else 
-      set -U _identifier (ip -j link show | jq -r '.[] | select(.ifname | test("e.*")) | .address')-nixos
-    end
-  else if command -v ifconfig >/dev/null 2>&1
-    if ifconfig -a | grep -q en0
-      set -U _identifier (ifconfig en0 | grep ether | awk '{print $2}')
+    if command -v ip >/dev/null 2>&1
+        if test -z "$NIX_PATH"
+            set -U _identifier (ip -j link show | jq -r '.[] | select(.ifname | test("en.*")) | .address')
+        else
+            set -U _identifier (ip -j link show | jq -r '.[] | select(.ifname | test("e.*")) | .address')-nixos
+        end
+    else if command -v ifconfig >/dev/null 2>&1
+        if ifconfig -a | grep -q en0
+            set -U _identifier (ifconfig en0 | grep ether | awk '{print $2}')
+        else
+            echo "Could not identify with ifconfig!"
+        end
     else
-      echo "Could not identify with ifconfig!"
+        echo "ip and ifconfig both not present - cannot identify!"
     end
-  else
-    echo "ip and ifconfig both not present - cannot identify!"
-  end
+end
+
+function remove_duplicates
+    set -l oned_array (string join ' ' (printf (string join '\n' $argv) | uniq))
+    string split ' ' "$oned_array"
 end
