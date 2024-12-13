@@ -11,9 +11,9 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
 
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
-    set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/git_readonly_personal_token)
+    set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/gitlab_readonly_personal_token)
     set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_cd_release_access_token2)
-    set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
+    # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
     abbr bats 'TERM=xterm bats'
