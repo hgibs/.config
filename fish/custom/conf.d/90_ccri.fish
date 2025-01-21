@@ -12,7 +12,8 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
     set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/gitlab_readonly_personal_token)
-    set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_cd_release_access_token2)
+    set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_write_dev_token)
+    set -gx GIT_EDGE_CD_RELEASE_TOKEN (cat ~/.secret/gitlab_edge_cd_release_access_token2)
     # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
@@ -57,9 +58,11 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
     set -gx MAVEN_OPTS '-Xmx1500M -Xms1G -Duser.timezone=UTC -Xss32m'
-    set -gx JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
     fish_add_path --append "$HOME/src/inrev"
+
+    # add zig to path
+    fish_add_path --prepend "$HOME/Applications/zig-linux-x86_64"
 
     # add coursier to path
     fish_add_path --prepend "$HOME/.local/share/coursier/bin"
@@ -84,6 +87,7 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     #default java
     # set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
     set -gx JAVA_HOME "$HOME/jvm/jdk-17.0.2"
+    fish_add_path -m "$JAVA_HOME/bin"
 
     # make sure docker is running
     systemctl --user --quiet is-active docker.service
