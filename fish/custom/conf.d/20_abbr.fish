@@ -163,3 +163,6 @@ abbr --add gfa 'git fetch --all --prune --tags'
 abbr --add gstaa 'git stash --all'
 abbr --add gbl 'git blame -b -w -C -C -C'
 abbr --add gbu 'git branch -vv --set-upstream-to origin/(__git.current_branch) (__git.current_branch)'
+
+# input
+abbr --add maptrackball 'xinput set-button-map (xinput list --id-only "Kensington Slimblade Trackball") 3 2 1 4 5 6 7 8 9'
