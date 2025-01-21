@@ -120,7 +120,7 @@ disabled = false
 [sudo]
 style = 'bold green'
 symbol = '󰣬 '
-disabled = false
+disabled = true
 
 [time]
 disabled = false
