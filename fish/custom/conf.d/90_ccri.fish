@@ -1,12 +1,11 @@
 command -v ip >/dev/null 2>&1 || exit 0
 
-ip link show | grep -q enp0s31f6
+ip link show | grep -qe enp0s31f6 -e enp5s0
 if test $status -ne 0
     exit 0
 end
 
-# if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
-if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
+function __init_ccri_env
     set -g HOST_ENV_SETTING ccri
 
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
@@ -111,4 +110,11 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     end
 
     eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+end
+
+# if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
+if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
+    __init_ccri_env
+else if test (ip -o link show enp5s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "00:16:3e:ce:9d:aa"
+    __init_ccri_env
 end
