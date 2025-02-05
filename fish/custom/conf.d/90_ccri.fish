@@ -1,18 +1,19 @@
 command -v ip >/dev/null 2>&1 || exit 0
 
-ip link show | grep -qe enp0s31f6 -e enp5s0
-if test $status -ne 0
-    exit 0
-end
-
 function __init_ccri_env
     set -g HOST_ENV_SETTING ccri
 
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
-    set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/gitlab_readonly_personal_token)
-    set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_write_dev_token)
-    set -gx GIT_EDGE_CD_RELEASE_TOKEN (cat ~/.secret/gitlab_edge_cd_release_access_token2)
+    if test -f "$HOME/.secret/gitlab_readonly_personal_token"
+        set -gx GIT_ACCESS_TOKEN_READONLY (cat "$HOME/.secret/gitlab_readonly_personal_token")
+    end
+    if test -f "$HOME/.secret/gitlab_edge_write_dev_token"
+        set -gx GIT_EDGE_WRITE_TOKEN (cat "$HOME/.secret/gitlab_edge_write_dev_token")
+    end
+    if test -f "$HOME/.secret/gitlab_edge_cd_release_access_token2"
+        set -gx GIT_EDGE_CD_RELEASE_TOKEN (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
+    end
     # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
@@ -111,10 +112,19 @@ function __init_ccri_env
 
     eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
 end
+ip link show | grep -qe enp0s31f6 -e enp5s0
+if test $status -ne 0
+    exit 0
+end
 
 # if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
-if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
-    __init_ccri_env
-else if test (ip -o link show enp5s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "00:16:3e:ce:9d:aa"
-    __init_ccri_env
+if ip link show enp0s31f6 >/dev/null
+    if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
+        __init_ccri_env
+    end
+end
+if ip link show enp5s0 >/dev/null
+    if test (ip -o link show enp5s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "00:16:3e:ce:9d:aa"
+        __init_ccri_env
+    end
 end
