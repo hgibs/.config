@@ -70,6 +70,11 @@ function __init_ccri_env
     # add pip to path
     fish_add_path --prepend "$HOME/.local/bin"
 
+    # golang
+    if test -f "$HOME/.local/go/bin/go"
+        fish_add_path --append "$HOME/.local/go/bin"
+    end
+
     # add jdtls to path
     fish_add_path --append "$HOME/Applications/jdtls/bin"
 
