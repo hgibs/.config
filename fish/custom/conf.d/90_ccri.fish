@@ -123,12 +123,12 @@ if test $status -ne 0
 end
 
 # if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
-if ip link show enp0s31f6 >/dev/null
+if ip link show enp0s31f6 2>/dev/null >/dev/null
     if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
         __init_ccri_env
     end
 end
-if ip link show enp5s0 >/dev/null
+if ip link show enp5s0 2>/dev/null >/dev/null
     if test (ip -o link show enp5s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "00:16:3e:ce:9d:aa"
         __init_ccri_env
     end
