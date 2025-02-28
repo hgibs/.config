@@ -199,14 +199,14 @@ on_force_close "quit"
 // Default: $SHELL
 
 // only uncomment on legacy branch
-// default_shell "fish"
+default_shell "fish"
 
 // Toggle between having pane frames around the panes
 // Options:
 //   - true (default)
 //   - false
 //
-// pane_frames true
+pane_frames true
 
 // Toggle between having Zellij lay out panes according to a predefined set of layouts whenever possible
 // Options:
@@ -275,7 +275,6 @@ default_layout "compact_bar_top"
 // Examples:
 //
 // copy_command "xclip -selection clipboard" // x11
-// copy_command "wl-copy"                    // wayland
 copy_command "pbcopy"                     // osx
 // copy_command "copy" //universal
 
