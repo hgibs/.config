@@ -18,6 +18,7 @@ set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/functions/*.fish
 set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/completions/*.fish)
 
 for s_file in $custom_scripts
+    # echo $s_file
     source $s_file
 end
 

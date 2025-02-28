@@ -1,18 +1,27 @@
 command -v ip >/dev/null 2>&1 || exit 0
 
-ip link show | grep -q enp0s31f6
-if test $status -ne 0
-    exit 0
-end
-
 # if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
-if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
+function __init_ccri_env
     set -g HOST_ENV_SETTING ccri
 
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
-    set -gx GIT_ACCESS_TOKEN_READONLY (cat ~/.secret/git_readonly_personal_token)
-    set -gx GIT_EDGE_WRITE_TOKEN (cat ~/.secret/gitlab_edge_write_dev_token)
+    # move asciinema config (which disables automatic uploading)
+    set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
+
+    if test -f "$HOME/.secret/gitlab_readonly_personal_token"
+        set -gx GIT_ACCESS_TOKEN_READONLY (cat "$HOME/.secret/gitlab_readonly_personal_token")
+    end
+    if test -f "$HOME/.secret/gitlab_edge_write_dev_token"
+        set -gx GIT_EDGE_WRITE_TOKEN (cat "$HOME/.secret/gitlab_edge_write_dev_token")
+    end
+    if test -f "$HOME/.secret/gitlab_edge_cd_release_access_token2"
+        set -gx GIT_EDGE_CD_RELEASE_TOKEN (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
+    end
+    if test -f "$HOME/.secret/gitlab_rw_personal_token"
+        set -gx GIT_ACCESS_TOKEN_RW (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
+    end
+    # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
     abbr bats 'TERM=xterm bats'
@@ -41,11 +50,6 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     abbr mountnas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
     abbr mountlxc 'sshfs hgibson@hgibson-lxc.ccri.com:/home/hgibson $HOME/lxc'
     abbr vpnclean "ip -j a | jq -r '.[] | select(.ifname | test(\"vpn.*\")) | .ifname' | xargs nmcli connection delete"
-
-    abbr crusher '$HOME/Developer/optix_edge/deployments/crusher'
-    abbr cmcc '$HOME/Developer/optix_edge/deployments/cmcc'
-    abbr java-utils '$HOME/Developer/optix_edge/java-utils'
-    abbr containers '$HOME/Developer/optix_edge/containers'
 
     # colorful less!
     set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
@@ -77,6 +81,7 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     #default java
     # set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk-amd64"
     set -gx JAVA_HOME "$HOME/jvm/jdk-17.0.2"
+    fish_add_path -m "$JAVA_HOME/bin"
 
     # make sure docker is running
     systemctl --user --quiet is-active docker.service
@@ -96,4 +101,36 @@ if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | h
     set -gx NVM_DIR "$HOME/.nvm"
 
     eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+
+    # golang
+    if test -f "$HOME/.local/go/bin/go"
+        fish_add_path --append "$HOME/.local/go/bin"
+    end
+
+    # fortify paths
+    fish_add_path --append "$HOME/Fortify/Fortify_SCA_24.2.1/bin"
+    fish_add_path --append "$HOME/Fortify/Fortify_Apps_and_Tools_24.2.0/bin"
+
+    if test -f ~/.asdf/asdf.fish
+        source ~/.asdf/asdf.fish
+    end
+
+    eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+end
+
+ip link show | grep -qe enp0s31f6 -e enp5s0
+if test $status -ne 0
+    exit 0
+end
+
+# if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
+if ip link show enp0s31f6 2>/dev/null >/dev/null
+    if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
+        __init_ccri_env
+    end
+end
+if ip link show enp5s0 2>/dev/null >/dev/null
+    if test (ip -o link show enp5s0 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "00:16:3e:ce:9d:aa"
+        __init_ccri_env
+    end
 end

@@ -3,6 +3,7 @@ theme = "fleet_dark"
 [editor]
 auto-save = false  # saves on unfocus
 # rulers = [80, 120]
+cursorline = true
 color-modes = true
 bufferline = "multiple"
 scroll-lines = 2
@@ -26,6 +27,26 @@ L = ["goto_line_end", "move_char_right"]
 p = "paste_before"
 P = "paste_after"
 X = "extend_line_above"
+
+[keys.normal.q]
+Q = "record_macro"
+q = "replay_macro"
+# fancy action for closing a tag, best I can do without pre-recording macro
+x = [
+  "move_prev_long_word_start",
+  "move_next_long_word_end",
+  "yank",
+  "move_char_right",
+  "insert_newline",
+  "paste_after",
+  "move_prev_long_word_start",
+  "move_char_right",
+  ":insert-output echo -n /",
+  "move_line_up",
+  "insert_mode"
+]
+  # "y", 
+  # "p", "m", "m", "l", "i", "ret", "ret", "tab", "j", "k", "l", "i",/jkkkj<tab>i<tab><tab>"
 
 [keys.normal.g]
 e = ["goto_last_line", "move_line_down"] 

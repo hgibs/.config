@@ -9,7 +9,6 @@
 # 		set -gx JAVA_HOME "/Library/Java/JavaVirtualMachines/jdk-19.jdk/Contents/Home"
 
 # 		fish_add_path -a /Users/hollandgibson/Library/Python/3.10/bin
-
 # 		# set up yubikey
 # 		set -gx GPG_TTY (tty)
 # 		set -e -Ug SSH_AGENT_PID
