@@ -11,5 +11,22 @@
   "buffer_font_family": "FiraCode Nerd Font Mono",
   "theme": "macOS Classic Dark",
   "ui_font_size": 16,
-  "buffer_font_size": 14
+  "buffer_font_size": 14,
+  "languages": {
+    "C": {
+      "format_on_save": "off",
+      "preferred_line_length": 64,
+      "soft_wrap": "preferred_line_length"
+    },
+    "AsciiDoc": {
+      "soft_wrap": "bounded"
+    },
+    "JSON": {
+      "tab_size": 4
+    }
+  },
+  "telemetry": {
+    "diagnostics": false,
+    "metrics": false
+  }
 }

@@ -1,4 +1,4 @@
-# set -gx FISH_MAJOR (fish --version | awk '{print $3}' | head -c 1)
+set -gx FISH_MAJOR (fish --version | awk '{print $3}' | head -c 1)
 set -gx FISH_MINOR (fish --version | awk '{print $3}' | head -c 3 | tail -c 1)
 
 set fish_color_command brcyan
@@ -19,8 +19,10 @@ else
             set -U _identifier (ip -j link show | jq -r '.[] | select(.ifname | test("e.*")) | .address')-nixos
         end
     else if command -v ifconfig >/dev/null 2>&1
-        if ifconfig -a | grep -q en0
-            set -U _identifier (ifconfig en0 | grep ether | awk '{print $2}')
+        if ifconfig -a | grep -q en4
+            set -U _identifier (ifconfig en4 | grep ether | awk '{print $2}')
+        else if ifconfig -a | grep -q en1
+            set -U _identifier (ifconfig en1 | grep ether | awk '{print $2}')
         else
             echo "Could not identify with ifconfig!"
         end
