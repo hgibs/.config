@@ -14,6 +14,9 @@ function __init_ccri_env
     if test -f "$HOME/.secret/gitlab_edge_cd_release_access_token2"
         set -gx GIT_EDGE_CD_RELEASE_TOKEN (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
     end
+    if test -f "$HOME/.secret/gitlab_rw_personal_token"
+        set -gx GIT_ACCESS_TOKEN_RW (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
+    end
     # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
@@ -50,6 +53,7 @@ function __init_ccri_env
     abbr cmcc '$HOME/Developer/optix_edge/deployments/cmcc'
     abbr java-utils '$HOME/Developer/optix_edge/java-utils'
     abbr containers '$HOME/Developer/optix_edge/containers'
+    abbr poam "echo (date -Idate)-(head -c 200 /dev/urandom | tr -dc 'a-z0-9' | head -c 6) | copy"
 
     # colorful less!
     set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"

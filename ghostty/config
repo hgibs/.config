@@ -41,3 +41,14 @@
 # # which is explained in the docs for that config option.
 # # Just for example:
 # resize-overlay-duration = 4s 200ms
+
+command = fish
+background = #000
+window-padding-x = 0
+window-padding-y = 0
+gtk-titlebar = true
+
+term=xterm-256color
+
+# keybind = ctrl+shift+plus=increase_font_size
+# keybind = ctrl+shift+minus=decrease_font_size
