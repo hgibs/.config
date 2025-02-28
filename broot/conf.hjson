@@ -94,6 +94,7 @@ special_paths: {
     # "/media/slow-backup-disk"    : no-enter
     # "/home/dys/useless"    : hide
     # "/home/dys/my-link-I-want-to-explore"    : enter
+    "/home/hgibson/nas0_tank/**" : no-enter
 }
 
 ###############################################################

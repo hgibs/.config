@@ -101,16 +101,13 @@ name = "binary"
 program = "{0}"
 runInTerminal = true
 
-
 # XML
-# [[language]]
-# # https://github.com/redhat-developer/vscode-xml/tree/main
-# name = "xml"
-# auto-format = false
-# language-server = "lemminx"
-# # language-servers = [ { "lemminx" } ]
+[[language]]
+# https://github.com/redhat-developer/vscode-xml/tree/main
+name = "xml"
+auto-format = false
+language-servers = [ "lemminx" ]
 
-# [language-server.lemminx]
-# command = "lemminx-linux"
-# args = ["--stdio"]
-
+[language-server.lemminx]
+command = "lemminx-linux"
+args = ["--stdio"]

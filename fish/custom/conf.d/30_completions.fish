@@ -20,3 +20,9 @@ if command -vq fzf
         fzf --fish >"$HOME/.config/fish/completions/fzf.fish"
     end
 end
+
+if command -vq trivy
+    if not test -f "$HOME/.config/fish/completions/trivy.fish"
+        trivy completion fish >"$HOME/.config/fish/completions/trivy.fish"
+    end
+end
