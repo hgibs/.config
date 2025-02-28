@@ -22,3 +22,4 @@ packer/checkpoint*
 yarn
 zed/**/*.mdb
 zed/.tmp*
+restic/log.txt
