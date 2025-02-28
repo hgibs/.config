@@ -52,10 +52,6 @@ x = [
 e = ["goto_last_line", "move_line_down"] 
 a = "code_action"
 
-[keys.normal.q]
-Q = "record_macro"
-q = "replay_macro"
-
 [keys.select]
 H = "goto_line_start"
 L = ["goto_line_end", "move_char_right"]
