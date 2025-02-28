@@ -1,8 +1,8 @@
-if test $FISH_MINOR -lt 4
+if test "$FISH_MAJOR" -lt 4
     exit 0
 end
 
-command -v ifconfig >/dev/null 2>&1 || exit 0
+command -q ifconfig || exit 0
 
 uname -o | grep -q Darwin
 set -l is_darwin $status
@@ -23,6 +23,7 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     set -gx DICPATH "$HOME/.local/share/hunspell"
 
     fish_add_path -a /Users/hollandgibson/.miniforge3/bin
+    fish_add_path -a "$HOME/.nimble/bin"
     fish_add_path -a "/Users/hollandgibson/Library/Application Support/Coursier/bin"
 
     abbr parachute 'cd $HOME/Documents/cloud/parachute && bass source env.key'
@@ -36,7 +37,6 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     # abbr s "onlykey-agent -c"
     abbr sshsign "ssh-keygen -Y sign -f ~/.ssh/secretive.touchid-home.pub -n file"
     abbr waketower "wakeonlan e0:d5:5e:21:8e:72"
-
 
     abbr sshk "onlykey-agent -sk ECC5 -c"
     abbr sshs "onlykey-agent -sk ECC5 -s"
