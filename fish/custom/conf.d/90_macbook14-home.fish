@@ -17,7 +17,7 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     # set -gx GNUPGHOME $HOME/.gnupg/onlykey  # use onlykey
     set -gx GNUPGHOME $HOME/.gnupg/macos # use secure (touchid)
     set -gx KUBECONFIG $HOME/.kube/config.yaml
-    set -gx ZELLIJ_CONFIG_DIR $HOME/.config/zellij/macos_config
+    # set -gx ZELLIJ_CONFIG_DIR $HOME/.config/zellij/macos_config
 
     set -gx DICTIONARY en_US
     set -gx DICPATH "$HOME/.local/share/hunspell"

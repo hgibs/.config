@@ -10,9 +10,9 @@ set -gx PAGER less
 set -gx RANDOM_SOURCE urandom
 set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 set -gx LANG "en_US.UTF-8"
-set -gx ZELLIJ_CONFIG_DIR "$HOME/.config/zellij/config-linux.kdl"
+set -gx ZELLIJ_CONFIG_DIR "$HOME/.config/zellij/linux_config"
 if test (uname -o) = Darwin
-    set -gx ZELLIJ_CONFIG_DIR "$HOME/.config/zellij/config-macos.kdl"
+    set -gx ZELLIJ_CONFIG_DIR "$HOME/.config/zellij/macos_config"
 end
 ###############
 # Non-exports #
