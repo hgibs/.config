@@ -199,7 +199,6 @@ on_force_close "quit"
 // Default: $SHELL
 
 // only uncomment on legacy branch
-shell "fish"
 
 // Toggle between having pane frames around the panes
 // Options:
