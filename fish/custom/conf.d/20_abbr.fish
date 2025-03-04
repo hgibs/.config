@@ -71,7 +71,7 @@ abbr --add --position anywhere -- ytplaylist "-o \"%(playlist_index&{} - |)s%(ti
 ## Developer stuff
 abbr --add watchf "watch -dcx $FISH -c"
 abbr --add clippy_noboiler 'cargo clippy --fix -- -W clippy::pedantic -W clippy::nursery -W clippy::unwrap_used -W clippy::expect_used'
-abbr --add vfn "vf new -p" (command -v python3.11) "(two_dirs \$PWD | tr / -)"
+abbr --add vfn "vf new -p (latest_uv_python) (two_dirs \$PWD | tr / -)"
 abbr --add vfa "vf activate (two_dirs \$PWD | tr / -)"
 
 ## Random Generators
