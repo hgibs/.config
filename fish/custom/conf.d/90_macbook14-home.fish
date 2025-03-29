@@ -36,7 +36,6 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     # abbr ssh-shell='onlykey-agent ~/.ssh/github.pub -v --shell'
     # abbr s "onlykey-agent -c"
     abbr sshsign "ssh-keygen -Y sign -f ~/.ssh/secretive.touchid-home.pub -n file"
-    abbr waketower "wakeonlan e0:d5:5e:21:8e:72"
 
     abbr sshk "onlykey-agent -sk ECC5 -c"
     abbr sshs "onlykey-agent -sk ECC5 -s"

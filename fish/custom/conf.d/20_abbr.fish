@@ -12,7 +12,11 @@ abbr --add tg terragrunt
 abbr --add tf terraform
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
+
+# utilities
 abbr --add weather "curl wttr.in/Charlottesville"
+abbr waketower "wakeonlan e0:d5:5e:21:8e:72"
+abbr wakegamingpc "wakeonlan 9c:6b:00:1d:ad:d4"
 
 abbr --add reset_fish 'source ~/.config/fish/config.fish'
 
