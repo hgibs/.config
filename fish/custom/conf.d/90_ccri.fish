@@ -100,8 +100,6 @@ function __init_ccri_env
     # add NVM setup
     set -gx NVM_DIR "$HOME/.nvm"
 
-    eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
-
     # golang
     if test -f "$HOME/.local/go/bin/go"
         fish_add_path --append "$HOME/.local/go/bin"
@@ -115,7 +113,9 @@ function __init_ccri_env
         source ~/.asdf/asdf.fish
     end
 
-    eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+    if test -d "$HOME/miniforge3"
+        eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+    end
 end
 
 ip link show | grep -qe enp0s31f6 -e enp5s0
@@ -125,7 +125,7 @@ end
 
 # if test (ifconfig en0 | grep ether | awk '{print $2}') = "f8:4d:89:69:83:59" 
 if ip link show enp0s31f6 2>/dev/null >/dev/null
-    if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "ac:91:a1:14:29:d5"
+    if test (ip -o link show enp0s31f6 | grep -oE "([a-f0-9]{2}:){5}[a-f0-9]{2}" | head -n 1) = "e8:cf:83:ca:d4:32"
         __init_ccri_env
     end
 end

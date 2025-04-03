@@ -26,7 +26,6 @@ abbr --add p 'ping -o'
 
 abbr --add md 'mkdir -p'
 # abbr --add curl 'curl -#JLO'
-abbr --add curlc 'curl -#LOC -'
 
 # abbr --add godu '/opt/homebrew/opt/gdu/bin/gdu'
 abbr --add godu '/opt/homebrew/Cellar/gdu/5.*/bin/gdu'
