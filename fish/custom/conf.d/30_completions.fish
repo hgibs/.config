@@ -26,3 +26,9 @@ if command -vq trivy
         trivy completion fish >"$HOME/.config/fish/completions/trivy.fish"
     end
 end
+
+if command -vq zellij
+    if not test -f "$HOME/.config/fish/completions/zellij.fish"
+        zellij setup --generate-completion fish >"$HOME/.config/fish/completions/zellij.fish"
+    end
+end

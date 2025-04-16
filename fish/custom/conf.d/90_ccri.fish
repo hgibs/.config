@@ -106,8 +106,8 @@ function __init_ccri_env
     end
 
     # fortify paths
-    fish_add_path --append "$HOME/Fortify/Fortify_SCA_24.2.1/bin"
-    fish_add_path --append "$HOME/Fortify/Fortify_Apps_and_Tools_24.2.0/bin"
+    fish_add_path --append "$HOME/Fortify/OpenText_SAST_Fortify_25.2.0/bin"
+    fish_add_path --append "$HOME/Fortify/Fortify_Apps_and_Tools_24.4.0/bin"
 
     if test -f ~/.asdf/asdf.fish
         source ~/.asdf/asdf.fish
