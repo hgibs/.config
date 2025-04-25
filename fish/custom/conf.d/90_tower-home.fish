@@ -25,14 +25,15 @@ if test "$_identifier" = "e0:d5:5e:21:8e:72"
     fish_add_path -p "$HOME/.local/bin"
     fish_add_path -a "$HOME/.cargo/bin"
     fish_add_path -a "$HOME/llama-cpp/build/bin"
+    fish_add_path -a "$HOME/miniforge3/bin"
+    fish_add_path -a /usr/local/cuda-12/bin
 
-    # fish_add_path -a "$HOME/miniforge3/bin"
     if command -vq conda
         eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
     end
 
     # enable byobu
-    set -g BYOBU_ENABLE flase
+    set -g BYOBU_ENABLE false
     # this causes ssh to fail...
 
     # >>> conda initialize >>>
