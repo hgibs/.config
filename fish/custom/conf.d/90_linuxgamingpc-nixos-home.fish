@@ -26,6 +26,7 @@ if test "$_identifier" = "9c:6b:00:1d:ad:d4-nixos"
     set -g BYOBU_ENABLE false
 
     # set up conda
+    fish_add_path -a "$HOME/miniforge3/bin"
     # eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
 
 end
