@@ -22,6 +22,7 @@ if test "$_identifier" = "9c:6b:00:1d:ad:d4"
     fish_add_path -p "$HOME/.local/bin"
     fish_add_path -a "$HOME/.cargo/bin"
 
+    fish_add_path -a "$HOME/miniforge3/bin"
     # enable byobu
     # set -g BYOBU_ENABLE true
 end
