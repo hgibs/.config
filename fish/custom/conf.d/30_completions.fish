@@ -32,3 +32,10 @@ if command -vq zellij
         zellij setup --generate-completion fish >"$HOME/.config/fish/completions/zellij.fish"
     end
 end
+
+if command -vq hauler
+    if not test -f "$HOME/.config/fish/completions/hauler.fish"
+        hauler completion fish >"$HOME/.config/fish/completions/hauler.fish"
+        source "$HOME/.config/fish/completions/hauler.fish"
+    end
+end
