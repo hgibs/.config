@@ -3,3 +3,6 @@
 --format 'bv*+ba'
 --embed-thumbnail
 -o "%(title)s.%(ext)s"
+# --no-mtime
+--sponsorblock-mark all,-preview
+--check-formats

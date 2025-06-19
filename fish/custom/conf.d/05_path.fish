@@ -18,8 +18,8 @@ if test (uname -o) = Darwin
 else if test (uname -o) = GNU/Linux
     fish_add_path --append $HOME/.cargo/bin
     fish_add_path --append $HOME/node/bin
-    fish_add_path --append $HOME/go/bin
 end
+fish_add_path --append $HOME/go/bin
 
 # could switch to `test -d` type checks
 
