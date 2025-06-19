@@ -55,11 +55,14 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     end
 
     # pre-empt system ruby
-    set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
-    fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
-    set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
-    fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
-
+    if test -d opt/homebrew/lib/ruby/gems
+        set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
+        fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
+    end
+    if test -d /opt/homebrew/Cellar/ruby/
+        set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
+        fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
+    end
     # swiftly
     source "/Users/hollandgibson/.swiftly/env.fish"
 
