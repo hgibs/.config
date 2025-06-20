@@ -1,0 +1,17 @@
+# created by ~/.config/setup/macos/brew-list.sh on Fri Jun 20 11:42:35 EDT 2025 
+broot
+eza
+ffmpeg
+fish
+gdu
+git-delta
+helix
+restic
+ripgrep
+starship
+tlrc
+uv
+watch
+yt-dlp
+zellij
+zoxide
