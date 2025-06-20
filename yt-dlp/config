@@ -6,3 +6,4 @@
 # --no-mtime
 --sponsorblock-mark all,-preview
 --check-formats
+--download-archive /Users/hollandgibson/.config/yt-dlp/archive.txt
