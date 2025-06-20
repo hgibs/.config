@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN"
+         "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>com.hollandgibson.brew-list</string>
+    <key>ProgramArguments</key>
+    <array>
+        <string>/Users/hollandgibson/.config/setup/macos/brew-list.sh</string>
+    </array>
+    <key>StandardErrorPath</key>
+    <string>/Users/hollandgibson/com.hollandgibson.task.err</string>
+    <key>StandardOutPath</key>
+    <string>/Users/hollandgibson/com.hollandgibson.task.out</string>
+    <key>StartCalendarInterval</key>
+    <dict>
+        <key>Hour</key>
+        <integer>0</integer>
+        <key>Minute</key>
+        <integer>5</integer>
+    </dict>
+    <key>RunAtLoad</key>
+    <true/>
+    <key>Nice</key>
+    <integer>10</integer>
+</dict>
+</plist>
