@@ -24,13 +24,13 @@ set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/completions/*.fi
 
 # run `fish -c exit | sort --sort-numeric` with debug timings below to find slow scripts`
 for s_file in $custom_scripts
-    set start_time (date +%s%N)
+    # set start_time (date +%s%N)
 
     source $s_file
 
-    set end_time (date +%s%N)
-    set iter_time (math "($end_time - $start_time) / 1000000")
-    printf "%s: %s\n" "$iter_time" "$s_file"
+    # set end_time (date +%s%N)
+    # set iter_time (math "($end_time - $start_time) / 1000000")
+    # printf "%s: %s\n" "$iter_time" "$s_file"
 end
 
 if status is-interactive
