@@ -1,2 +1,2 @@
-# created by ~/.config/setup/macos/brew-list.sh on Fri Jun 20 11:42:36 EDT 2025 
+# created by ~/.config/setup/macos/brew-list.sh on Thu Jul 24 00:06:22 EDT 2025 
 calibre

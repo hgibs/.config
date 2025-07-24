@@ -1,11 +1,16 @@
-# created by ~/.config/setup/macos/brew-list.sh on Fri Jun 20 11:42:35 EDT 2025 
+# created by ~/.config/setup/macos/brew-list.sh on Thu Jul 24 00:06:20 EDT 2025 
 broot
 eza
+fd
 ffmpeg
 fish
+fzf
 gdu
 git-delta
 helix
+hilite
+hyperfine
+imagemagick
 restic
 ripgrep
 starship
