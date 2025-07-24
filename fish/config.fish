@@ -48,17 +48,3 @@ if status is-interactive
 end
 
 # status --is-login; and status --is-interactive; and test "$BYOBU_ENABLE" = "true"; and exec byobu-launcher
-
-# >>> conda initialize >>>
-# !! Contents within this block are managed by 'conda init' !!
-if test -f /home/holland/miniforge3/bin/conda
-    eval /home/holland/miniforge3/bin/conda "shell.fish" "hook" $argv | source
-else
-    if test -f "/home/holland/miniforge3/etc/fish/conf.d/conda.fish"
-        . "/home/holland/miniforge3/etc/fish/conf.d/conda.fish"
-    else
-        set -x PATH "/home/holland/miniforge3/bin" $PATH
-    end
-end
-# <<< conda initialize <<<
-
