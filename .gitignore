@@ -24,3 +24,4 @@ zed/**/*.mdb
 zed/.tmp*
 restic/log.txt
 restic/error.log
+yt-dlp/archive.txt
