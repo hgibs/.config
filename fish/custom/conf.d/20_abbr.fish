@@ -30,8 +30,9 @@ abbr --add md 'mkdir -p'
 # abbr --add ohmyzsh "mate ~/.oh-my-zsh"
 # abbr --add tf "terraform"
 
-abbr --add tree2 'tree -L 2'
-abbr --add tree3 'tree -L 3'
+# abbr --add tree2 'tree -L 2'
+# abbr --add tree3 'tree -L 3'
+abbr --add rustdev "zellij -l rust_project"
 
 abbr --add l "eza -l --header --git --time-style=iso"
 abbr --add ls "eza -la --header --git --time-style=long-iso"
