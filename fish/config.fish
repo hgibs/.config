@@ -13,13 +13,24 @@ set -Ux FISH (command -v fish)
 
 # import my work
 # conf.d sets the HOST_ENV_SETTING which must happen for some functions to get correctly defined
+# ~ 174ms before optimization:
 set -l custom_scripts (command ls -1 $HOME/.config/fish/custom/conf.d/*.fish)
+
+# ~ 7 ms:
 set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/functions/*.fish)
+
+# ~ 12ms:
 set -la custom_scripts (command ls -1 $HOME/.config/fish/custom/completions/*.fish)
 
+# run `fish -c exit | sort --sort-numeric` with debug timings below to find slow scripts`
 for s_file in $custom_scripts
-    # echo $s_file
+    set start_time (date +%s%N)
+
     source $s_file
+
+    set end_time (date +%s%N)
+    set iter_time (math "($end_time - $start_time) / 1000000")
+    printf "%s: %s\n" "$iter_time" "$s_file"
 end
 
 if status is-interactive

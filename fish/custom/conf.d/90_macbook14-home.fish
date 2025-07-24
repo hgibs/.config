@@ -2,11 +2,6 @@ if test "$FISH_MAJOR" -lt 4
     exit 0
 end
 
-command -q ifconfig || exit 0
-
-uname -o | grep -q Darwin
-set -l is_darwin $status
-
 # if test $is_darwin
 if test "$_identifier" = "f8:4d:89:69:83:59"
     set -g HOST_ENV_SETTING home
@@ -72,8 +67,11 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     # 	set -gx RANDOM_SOURCE rng
     # end
 
+    # This takes like 100ms and sucks to keep re-running.
+    # There should be a way with universal variables to only run it once, like the docker
+    # setup works.
     # >>> conda initialize >>>
     # !! Contents within this block are managed by 'conda init' !!
-    eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" hook $argv | source
+    # eval /Users/hollandgibson/.miniforge3/bin/conda "shell.fish" hook $argv | source
     # <<< conda initialize <<<
 end
