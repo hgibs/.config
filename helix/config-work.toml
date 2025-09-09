@@ -1,0 +1,68 @@
+# theme = "catppuccin_latte"
+theme = "spacebones_light"
+
+[editor]
+auto-save = false  # saves on unfocus
+# rulers = [80, 120]
+cursorline = true
+color-modes = true
+bufferline = "multiple"
+scroll-lines = 2
+mouse = false
+shell = ["fish", "-c"]
+auto-completion = true
+idle-timeout = 200
+
+[editor.file-picker]
+git-ignore = false
+
+[editor.lsp]
+display-inlay-hints = true
+display-messages = true
+
+[keys.normal]
+H = "goto_line_start"
+L = ["goto_line_end", "move_char_right"]
+# C-> = ["extend_to_line_bounds",]  # want to do a one-space indent, but that requires a new macro
+# swapping these to make more sense to me
+p = "paste_before"
+P = "paste_after"
+X = "extend_line_above"
+
+[keys.normal.q]
+Q = "record_macro"
+q = "replay_macro"
+# fancy action for closing a tag, best I can do without pre-recording macro
+x = [
+  "move_prev_long_word_start",
+  "move_next_long_word_end",
+  "yank",
+  "move_char_right",
+  "insert_newline",
+  "paste_after",
+  "move_prev_long_word_start",
+  "move_char_right",
+  ":insert-output echo -n /",
+  "move_line_up",
+  "insert_mode"
+]
+  # "y", 
+  # "p", "m", "m", "l", "i", "ret", "ret", "tab", "j", "k", "l", "i",/jkkkj<tab>i<tab><tab>"
+
+[keys.normal.g]
+e = ["goto_last_line", "move_line_down"] 
+a = "code_action"
+
+[keys.select]
+H = "goto_line_start"
+L = ["goto_line_end", "move_char_right"]
+
+[editor.soft-wrap]
+enable = true
+max-wrap = 25 # increase value to reduce forced mid-word wrapping
+max-indent-retain = 0
+# wrap-indicator = ""  # set wrap-indicator to "" to hide it
+
+[keys.insert]
+j = { k = "normal_mode" }
+C-s = ':w'
