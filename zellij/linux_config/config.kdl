@@ -273,7 +273,9 @@ load_plugins {
 // Choose the theme that is specified in the themes section.
 // Default: default
 // 
-// theme "dracula"
+// theme "iceberg-light"
+// theme "gruvbox-light"
+theme "dayfox"
  
 // Choose the base input mode of zellij.
 // Default: normal
@@ -356,7 +358,8 @@ on_force_close "quit"
 // copy_command "wl-copy"                    // wayland
 // copy_command "pbcopy"                     // osx
 // 
-copy_command "xclip -sel clip"
+// copy_command "xclip -sel clip"
+copy_command "xsel --input --clipboard"
  
 // Choose the destination for copied text
 // Allows using the primary selection buffer (on x11/wayland) instead of the system clipboard.
