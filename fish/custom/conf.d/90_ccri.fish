@@ -21,6 +21,9 @@ function __init_ccri_env
     if test -f "$HOME/.secret/gitlab_rw_personal_token"
         set -gx GIT_ACCESS_TOKEN_RW (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
     end
+    # if test -f "$HOME/.secret/artistic_pypi_token"
+    #     set -gx ARTISTIC_PYPI_TOKEN (cat "$HOME/.secret/artistic_pypi_token")
+    # end
     # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
     # abbr -e ls # wait for exa to become available
@@ -74,6 +77,9 @@ function __init_ccri_env
     # add rubygems to path
     fish_add_path --append "$HOME/.local/share/gem/ruby/3.0.0/bin"
 
+    # ruby env
+    fish_add_path --append "$HOME/.rbenv/bin"
+
     # add spotbugs to end of path
     # set -gxa PATH "$HOME/Developer/spotbugs-utils"
     fish_add_path --global --append "$HOME/Developer/spotbugs-utils"
@@ -115,6 +121,10 @@ function __init_ccri_env
 
     if test -d "$HOME/miniforge3"
         eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+    end
+
+    function hx
+        command /snap/bin/hx --config $HOME/.config/helix/config-work.toml $argv
     end
 end
 
