@@ -15,6 +15,12 @@ if command -vq helmfile
     end
 end
 
+if command -vq bat
+    if not test -f "$HOME/.config/fish/completions/bat.fish"
+        bat --completion fish >"$HOME/.config/fish/completions/bat.fish"
+    end
+end
+
 if command -vq fzf
     if not test -f "$HOME/.config/fish/completions/fzf.fish"
         fzf --fish >"$HOME/.config/fish/completions/fzf.fish"
