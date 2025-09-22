@@ -63,6 +63,9 @@ function __init_ccri_env
     set -gx MAVEN_OPTS '-Xmx1500M -Xms1G -Duser.timezone=UTC -Xss32m'
     set -gx JAVA_HOME /usr/lib/jvm/java-8-openjdk-amd64
 
+    # miniforge location
+    set -g conda_bin "$HOME/miniforge3/bin/conda"
+
     fish_add_path --append "$HOME/src/inrev"
 
     # add coursier to path
@@ -120,9 +123,9 @@ function __init_ccri_env
         source ~/.asdf/asdf.fish
     end
 
-    if test -d "$HOME/miniforge3"
-        eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
-    end
+    # if test -d "$HOME/miniforge3"
+    #     eval $HOME/miniforge3/bin/conda "shell.fish" hook $argv | source
+    # end
 
     function hx
         command /snap/bin/hx --config $HOME/.config/helix/config-work.toml $argv

@@ -12,6 +12,7 @@ if test "$_identifier" = "e0:d5:5e:21:8e:72"
 
     set -gx HELIX_RUNTIME $HOME/.config/helix/runtime
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
+    set -g conda_bin "$HOME/miniforge3/bin/conda"
 
     # colorful less!
     set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"

@@ -17,6 +17,8 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     set -gx DICTIONARY en_US
     set -gx DICPATH "$HOME/.local/share/hunspell"
 
+    set -g conda_bin "$HOME/.miniforge3/bin/conda"
+
     fish_add_path -a /Users/hollandgibson/.miniforge3/bin
     fish_add_path -a "$HOME/.nimble/bin"
     fish_add_path -a "/Users/hollandgibson/Library/Application Support/Coursier/bin"
