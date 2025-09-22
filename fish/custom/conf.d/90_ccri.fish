@@ -76,6 +76,7 @@ function __init_ccri_env
 
     # add rubygems to path
     fish_add_path --append "$HOME/.local/share/gem/ruby/3.0.0/bin"
+    fish_add_path --append "$HOME/.local/share/gem/ruby/3.4.0/bin"
 
     # ruby env
     fish_add_path --append "$HOME/.rbenv/bin"
