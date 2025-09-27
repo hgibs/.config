@@ -13,11 +13,10 @@ if test "$_identifier" = "9c:6b:00:1d:ad:d4"
     set -gx HELIX_RUNTIME $HOME/.config/helix/runtime
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
-    # colorful less!
-    set -gx LESSOPEN "| /usr/share/source-highlight/src-hilite-lesspipe.sh %s"
-
     # move asciinema config (which disables automatic uploading)
     set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
+
+    # set -gx KITTY_CONF_INCLUDE "include $HOME/.config/kitty/kitty-themes/themes/VibrantInk.conf"
 
     fish_add_path -p "$HOME/.local/bin"
     fish_add_path -a "$HOME/.cargo/bin"
