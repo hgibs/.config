@@ -75,25 +75,35 @@ skin: {
     help_table_border: ansi(239) None
     preview: gray(20) gray(1) / gray(18) gray(2)
     preview_line_number: gray(12) gray(3)
+    preview_separator: ansi(94) None / gray(3) None
     preview_match: None ansi(29)
     hex_null: gray(11) None
     hex_ascii_graphic: gray(18) None
     hex_ascii_whitespace: ansi(143) None
     hex_ascii_other: ansi(215) None
     hex_non_ascii: ansi(167) None
+    good_to_bad_0: ansi(28)
+    good_to_bad_1: ansi(29)
+    good_to_bad_2: ansi(29)
+    good_to_bad_3: ansi(29)
+    good_to_bad_4: ansi(29)
+    good_to_bad_5: ansi(100)
+    good_to_bad_6: ansi(136)
+    good_to_bad_7: ansi(172)
+    good_to_bad_8: ansi(166)
+    good_to_bad_9: ansi(196)
 }
 
 
 ###############################################################
 # Syntax Theme
 # 
-# If you want to choose the them used for preview, uncomment
+# If you want to choose the theme used for preview, uncomment
 # one of the following lines:
 # 
 # syntax_theme: GitHub
-# syntax_theme: SolarizedDark
-# syntax_theme: SolarizedLight
 syntax_theme: SolarizedDark
+# syntax_theme: SolarizedLight
 # syntax_theme: MochaDark
 # syntax_theme: OceanDark
 # syntax_theme: OceanLight

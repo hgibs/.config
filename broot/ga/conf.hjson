@@ -1,0 +1,24 @@
+default_flags: ghs
+
+show_selection_mark: true
+
+special_paths: {
+    "/media" : "no-enter" // comment it if desired
+    "**/.git": "hide"
+    # "/media/slow-backup-disk"    : no-enter
+    # "/home/dys/useless"    : hide
+    # "/home/dys/my-link-I-want-to-explore"    : enter
+    "/home/hgibson/nas0_tank/**" : no-enter
+}
+
+quit_on_last_cancel: true
+
+imports: [
+
+    # Verbs are better configured in verbs.hjson. But you
+    # can also add another files for your personal verbs
+    verbs.hjson
+
+    # force white skin
+    skins/white.hjson
+]

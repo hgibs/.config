@@ -9,6 +9,8 @@ function __init_ccri_env
     # move asciinema config (which disables automatic uploading)
     set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
 
+    set -gx BROOT_CONFIG_DIR "$HOME/dotfiles/broot/ga"
+
     if test -f "$HOME/.secret/gitlab_readonly_personal_token"
         set -gx GIT_ACCESS_TOKEN_READONLY (cat "$HOME/.secret/gitlab_readonly_personal_token")
     end
@@ -21,6 +23,7 @@ function __init_ccri_env
     if test -f "$HOME/.secret/gitlab_rw_personal_token"
         set -gx GIT_ACCESS_TOKEN_RW (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
     end
+
     # if test -f "$HOME/.secret/artistic_pypi_token"
     #     set -gx ARTISTIC_PYPI_TOKEN (cat "$HOME/.secret/artistic_pypi_token")
     # end

@@ -62,6 +62,7 @@ skin: {
 	preview_title: gray(3) None / gray(5) None
 	preview: gray(5) gray(23) / gray(7) gray(23)
 	preview_line_number: gray(6) gray(20)
+	preview_separator: gray(7) None / gray(18) None
 	preview_match: None ansi(29) Underlined
 	hex_null: gray(15) None
 	hex_ascii_graphic: gray(2) None
@@ -70,4 +71,14 @@ skin: {
 	hex_non_ascii: ansi(167) None
 	staging_area_title: gray(8) None / gray(13) None
 	mode_command_mark: gray(15) ansi(204) Bold
+	good_to_bad_0: ansi(28)
+	good_to_bad_1: ansi(29)
+	good_to_bad_2: ansi(29)
+	good_to_bad_3: ansi(29)
+	good_to_bad_4: ansi(29)
+	good_to_bad_5: ansi(100)
+	good_to_bad_6: ansi(136)
+	good_to_bad_7: ansi(172)
+	good_to_bad_8: ansi(166)
+	good_to_bad_9: ansi(196)
 }
