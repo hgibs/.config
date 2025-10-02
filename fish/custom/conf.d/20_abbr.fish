@@ -100,6 +100,7 @@ abbr --add gp_ssl 'GIT_SSL_NO_VERIFY=1 git push'
 abbr --add gt 'git tag'
 abbr --add gtd "git for-each-ref --sort=creatordate --format '%(refname)' refs/tags | grep -Po '(?<=refs.tags.)\\S+'"
 abbr --add gg 'br --conf ~/.config/broot/git-diff-conf.toml --git-status'
+abbr --add gtso 'git tag --sort=v:refname'
 
 ## additional git abbrs
 # abbr --add gcm --set-cursor=% 'git commit -m "%"'
