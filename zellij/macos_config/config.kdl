@@ -454,3 +454,5 @@ show_startup_tips false
 // Default: true
 // 
 // show_release_notes false
+
+advanced_mouse_actions false
