@@ -40,7 +40,7 @@ function __init_ccri_env
     abbr mcv 'mvn clean verify'
     abbr mcis 'mvn clean install -DskipTests'
     abbr mdt 'mvn dependency:tree'
-    abbr mdtf 'mvn dependency:tree -DoutputFile=dependencies.txt'
+    abbr mdtf 'mvn dependency:tree -DoutputFile=target/dependencies.txt'
     abbr mst 'mvn -Dmaven.test.skip=true'
     abbr m mvn
     abbr mt 'mvn test'
@@ -51,8 +51,9 @@ function __init_ccri_env
     # abbr mv 'mvn verify' # can't do that and still `mv` files!
     abbr msc 'mvn scala:console'
     abbr mep 'mvn help:effective-pom -Dverbose=true -Doutput=effective.xml'
-    abbr ml 'mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list'
-    abbr mlp 'mvn -q --also-make exec:exec -Dexec.executable="pwd"' # list all project dirs
+    abbr mlp 'mvn fr.jcgay.maven.plugins:buildplan-maven-plugin:list'
+    abbr mlsd 'mvn -q --also-make exec:exec -Dexec.executable="pwd"' # list all project dirs
+    abbr mls 'mvn --also-make dependency:tree | grep maven-dependency-plugin | awk \'{ print $(NF-1) }\''
     abbr mountnas 'sshfs hgibson@nas0.ccri.com:/mnt/tank $HOME/nas0_tank'
     abbr mountlxc 'sshfs hgibson@hgibson-lxc.ccri.com:/home/hgibson $HOME/lxc'
     abbr vpnclean "ip -j a | jq -r '.[] | select(.ifname | test(\"vpn.*\")) | .ifname' | xargs nmcli connection delete"

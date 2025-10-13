@@ -2,7 +2,6 @@
 url = "https://asciinema.nowhere.invalid"
 
 [session]
-# Enable input (keyboard) recording, default: false
 capture_input = true
 
 idle_time_limit = 2
