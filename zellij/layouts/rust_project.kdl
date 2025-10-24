@@ -19,7 +19,6 @@ layout {
 			}
 	        pane split_direction="horizontal" {
 	            pane command="bacon" {
-		            args "check-all"
 		        }
 	            pane
 	        }
