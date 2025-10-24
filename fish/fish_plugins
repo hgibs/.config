@@ -3,6 +3,7 @@ patrickf1/colored_man_pages.fish
 blackjid/plugin-kubectl
 edc/bass
 oh-my-fish/plugin-license
-rstacruz/fish-asdf
-jhillyerd/plugin-git
 ckipp01/mill-fish-completions
+jhillyerd/plugin-git@fish-3.6-required
+meaningful-ooo/sponge
+rstacruz/fish-asdf

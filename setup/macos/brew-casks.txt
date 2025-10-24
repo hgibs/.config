@@ -1,2 +1,4 @@
 # created by ~/.config/setup/macos/brew-list.sh
 calibre
+godot
+secretive

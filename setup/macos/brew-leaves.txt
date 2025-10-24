@@ -10,6 +10,7 @@ fish
 fzf
 gdu
 git-delta
+git-lfs
 gleam
 helix
 helm
@@ -25,6 +26,7 @@ rfidresearchgroup/proxmark3/arm-none-eabi-gcc
 rfidresearchgroup/proxmark3/proxmark3
 ripgrep
 starship
+taplo
 tlrc
 uv
 watch
