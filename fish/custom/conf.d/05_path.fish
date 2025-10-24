@@ -14,7 +14,9 @@ if test (uname -o) = Darwin
     fish_add_path --append '/Applications/Sublime Text.app/Contents/SharedSupport/bin'
     fish_add_path --append $HOME/.cargo/bin
     fish_add_path --append /opt/homebrew/opt/mysql-client/bin
+    fish_add_path --append /opt/podman/bin
 
+    fish_add_path --append /Users/hollandgibson/Applications/binaryen/bin
 else if test (uname -o) = GNU/Linux
     fish_add_path --append $HOME/.cargo/bin
     fish_add_path --append $HOME/node/bin

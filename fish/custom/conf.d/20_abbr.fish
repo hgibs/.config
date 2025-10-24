@@ -12,6 +12,13 @@ abbr --add tg terragrunt
 abbr --add tf terraform
 abbr --add tgaa "terragrunt apply --auto-approve"
 abbr --add tgra "terragrunt run-all apply"
+abbr --add l "eza -l --header --git --time-style=iso"
+abbr --add ls "eza -la --header --git --time-style=long-iso"
+abbr --add lsg "eza -lag --header --git --time-style=long-iso"
+abbr --add t tldr
+
+# quick hits
+abbr --add hoy "date -Idate"
 
 # utilities
 abbr --add weather "curl wttr.in/Charlottesville"
@@ -20,7 +27,6 @@ abbr wakegamingpc "wakeonlan 9c:6b:00:1d:ad:d4"
 
 abbr --add reset_fish 'source ~/.config/fish/config.fish'
 
-abbr --add t tldr
 # abbr --add m '/usr/bin/man'
 abbr --add p 'ping -o'
 
@@ -34,10 +40,10 @@ abbr --add md 'mkdir -p'
 # abbr --add tree3 'tree -L 3'
 abbr --add rustdev "zellij -l rust_project"
 
-abbr --add l "eza -l --header --git --time-style=iso"
-abbr --add ls "eza -la --header --git --time-style=long-iso"
-abbr --add lsg "eza -lag --header --git --time-style=long-iso"
+# updates
 abbr --add buu "brew update && brew upgrade"
+abbr --add auu "sudo apt update && sudo apt upgrade -y"
+abbr --add tu "tldr --update"
 
 abbr --add ... "../.."
 abbr --add .... "../../.."
@@ -53,6 +59,7 @@ switch (uname -o)
     case Darwin
         abbr --add cb "| pbcopy"
         abbr --add pb "pbpaste |"
+        abbr --add flushdns "sudo dscacheutil -flushcache; sudo killall -HUP mDNSResponder"
 end
 
 abbr --add !! --position anywhere --function last_history_item
