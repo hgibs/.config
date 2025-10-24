@@ -4,12 +4,11 @@ command -v ip >/dev/null 2>&1 || exit 0
 function __init_ccri_env
     set -g HOST_ENV_SETTING ccri
 
-    set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
-
-    # move asciinema config (which disables automatic uploading)
+    # configs
     set -gx ASCIINEMA_CONFIG_HOME "$HOME/dotfiles/asciinema"
-
+    set -gx BAT_CONFIG_PATH "$HOME/dotfiles/bat/config-lightmode"
     set -gx BROOT_CONFIG_DIR "$HOME/dotfiles/broot/ga"
+    set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
     if test -f "$HOME/.secret/gitlab_readonly_personal_token"
         set -gx GIT_ACCESS_TOKEN_READONLY (cat "$HOME/.secret/gitlab_readonly_personal_token")
