@@ -10,6 +10,7 @@ function __init_ccri_env
     set -gx BROOT_CONFIG_DIR "$HOME/dotfiles/broot/ga"
     set -gx STARSHIP_CONFIG ~/dotfiles/starship.toml
 
+    # secrets
     if test -f "$HOME/.secret/gitlab_readonly_personal_token"
         set -gx GIT_ACCESS_TOKEN_READONLY (cat "$HOME/.secret/gitlab_readonly_personal_token")
     end
@@ -23,12 +24,14 @@ function __init_ccri_env
         set -gx GIT_ACCESS_TOKEN_RW (cat "$HOME/.secret/gitlab_edge_cd_release_access_token2")
     end
 
+    set -gx EDITOR "hx --config $HOME/.config/helix/config-work.toml"
+
     # if test -f "$HOME/.secret/artistic_pypi_token"
     #     set -gx ARTISTIC_PYPI_TOKEN (cat "$HOME/.secret/artistic_pypi_token")
     # end
     # set -gx GIT_ACCESS_TOKEN_RW (cat ~/.secret/gitlab_profile_private_access_token_renovate_dev_rw)
 
-    # abbr -e ls # wait for exa to become available
+    # abbrs
     abbr bats 'TERM=xterm bats'
 
     abbr record_container 'asciinema rec ~/terminal_recording/sessions/(date +%FT%T).asc -c "zellij --layout ~/terminal_recording/recording_stack_layout_container.kdl"'
