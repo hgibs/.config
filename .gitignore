@@ -10,6 +10,7 @@ scw/config.yaml
 asciinema/install-id
 broot/launcher
 byobu/.ssh-agent
+containers
 fish/completions
 fish/conf.d
 fish/fish_variables
