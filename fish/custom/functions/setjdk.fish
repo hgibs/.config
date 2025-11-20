@@ -10,7 +10,7 @@ if test "$HOST_ENV_SETTING" = ccri
         if test $javaversion = graalvm
             set -gx JAVA_HOME "$HOME/jvm/graalvm-jdk-21.0.1+12.1"
         else if test $javaversion -eq 21
-            set -gx JAVA_HOME "$HOME/jvm/jdk-21.0.1"
+            set -gx JAVA_HOME "$HOME/jvm/jdk-21.0.7"
         else if test $javaversion -eq 20
             set -gx JAVA_HOME "$HOME/jvm/jdk-20.0.2"
         else if test $javaversion -eq 18

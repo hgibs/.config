@@ -108,8 +108,7 @@ abbr --add gt 'git tag'
 abbr --add gtd "git for-each-ref --sort=creatordate --format '%(refname)' refs/tags | grep -Po '(?<=refs.tags.)\\S+'"
 abbr --add gg 'br --conf ~/.config/broot/git-diff-conf.toml --git-status'
 abbr --add gtso 'git tag --sort=v:refname'
-
-## additional git abbrs
+abbr --add gafp 'git add . && git commit -v --amend --no-edit && git push --force-with-lease'
 # abbr --add gcm --set-cursor=% 'git commit -m "%"'
 # abbr --add git https="git remote set-url origin https://github.com/$(git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"
 # abbr --add git ssh="  git remote set-url origin git@github.com:$(    git remote get-url origin | sed 's/https:\/\/github.com\///' | sed 's/git@github.com://')"

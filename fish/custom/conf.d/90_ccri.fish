@@ -26,6 +26,10 @@ function __init_ccri_env
 
     set -gx EDITOR "hx --config $HOME/.config/helix/config-work.toml"
 
+    # aider configs
+    set -gx OLLAMA_API_BASE "http://apollo.ccri.com:11434"
+    set -gx OLLAMA_HOST "http://apollo.ccri.com:11434"
+
     # if test -f "$HOME/.secret/artistic_pypi_token"
     #     set -gx ARTISTIC_PYPI_TOKEN (cat "$HOME/.secret/artistic_pypi_token")
     # end
