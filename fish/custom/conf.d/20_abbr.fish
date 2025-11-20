@@ -116,6 +116,7 @@ abbr --add gafp 'git add . && git commit -v --amend --no-edit && git push --forc
 
 # helm and k8s
 abbr --add kga 'kubectl get all,cm,secret,ing,pvc,cert' #,certificaterequest'
+abbr --add kdf 'kubectl delete -f'
 abbr --add mk 'minikube kubectl --'
 abbr --add hi 'helmfile --interactive'
 abbr --add hia 'helmfile --interactive apply'
