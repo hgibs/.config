@@ -22,9 +22,10 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     fish_add_path -a /Users/hollandgibson/.miniforge3/bin
     fish_add_path -a "$HOME/.nimble/bin"
     fish_add_path -a "/Users/hollandgibson/Library/Application Support/Coursier/bin"
-    fish_add_path -a "$HOME/.swiftly/bin"
     fish_add_path -a /usr/local/go/bin
 
+    abbr mactrust "xattr -d com.apple.quarantine"
+    abbr unquarantine "xattr -d com.apple.quarantine"
     abbr parachute 'cd $HOME/Documents/cloud/parachute && bass source env.key'
     abbr vpsiac --position=command 'cd $HOME/Developer/cloud/vps-iac && bass source env.key'
     abbr keyb --position=anywhere '$HOME/Documents/projects/Mercury65Plus'
@@ -52,16 +53,21 @@ if test "$_identifier" = "f8:4d:89:69:83:59"
     end
 
     # pre-empt system ruby
-    if test -d opt/homebrew/lib/ruby/gems
-        set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
-        fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
-    end
-    if test -d /opt/homebrew/Cellar/ruby/
-        set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
-        fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
-    end
+    # if test -d /opt/homebrew/lib/ruby/gems
+    #     set -l latest_gem (ls -1 /opt/homebrew/lib/ruby/gems | tail -n 1)
+    #     fish_add_path -p "/opt/homebrew/Cellar/$latest_gem/bin"
+    # end
+    # if test -d /opt/homebrew/Cellar/ruby/
+    #     set -l latest_ruby (ls -1 /opt/homebrew/Cellar/ruby/ | tail -n 1)
+    #     fish_add_path -p "/opt/homebrew/Cellar/ruby/$latest_ruby/bin"
+    # end
+
+    # fish_add_path -p (brew --prefix ruby)/bin
+    # fish_add_path -p (gem environment gemdir)/
+
     # swiftly
-    source "/Users/hollandgibson/.swiftly/env.fish"
+    # fish_add_path -a "$HOME/.swiftly/bin"
+    # source "/Users/hollandgibson/.swiftly/env.fish"
 
     # adds ~3ms to startup - but defaults to slightly better random source
     # utlimately not worth the hassle but keeping here for useful notes

@@ -1,4 +1,6 @@
 # created by ~/.config/setup/macos/brew-list.sh
 calibre
+dbeaver-community
 godot
+ovhcloud-cli
 secretive
