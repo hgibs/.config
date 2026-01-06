@@ -1,5 +1,9 @@
 # Installation
 
+# DEPRECATION NOTICE
+
+Now at https://codeberg.org/humble_proton/dotfiles
+
 ## Current Work
 
 
